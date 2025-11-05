@@ -2,8 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Georgian Font */
+@font-face {
+  font-family: 'BPG ExtraSquare Mtavruli';
+  src: url('/fonts/bpg_extrasquare_mtavruli_2009.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  --font-georgian: 'BPG ExtraSquare Mtavruli', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
@@ -19,7 +28,7 @@ html {
 }
 
 body {
-  font-family: var(--font-inter);
+  font-family: var(--font-georgian);
   background: #ffffff;
   color: #1a1a1a;
   overflow-x: hidden;
