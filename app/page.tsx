@@ -40,27 +40,26 @@ const HomePage = () => {
   ]
 
   const stats = [
-    { number: '60%', label: 'იაფია ბაზართან' },
-    { number: '100+', label: 'დასრულებული პროექტი' },
-    { number: '7', label: 'დღიანი მიწოდება' },
-    { number: '99%', label: 'კმაყოფილი კლიენტები' }
+    { number: '40%', label: 'იაფი ბაზართან შედარებით' },
+    { number: '10+', label: 'დასრულებული პროექტი' },
+    { number: '100%', label: 'კმაყოფილი კლიენტები' }
   ]
 
   const pricingPreview = [
     {
       name: 'Landing Page',
-      price: '500',
-      features: ['1 გვერდი', 'რესპონსიული დიზაინი', 'კონტაქტის ფორმა', '3 დღიანი მიწოდება']
+      price: '500-800',
+      features: ['1-2 გვერდი', 'რესპონსიული დიზაინი', 'კონტაქტის ფორმა', 'მიწოდების ვადა (მაქს. 3 დღე)']
     },
     {
-      name: 'საწარმოს საიტი',
-      price: '1,500',
+      name: 'საიტი ბიზნესისთვის',
+      price: '1000-2500',
       popular: true,
-      features: ['5-7 გვერდი', 'თანამედროვე დიზაინი', 'ადმინ პანელი', 'SEO ოპტიმიზაცია', '7 დღიანი მიწოდება']
+      features: ['3-7 გვერდი', 'თანამედროვე დიზაინი', 'ადმინ პანელი', 'SEO ოპტიმიზაცია', 'მიწოდების ვადა (მაქს. 7 დღე)']
     },
     {
-      name: 'E-Commerce',
-      price: '3,500',
+      name: 'მასშტაბური პროექტები',
+      price: '3000-5000',
       features: ['უსასრულო პროდუქტი', 'გადახდის სისტემა', 'ინვენტარის მართვა', 'ანალიტიკა', '14 დღიანი მიწოდება']
     }
   ]
@@ -107,7 +106,7 @@ const HomePage = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-10 sm:mt-12 md:mt-16 max-w-4xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-12 mt-10 sm:mt-12 md:mt-16 max-w-3xl mx-auto"
           >
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
@@ -124,10 +123,10 @@ const HomePage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
-              რატომ ავირჩიოთ PixelWeb?
+              რატომ უნდა ავირჩიოთ PixelWeb?
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              ჩვენ გთავაზობთ საუკეთესო ხარისხს ყველაზე ხელმისაწვდომ ფასად საქართველოში
+              ჩვენ გთავაზობთ საუკეთესო ხარისხს ხელმისაწვდომ ფასად საქართველოში
             </p>
           </div>
 
@@ -155,7 +154,7 @@ const HomePage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
-              მარტივი და გამჭვირვალე ფასები
+              მარტივი და ოპტიმალური ფასები
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               აირჩიეთ თქვენთვის შესაფერისი პაკეტი. ყველა პაკეტი მოიცავს უფასო ტექნიკურ მხარდაჭერას.
@@ -224,7 +223,7 @@ const HomePage = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">
-              მზად ხართ დავიწყოთ თქვენი პროექტი?
+              მზად ხართ დასაწყებად?
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-primary-100 dark:text-primary-200 mb-6 sm:mb-8 max-w-2xl mx-auto">
               დაგვიკავშირდით დღესვე და მიიღეთ უფასო კონსულტაცია თქვენი პროექტის შესახებ

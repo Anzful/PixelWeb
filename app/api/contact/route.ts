@@ -77,7 +77,13 @@ export async function POST(request: Request) {
     })
 
     if (!emailResponse.ok) {
-      throw new Error('Email sending failed')
+      const errorData = await emailResponse.json()
+      console.error('Resend API Error:', {
+        status: emailResponse.status,
+        statusText: emailResponse.statusText,
+        error: errorData
+      })
+      throw new Error(`Email sending failed: ${JSON.stringify(errorData)}`)
     }
 
     return NextResponse.json({ 

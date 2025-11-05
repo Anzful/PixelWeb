@@ -10,48 +10,46 @@ const ServicesPage = () => {
     {
       icon: <FaFileAlt className="text-5xl text-primary-600" />,
       name: 'Landing Page',
-      price: '500-800',
+      price: '500-700',
       duration: '3-5 დღე',
       description: 'იდეალური მცირე ბიზნესისთვის ან პროდუქტის წარმოსაჩენად',
       features: [
-        '1 გვერდი თანამედროვე დიზაინით',
+        '1-2 გვერდი თანამედროვე დიზაინით',
         'სრულად რესპონსიული (მობილური, ტაბლეტი, დესკტოპი)',
         'კონტაქტის ფორმა',
         'Google Maps ინტეგრაცია',
         'სოციალური მედიის ლინკები',
         'ძირითადი SEO ოპტიმიზაცია',
-        '1 თვე უფასო ტექნიკური მხარდაჭერა'
+        'ადმინ პანელი'
       ],
       notIncluded: [
-        'ადმინ პანელი',
         'მონაცემთა ბაზა',
         'მომხმარებლის ავტორიზაცია'
       ],
-      marketPrice: '1,500-2,000'
+      marketPrice: '1,000-2,000'
     },
     {
       icon: <FaBriefcase className="text-5xl text-primary-600" />,
-      name: 'საწარმოს ვებსაიტი',
-      price: '1,500-2,500',
+      name: 'საიტი ბიზნესისთვის',
+      price: '1,000-2,500',
       duration: '7-10 დღე',
       description: 'სრული ფუნქციონალის საიტი ბიზნესისთვის',
       features: [
-        '5-10 გვერდი (მთავარი, შესახებ, სერვისები, პორტფოლიო, კონტაქტი, ბლოგი)',
+        '3-7 გვერდი (მთავარი, შესახებ, სერვისები, პორტფოლიო, კონტაქტი, ბლოგი)',
         'პროფესიონალური და უნიკალური დიზაინი',
         'სრულად რესპონსიული',
+        'მომხმარებლის ავტორიზაცია',
         'კონტენტის მართვის სისტემა (CMS)',
         'ბლოგის სექცია',
         'მრავალენოვანი მხარდაჭერა (ქართული/ინგლისური)',
         'სრული SEO ოპტიმიზაცია',
-        'Google Analytics ინტეგრაცია',
         'სოციალური მედიის ინტეგრაცია',
-        '3 თვე უფასო ტექნიკური მხარდაჭერა'
+        'პროდუქტების კატალოგი'
       ],
       notIncluded: [
         'ონლაინ გადახდის სისტემა',
-        'პროდუქტების კატალოგი'
       ],
-      marketPrice: '4,000-6,000',
+      marketPrice: '2,000-4,000',
       popular: true
     },
     {
@@ -67,7 +65,7 @@ const ServicesPage = () => {
         'მომხმარებლის რეგისტრაცია და პროფილი',
         'შეკვეთების მართვის სისტემა',
         'ინვენტარის მართვა',
-        'გადახდის სისტემების ინტეგრაცია (BOG, TBC, PayPal)',
+        'გადახდის სისტემების ინტეგრაცია',
         'მიწოდების კალკულატორი',
         'ადმინ პანელი სრული კონტროლისთვის',
         'Email შეტყობინებები შეკვეთებზე',
@@ -76,47 +74,35 @@ const ServicesPage = () => {
         '6 თვე უფასო ტექნიკური მხარდაჭერა'
       ],
       notIncluded: [],
-      marketPrice: '8,000-15,000'
+      marketPrice: '3,000-5,000+'
     },
     {
       icon: <FaRocket className="text-5xl text-primary-600" />,
-      name: 'პორტფოლიო საიტი',
-      price: '800-1,200',
-      duration: '5-7 დღე',
-      description: 'კრეატიული საიტი პირადი ან პროფესიული პორტფოლიოსთვის',
+      name: 'მორგებული ვებსაიტი',
+      price: 'მოლაპარაკებით',
+      duration: 'მოლაპარაკებით',
+      description: 'სრულად მორგებული ვებსაიტი თქვენი უნიკალური საჭიროებების მიხედვით',
       features: [
-        '4-6 გვერდი',
-        'ინტერაქტიული და ანიმირებული დიზაინი',
-        'პორტფოლიო გალერეა',
-        'პროექტების დეტალური გვერდები',
-        'კონტაქტის ფორმა',
-        'Resume/CV სექცია',
-        'სრულად რესპონსიული',
-        'ძირითადი SEO ოპტიმიზაცია',
-        '2 თვე უფასო ტექნიკური მხარდაჭერა'
+        'სრულად მორგებული ვებსაიტი თქვენი საჭიროებების მიხედვით',
       ],
-      notIncluded: [
-        'ბლოგის ფუნქციონალი',
-        'მომხმარებლის ავტორიზაცია'
-      ],
-      marketPrice: '2,000-3,000'
+      notIncluded: [],
     }
   ]
 
   const additionalServices = [
     {
       name: 'დომენის რეგისტრაცია',
-      price: '50-100 ₾/წელი',
+      price: '30-70 ₾/წელი',
       description: '.ge, .com, .net დომენები'
     },
     {
       name: 'ჰოსტინგი',
-      price: '150-300 ₾/წელი',
+      price: '120-400 ₾/წელი',
       description: 'სწრაფი და უსაფრთხო ჰოსტინგი'
     },
     {
       name: 'მხარდაჭერა',
-      price: '200-500 ₾/თვე',
+      price: 'დამოკიდებულია პროექტისგან',
       description: 'რეგულარული განახლებები და ტექნიკური მხარდაჭერა'
     }
   ]
@@ -199,11 +185,13 @@ const ServicesPage = () => {
                 <div className="p-8">
                   <div className="flex items-center justify-between mb-4">
                     <div>{service.icon}</div>
-                    <div className="text-right">
-                      <div className="text-gray-500 text-sm line-through">
-                        ბაზარზე: {service.marketPrice} ₾
+                    {service.marketPrice && service.marketPrice !== 'მოლაპარაკებით' && (
+                      <div className="text-right">
+                        <div className="text-red-500 text-sm line-through">
+                          ბაზარზე: {service.marketPrice} ₾
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                   
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.name}</h3>
@@ -212,7 +200,9 @@ const ServicesPage = () => {
                   <div className="mb-6">
                     <div className="flex items-baseline mb-2">
                       <span className="text-4xl font-bold text-primary-600">{service.price}</span>
-                      <span className="text-gray-600 ml-2">₾</span>
+                      {service.price !== 'მოლაპარაკებით' && (
+                        <span className="text-gray-600 ml-2">₾</span>
+                      )}
                     </div>
                     <div className="text-sm text-gray-500">
                       ⏱️ მიწოდება: {service.duration}

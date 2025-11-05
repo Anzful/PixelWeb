@@ -85,23 +85,22 @@ const ContactPage = () => {
     {
       icon: <FaPhone className="text-3xl text-primary-600" />,
       title: 'ტელეფონი',
-      info: '+995 XXX XX XX XX',
-      subInfo: 'ორშაბათი - შაბათი: 10:00 - 19:00'
+      info: '+995 591 410 914',
+      subInfo: 'ორშაბათი - პარასკევი: 10:00 - 21:00'
     },
     {
       icon: <FaEnvelope className="text-3xl text-primary-600" />,
       title: 'ელ-ფოსტა',
-      info: 'info@pixelweb.ge',
-      subInfo: 'პასუხს გიგზავნით 24 საათში'
+      info: 'pixelweb2026@gmail.com',
+      subInfo: 'პასუხს გიგზავნით მაქსიმალურად სწრაფად'
     }
   ]
 
   const services = [
-    'Landing Page (500-800 ₾)',
-    'საწარმოს ვებსაიტი (1,500-2,500 ₾)',
+    'Landing Page (500-700 ₾)',
+    'საწარმოს ვებსაიტი (1,000-2,500 ₾)',
     'E-Commerce (3,000-5,000 ₾)',
-    'პორტფოლიო საიტი (800-1,200 ₾)',
-    'მორგებული პროექტი',
+    'მორგებული ვებსაიტი (მოლაპარაკებით)',
     'არ ვარ დარწმუნებული'
   ]
 
@@ -111,7 +110,7 @@ const ContactPage = () => {
     '2,000 - 3,000 ₾',
     '3,000 - 5,000 ₾',
     '5,000 ₾+',
-    'მოვალაპარაკოთ'
+    'შეთანხმებით'
   ]
 
   return (
@@ -130,7 +129,7 @@ const ContactPage = () => {
               დაგვიკავშირდით
             </h1>
             <p className="text-xl text-primary-100">
-              მზად ვართ მოვისმინოთ თქვენი იდეა და დავგეგმოთ თქვენი საიტის შექმნა. მიიღეთ უფასო კონსულტაცია და ფასის შეთავაზება.
+              მზად ვართ მოვისმინოთ თქვენი მოთხოვნა და დავგეგმოთ თქვენი ვებსაიტი. მიიღეთ უფასო კონსულტაცია.
             </p>
           </motion.div>
         </div>
@@ -227,12 +226,13 @@ const ContactPage = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                        ტელეფონი
+                        ტელეფონი *
                       </label>
                       <input
                         type="tel"
                         id="phone"
                         name="phone"
+                        required
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
@@ -351,11 +351,11 @@ const ContactPage = () => {
                   <div className="space-y-3 text-gray-600">
                     <div className="flex justify-between">
                       <span>ორშაბათი - პარასკევი</span>
-                      <span className="font-semibold">10:00 - 19:00</span>
+                      <span className="font-semibold">09:00 - 21:00</span>
                     </div>
                     <div className="flex justify-between">
                       <span>შაბათი</span>
-                      <span className="font-semibold">11:00 - 17:00</span>
+                      <span className="font-semibold">11:00 - 19:00</span>
                     </div>
                     <div className="flex justify-between">
                       <span>კვირა</span>
@@ -385,7 +385,7 @@ const ContactPage = () => {
 
                 {/* Social Media */}
                 <div className="bg-white rounded-2xl shadow-lg p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">დაგვიმეგობრდით</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">დაგვიკავშირდით</h3>
                   <div className="flex space-x-4">
                     <a
                       href="#"
@@ -413,7 +413,7 @@ const ContactPage = () => {
                   <div className="text-4xl mb-2">⚡</div>
                   <h3 className="text-xl font-bold mb-2">სწრაფი პასუხი</h3>
                   <p className="text-primary-100">
-                    პასუხს გიგზავნით 24 საათში
+                    პასუხს გიგზავნით მაქსიმალურად სწრაფად
                   </p>
                 </div>
               </motion.div>

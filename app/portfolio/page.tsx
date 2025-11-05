@@ -128,7 +128,7 @@ const PortfolioPage = () => {
               ჩვენი პროექტები
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-primary-100">
-              ნახეთ რას ვქმნით ჩვენი კლიენტებისთვის. თითოეული პროექტი არის უნიკალური და შექმნილია სიყვარულით.
+              გაიგეთ მეტი ჩვენი პროექტების შესახებ.
             </p>
           </motion.div>
         </div>
@@ -137,24 +137,15 @@ const PortfolioPage = () => {
       {/* Stats Section */}
       <section className="py-8 sm:py-10 md:py-12 bg-white border-b">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-12 max-w-3xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4 }}
               viewport={{ once: true }}
             >
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">100+</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">10+</div>
               <div className="text-xs sm:text-sm md:text-base text-gray-600">დასრულებული პროექტი</div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">85+</div>
-              <div className="text-xs sm:text-sm md:text-base text-gray-600">კმაყოფილი კლიენტი</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -162,7 +153,7 @@ const PortfolioPage = () => {
               transition={{ duration: 0.4, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">99%</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">100%</div>
               <div className="text-xs sm:text-sm md:text-base text-gray-600">წარმატების მაჩვენებელი</div>
             </motion.div>
             <motion.div

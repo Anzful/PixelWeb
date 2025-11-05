@@ -11,12 +11,11 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="text-2xl font-bold mb-4">
-              <span className="text-primary-600 dark:text-primary-400">Web</span>
-              <span className="text-gray-900 dark:text-white">Smiths</span>
-              <span className="text-accent-600 dark:text-accent-400">.btw</span>
+              <span className="text-primary-900 dark:text-primary-400">Pixel</span>
+              <span className="text-gray-900 dark:text-white">Web</span>
             </div>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              პროფესიონალური ვებსაიტები ხელმისაწვდომ ფასად. თქვენი ციფრული წარმატების პარტნიორი.
+              პროფესიონალური ვებსაიტები ხელმისაწვდომ ფასად. გთავაზობთ საუკეთესო ხარისხს ხელმისაწვდომ ფასად საქართველოში
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
@@ -95,11 +94,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <FaPhone className="text-primary-600 dark:text-primary-400" />
-                <span>+995 XXX XX XX XX</span>
+                <span>+995 591 410 914</span>
               </li>
               <li className="flex items-center space-x-3">
                 <FaEnvelope className="text-primary-600 dark:text-primary-400" />
-                <span>info@pixelweb.ge</span>
+                <span>pixelweb2026@gmail.com</span>
               </li>
             </ul>
           </div>

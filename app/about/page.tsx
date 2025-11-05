@@ -9,7 +9,7 @@ const AboutPage = () => {
     {
       icon: <FaHeart className="text-4xl text-primary-600" />,
       title: 'ვაფასებთ თითოეულ კლიენტს',
-      description: 'თითოეული პროექტი ჩვენთვის უნიკალურია. ჩვენ ვუსმენთ თქვენს საჭიროებებს და ვქმნით გადაწყვეტას, რომელიც აღემატება მოლოდინებს.'
+      description: 'თითოეული პროექტი ჩვენთვის უნიკალურია. ჩვენ ვუსმენთ თქვენს საჭიროებებს და მაქსიმალურად ვცდილობთ დაგეხმაროთ მათ გადაჭრაში.'
     },
     {
       icon: <FaLightbulb className="text-4xl text-primary-600" />,
@@ -19,7 +19,7 @@ const AboutPage = () => {
     {
       icon: <FaRocket className="text-4xl text-primary-600" />,
       title: 'სწრაფი მიწოდება',
-      description: 'დრო ფულია. ჩვენ ვასრულებთ პროექტებს დროულად, მაღალი ხარისხის შენარჩუნებით. არანაირი დაყოვნება.'
+      description: 'ჩვენ ვაფასებთ და გვესმის დროის მნიშვნელობა ჩვენი მომხმარებლებისთვის და ვმუშაობთ წინასწარ გათვალისწინებული ვადების მკაცრად დაცვით.'
     },
     {
       icon: <FaCheckCircle className="text-4xl text-primary-600" />,
@@ -30,23 +30,18 @@ const AboutPage = () => {
 
   const achievements = [
     {
-      icon: <FaUsers className="text-5xl text-primary-600" />,
-      number: '85+',
-      label: 'კმაყოფილი კლიენტი'
-    },
-    {
       icon: <FaRocket className="text-5xl text-primary-600" />,
-      number: '100+',
+      number: '10+',
       label: 'დასრულებული პროექტი'
     },
     {
       icon: <FaAward className="text-5xl text-primary-600" />,
-      number: '99%',
+      number: '100%',
       label: 'წარმატების მაჩვენებელი'
     },
     {
       icon: <FaHeart className="text-5xl text-primary-600" />,
-      number: '3+',
+      number: '4+',
       label: 'წლიანი გამოცდილება'
     }
   ]
@@ -54,15 +49,15 @@ const AboutPage = () => {
   const whyChooseUs = [
     {
       title: 'ხელმისაწვდომი ფასები',
-      description: 'ბაზრის ფასებთან შედარებით 60%-მდე იაფია, ხარისხის შენარჩუნებით'
+      description: 'ბაზრის ფასებთან შედარებით 40%-მდე იაფია, ხარისხის შენარჩუნებით'
     },
     {
       title: 'სწრაფი მიწოდება',
-      description: 'Landing Page - 3 დღე, კორპორატიული საიტი - 7 დღე, E-commerce - 14 დღე'
+      description: 'Landing Page - 3 დღე, კორპორატიული საიტი - 7 დღე, E-commerce - 14 დღე (საშუალოდ)'
     },
     {
       title: 'უახლესი ტექნოლოგიები',
-      description: 'React, Next.js, Node.js - სწრაფი, უსაფრთხო და მასშტაბირებადი გადაწყვეტები'
+      description: 'React, Next.js, Node.js - სწრაფი, უსაფრთხო და უახლესი ტექნოლოგიები'
     },
     {
       title: 'რესპონსიული დიზაინი',
@@ -94,7 +89,7 @@ const AboutPage = () => {
               ჩვენ შესახებ
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-primary-100">
-              ჩვენ ვართ ახალგაზრდა და ენერგიული გუნდი, რომელიც მიზნად ისახავს ხარისხიანი ვებსაიტების შექმნას ხელმისაწვდომ ფასად საქართველოში.
+              ჩვენ ვართ ახალგაზრდა და ენერგიული გუნდი, რომელიც მიზნად ისახავს ხარისხიანი ვებსაიტების შექმნას ხელმისაწვდომ ფასად.
             </p>
           </motion.div>
         </div>
@@ -115,10 +110,10 @@ const AboutPage = () => {
                 ჩვენი მისია
               </h2>
               <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-4 sm:mb-6">
-                <strong className="text-primary-600">PixelWeb.ge</strong> შეიქმნა იმ იდეით, რომ პროფესიონალური ვებსაიტები ხელმისაწვდომი უნდა იყოს ყველასთვის - პატარა ბიზნესიდან დიდ კორპორაციებამდე.
+                <strong className="text-primary-600">PixelWeb</strong> შეიქმნა იმ იდეით, რომ პროფესიონალური ვებსაიტები ხელმისაწვდომი უნდა იყოს ყველასთვის - პატარა ბიზნესიდან დიდ კორპორაციებამდე.
               </p>
               <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
-                ჩვენ გვესმის, რომ საქართველოში ბევრი მცირე და საშუალო ბიზნესი ვერ იძენს ვებსაიტს მაღალი ფასების გამო. ჩვენი მიზანია შევცვალოთ ეს რეალობა და შევთავაზოთ ბაზარზე არსებულზე 60%-მდე იაფი, მაგრამ იგივე ხარისხის ან უფრო მაღალი ხარისხის ვებსაიტები.
+                ჩვენ გვესმის, რომ საქართველოში გადაჭარბებული ფასების გამო მცირე და საშუალო ბიზნესებს არ აქვთ საშუალება რომ ქონდეთ გამართული ვებსაიტი. ჩვენი მიზანია შევცვალოთ ეს რეალობა და შევთავაზოთ ქართულ ბაზარს არსებულზე 40%-ით იაფი პროდუქცია.
               </p>
             </motion.div>
 
@@ -129,7 +124,7 @@ const AboutPage = () => {
               viewport={{ once: true }}
               className="bg-gradient-to-br from-primary-50 to-accent-50 p-6 sm:p-8 rounded-xl sm:rounded-2xl"
             >
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">რატომ ვართ იაფი?</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">რატომ არის ფასები ჩვენთან ხელმისაწვდომი?</h3>
               <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-700">
                 <li className="flex items-start">
                   <FaCheckCircle className="text-green-500 mt-1 mr-3 flex-shrink-0" />
@@ -145,7 +140,7 @@ const AboutPage = () => {
                 </li>
                 <li className="flex items-start">
                   <FaCheckCircle className="text-green-500 mt-1 mr-3 flex-shrink-0" />
-                  <span>ჩვენი მიზანია დავეხმაროთ საქართველოს ციფრულ განვითარებას, არა მხოლოდ მოგება</span>
+                  <span>ჩვენი მიზანია დავეხმაროთ საქართველოს ციფრულ განვითარებას.</span>
                 </li>
               </ul>
             </motion.div>
@@ -161,7 +156,7 @@ const AboutPage = () => {
               ჩვენი ღირებულებები
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600">
-              ის პრინციპები, რომლითაც ვხელმძღვანელობთ ყოველდღიურ სამუშაოში
+              პრინციპები და სამუშაო ეთიკა, რომელსაც არასდროს ვუღალატებთ
             </p>
           </div>
 

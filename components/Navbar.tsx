@@ -41,9 +41,8 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
             <div className="text-xl sm:text-2xl lg:text-3xl font-bold">
-              <span className="text-primary-600 dark:text-primary-400">Pixel</span>
+              <span className="text-primary-900 dark:text-primary-400">Pixel</span>
               <span className="text-gray-800 dark:text-white">Web</span>
-              <span className="text-accent-500 dark:text-accent-400">.ge</span>
             </div>
           </Link>
 
