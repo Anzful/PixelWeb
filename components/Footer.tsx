@@ -5,27 +5,27 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
             <div className="text-2xl font-bold mb-4">
-              <span className="text-primary-400">Web</span>
-              <span className="text-white">Smiths</span>
-              <span className="text-accent-400">.btw</span>
+              <span className="text-primary-600 dark:text-primary-400">Web</span>
+              <span className="text-gray-900 dark:text-white">Smiths</span>
+              <span className="text-accent-600 dark:text-accent-400">.btw</span>
             </div>
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
               პროფესიონალური ვებსაიტები ხელმისაწვდომ ფასად. თქვენი ციფრული წარმატების პარტნიორი.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
+              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                 <FaFacebook size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
+              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                 <FaInstagram size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
+              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                 <FaLinkedin size={24} />
               </a>
             </div>
@@ -33,30 +33,30 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">სწრაფი ბმულები</h3>
+            <h3 className="text-gray-900 dark:text-white font-semibold text-lg mb-4">სწრაფი ბმულები</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="hover:text-primary-400 transition-colors">
+                <Link href="/" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                   მთავარი
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-primary-400 transition-colors">
+                <Link href="/services" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                   სერვისები
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="hover:text-primary-400 transition-colors">
+                <Link href="/portfolio" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                   პორტფოლიო
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-primary-400 transition-colors">
+                <Link href="/about" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                   ჩვენ შესახებ
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-primary-400 transition-colors">
+                <Link href="/contact" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                   კონტაქტი
                 </Link>
               </li>
@@ -65,21 +65,21 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">სერვისები</h3>
+            <h3 className="text-gray-900 dark:text-white font-semibold text-lg mb-4">სერვისები</h3>
             <ul className="space-y-2">
-              <li className="hover:text-primary-400 transition-colors cursor-pointer">
+              <li className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer">
                 Landing Page
               </li>
-              <li className="hover:text-primary-400 transition-colors cursor-pointer">
+              <li className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer">
                 საწარმოს ვებსაიტი
               </li>
-              <li className="hover:text-primary-400 transition-colors cursor-pointer">
+              <li className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer">
                 ელექტრონული კომერცია
               </li>
-              <li className="hover:text-primary-400 transition-colors cursor-pointer">
+              <li className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer">
                 პორტფოლიო საიტი
               </li>
-              <li className="hover:text-primary-400 transition-colors cursor-pointer">
+              <li className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer">
                 საბაზრო ადგილი
               </li>
             </ul>
@@ -87,25 +87,25 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">კონტაქტი</h3>
+            <h3 className="text-gray-900 dark:text-white font-semibold text-lg mb-4">კონტაქტი</h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
-                <FaMapMarkerAlt className="text-primary-400 mt-1" />
+                <FaMapMarkerAlt className="text-primary-600 dark:text-primary-400 mt-1" />
                 <span>თბილისი, საქართველო</span>
               </li>
               <li className="flex items-center space-x-3">
-                <FaPhone className="text-primary-400" />
+                <FaPhone className="text-primary-600 dark:text-primary-400" />
                 <span>+995 XXX XX XX XX</span>
               </li>
               <li className="flex items-center space-x-3">
-                <FaEnvelope className="text-primary-400" />
+                <FaEnvelope className="text-primary-600 dark:text-primary-400" />
                 <span>info@websmiths.btw</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <div className="border-t border-gray-300 dark:border-gray-800 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400">
           <p>&copy; {currentYear} WebSmiths.btw. ყველა უფლება დაცულია.</p>
         </div>
       </div>
