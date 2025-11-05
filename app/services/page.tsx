@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { FaCheck, FaTimes, FaRocket, FaShoppingCart, FaBriefcase, FaFileAlt, FaArrowRight } from 'react-icons/fa'
 import { motion } from 'framer-motion'
+import PageTransition from '@/components/PageTransition'
 
 const ServicesPage = () => {
   const services = [
@@ -169,8 +170,9 @@ const ServicesPage = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Hero Section */}
+    <PageTransition>
+      <div className="min-h-screen pt-20">
+        {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary-600 to-primary-700 text-white py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -380,7 +382,8 @@ const ServicesPage = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </PageTransition>
   )
 }
 

@@ -27,26 +27,26 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white dark:bg-gray-900 shadow-lg py-4' : 'bg-transparent py-6'
+      scrolled ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-lg py-3 sm:py-4' : 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm py-4 sm:py-6'
     }`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="text-2xl sm:text-3xl font-bold">
+          <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold">
               <span className="text-primary-600 dark:text-primary-400">Web</span>
               <span className="text-gray-800 dark:text-white">Smiths</span>
               <span className="text-accent-500 dark:text-accent-400">.btw</span>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          {/* Desktop Navigation - Hidden on mobile/tablet, shown on lg+ */}
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium"
+                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium text-sm xl:text-base"
               >
                 {link.label}
               </Link>
@@ -54,18 +54,18 @@ const Navbar = () => {
             <ThemeToggle />
             <Link
               href="/contact"
-              className="bg-primary-600 text-white px-6 py-2.5 rounded-lg hover:bg-primary-700 transition-all hover:shadow-lg transform hover:-translate-y-0.5"
+              className="bg-primary-600 text-white px-4 xl:px-6 py-2 xl:py-2.5 rounded-lg hover:bg-primary-700 transition-all hover:shadow-lg transform hover:-translate-y-0.5 text-sm xl:text-base font-semibold"
             >
               დაგვიკავშირდით
             </Link>
           </div>
 
-          {/* Mobile Menu Button & Theme Toggle */}
-          <div className="md:hidden flex items-center space-x-3">
+          {/* Mobile/Tablet Menu Button & Theme Toggle */}
+          <div className="lg:hidden flex items-center space-x-3">
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 dark:text-gray-300 text-2xl"
+              className="text-gray-700 dark:text-gray-300 text-2xl p-2 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               aria-label="Toggle menu"
             >
               {isOpen ? <FaTimes /> : <FaBars />}
@@ -73,27 +73,29 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile/Tablet Menu - Improved Design */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 animate-slide-up bg-white dark:bg-gray-900 rounded-lg">
-            <div className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
+          <div className="lg:hidden mt-4 pb-4 animate-fade-in">
+            <div className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-xl shadow-xl p-4 border border-gray-200 dark:border-gray-700">
+              <div className="flex flex-col space-y-2">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-700 transition-all font-medium py-3 px-4 rounded-lg"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
                 <Link
-                  key={link.href}
-                  href={link.href}
+                  href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium py-2"
+                  className="bg-primary-600 text-white px-4 py-3 rounded-lg hover:bg-primary-700 transition-all text-center font-semibold mt-2 hover:shadow-lg"
                 >
-                  {link.label}
+                  დაგვიკავშირდით
                 </Link>
-              ))}
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="bg-primary-600 text-white px-6 py-2.5 rounded-lg hover:bg-primary-700 transition-colors text-center"
-              >
-                დაგვიკავშირდით
-              </Link>
+              </div>
             </div>
           </div>
         )}

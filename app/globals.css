@@ -134,3 +134,172 @@ body {
   background: #0284c7;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #0ea5e9;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* Smooth Transitions */
+a, button, input, textarea, select {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Background Grid Pattern */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(14, 165, 233, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 165, 233, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Image Loading Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(90deg, 
+    rgba(246, 247, 248, 1) 0%, 
+    rgba(237, 238, 241, 1) 20%, 
+    rgba(246, 247, 248, 1) 40%, 
+    rgba(246, 247, 248, 1) 100%
+  );
+  background-size: 200% 100%;
+}
+
+.dark .animate-shimmer {
+  background: linear-gradient(90deg,
+    rgba(55, 65, 81, 1) 0%,
+    rgba(75, 85, 99, 1) 20%,
+    rgba(55, 65, 81, 1) 40%,
+    rgba(55, 65, 81, 1) 100%
+  );
+  background-size: 200% 100%;
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Button Press Effect */
+button:active {
+  transform: scale(0.98);
+}
+
+/* Focus Styles */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* Selection Color */
+::selection {
+  background: #0ea5e9;
+  color: white;
+}
+
+.dark ::selection {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+/* Improved Mobile Touch Targets */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Loading Spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive Design Utilities */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1920px;
+  }
+}
+
+/* Ensure proper touch targets on mobile */
+@media (hover: none) and (pointer: coarse) {
+  button, a, input, select, textarea {
+    min-height: 44px;
+  }
+}
+
+/* Smooth scroll for all browsers */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Fix for iOS safe area */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+}
+
+/* Pulse Animation for Important Elements */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(14, 165, 233, 0);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+

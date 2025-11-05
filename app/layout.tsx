@@ -3,12 +3,19 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import PageLoader from '@/components/PageLoader'
 
 export const metadata: Metadata = {
   title: 'WebSmiths.btw - ხელმისაწვდომი ვებსაიტების შექმნა საქართველოში',
   description: 'პროფესიონალური ვებსაიტები ხელმისაწვდომ ფასად. ჩვენ ვქმნით თანამედროვე, სწრაფ და ხარისხიან ვებსაიტებს თქვენი ბიზნესისთვის.',
   keywords: 'ვებსაიტის შექმნა, ვებ დეველოპმენტი, საქართველო, ხელმისაწვდომი ფასები, WebSmiths',
   authors: [{ name: 'WebSmiths.btw' }],
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
   openGraph: {
     title: 'WebSmiths.btw - ხელმისაწვდომი ვებსაიტების შექმნა',
     description: 'პროფესიონალური ვებსაიტები ხელმისაწვდომ ფასად',
@@ -37,6 +44,7 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
+          <PageLoader />
           <Navbar />
           <main className="min-h-screen">
             {children}

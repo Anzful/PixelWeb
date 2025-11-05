@@ -2,121 +2,108 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaExternalLinkAlt, FaCode } from 'react-icons/fa'
+import ImageSlider from '@/components/ImageSlider'
+import ProjectModal from '@/components/ProjectModal'
+import PageTransition from '@/components/PageTransition'
 
 const PortfolioPage = () => {
   const [filter, setFilter] = useState('all')
+  const [selectedProject, setSelectedProject] = useState<any>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const projects = [
     {
       id: 1,
-      title: 'მშენებლობის კომპანია "ბილდერი"',
-      category: 'corporate',
-      image: '/images/portfolio/builder.jpg',
-      description: 'თანამედროვე საიტი მშენებლობის კომპანიისთვის პროექტების გალერეით და კონტაქტის ფორმით',
-      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-      deliveryTime: '7 დღე',
-      price: '1,800 ₾',
-      features: ['6 გვერდი', 'პროექტების გალერეა', 'კონტაქტის ფორმა', 'SEO ოპტიმიზაცია']
+      title: 'AndCook - რეცეპტების აპლიკაცია',
+      category: 'mobile',
+      images: ['/images/AndCook.jpg', '/images/AndCook2.jpg'],
+      description: 'თანამედროვე მობილური აპლიკაცია კულინარიული რეცეპტების აღმოსაჩენად და გაზიარებისთვის',
+      technologies: ['React Native', 'Firebase', 'Node.js'],
+      features: ['რეცეპტების ბაზა', 'ძიების ფუნქცია', 'სოციალური ფუნქციები', 'ოფლაინ რეჟიმი'],
+      liveUrl: 'https://andcook.vercel.app'
     },
     {
       id: 2,
-      title: 'რესტორანი "საქართველო"',
-      category: 'restaurant',
-      image: '/images/portfolio/restaurant.jpg',
-      description: 'ელეგანტური ვებსაიტი რესტორნისთვის მენიუთი და ონლაინ დაჯავშნის სისტემით',
-      technologies: ['React', 'Node.js', 'MongoDB'],
-      deliveryTime: '10 დღე',
-      price: '2,200 ₾',
-      features: ['ონლაინ დაჯავშნა', 'ციფრული მენიუ', 'მრავალენოვანი', 'ფოტო გალერეა']
+      title: 'AndScore - სპორტული აპლიკაცია',
+      category: 'mobile',
+      images: ['/images/AndScore.jpg', '/images/AndScore2.jpg'],
+      description: 'ფუნქციური სპორტული აპლიკაცია ლაივ სქორების და სტატისტიკის თვალთვალისთვის',
+      technologies: ['React Native', 'REST API', 'Redux'],
+      features: ['ლაივ სქორები', 'სტატისტიკა', 'შეტყობინებები', 'ფავორიტების სისტემა'],
+      liveUrl: 'https://andscore.site'
     },
     {
       id: 3,
-      title: 'ონლაინ მაღაზია "StyleHub"',
-      category: 'ecommerce',
-      image: '/images/portfolio/fashion-store.jpg',
-      description: 'სრული ფუნქციონალის ონლაინ მაღაზია ტანსაცმლის გაყიდვისთვის',
-      technologies: ['Next.js', 'Stripe', 'PostgreSQL'],
-      deliveryTime: '18 დღე',
-      price: '4,500 ₾',
-      features: ['გადახდის სისტემა', 'ინვენტარის მართვა', '500+ პროდუქტი', 'ფილტრაცია']
+      title: 'AndCode - საგანმანათლებო პლატფორმა',
+      category: 'education',
+      images: ['/images/andcode.jpg', '/images/andcode2.jpg'],
+      description: 'ინტერაქტიული საგანმანათლებო პლატფორმა პროგრამირების შესასწავლად',
+      technologies: ['Next.js', 'TypeScript', 'MongoDB'],
+      features: ['ვიდეო გაკვეთილები', 'კოდის რედაქტორი', 'ტესტები', 'სერტიფიკატები'],
+      liveUrl: 'https://andcode.vercel.app'
     },
     {
       id: 4,
-      title: 'ადვოკატის საიტი - ნინო გელაშვილი',
-      category: 'personal',
-      image: '/images/portfolio/lawyer.jpg',
-      description: 'პროფესიონალური საიტი იურისტისთვის',
-      technologies: ['Next.js', 'Tailwind CSS'],
-      deliveryTime: '5 დღე',
-      price: '1,200 ₾',
-      features: ['პორტფოლიო', 'ბლოგი', 'კონსულტაციის დაჯავშნა', 'SEO']
+      title: 'AndWatch - სმარტ საათის აპი',
+      category: 'mobile',
+      images: ['/images/andwatch.jpg', '/images/Andwatch2.jpg'],
+      description: 'ჯანმრთელობის მონიტორინგის აპლიკაცია სმარტ საათებისთვის',
+      technologies: ['React Native', 'Health API', 'Firebase'],
+      features: ['ნაბიჯების დათვლა', 'პულსის მონიტორინგი', 'ძილის ანალიზი', 'ვარჯიშის ტრეკერი'],
+      liveUrl: 'https://andwatch.vercel.app'
     },
     {
       id: 5,
-      title: 'ფიტნეს კლუბი "ActiveLife"',
-      category: 'corporate',
-      image: '/images/portfolio/fitness.jpg',
-      description: 'ინტერაქტიული საიტი ფიტნეს ცენტრისთვის აბონემენტების სისტემით',
-      technologies: ['React', 'Firebase', 'Stripe'],
-      deliveryTime: '12 დღე',
-      price: '2,800 ₾',
-      features: ['აბონემენტების სისტემა', 'ჯგუფური ვარჯიშები', 'ონლაინ დაჯავშნა', 'გადახდა']
+      title: 'TypingY - ტექსტის სისწრაფის ტრენერი',
+      category: 'education',
+      images: ['/images/TypingY.png'],
+      description: 'საგანმანათლებო ვებ აპლიკაცია ბეჭდვის სისწრაფისა და სიზუსტის გასაუმჯობესებლად',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS'],
+      features: ['სავარჯიშოები', 'სტატისტიკა', 'რეიტინგი', 'მრავალენოვანი'],
+      liveUrl: 'https://typingy.live'
     },
     {
       id: 6,
-      title: 'კაფე "Coffee Corner"',
-      category: 'restaurant',
-      image: '/images/portfolio/cafe.jpg',
-      description: 'მინიმალისტური Landing Page კაფესთვის',
-      technologies: ['Next.js', 'Tailwind CSS'],
-      deliveryTime: '3 დღე',
-      price: '650 ₾',
-      features: ['1 გვერდი', 'მენიუ', 'მდებარეობა', 'სოციალური მედია']
+      title: 'Furniture Store - ავეჯის ონლაინ მაღაზია',
+      category: 'ecommerce',
+      images: ['/images/Furniture1.jpg', '/images/Furniture2.jpg', '/images/Furniture3.jpg'],
+      description: 'თანამედროვე E-commerce პლატფორმა ავეჯის გაყიდვისთვის',
+      technologies: ['Next.js', 'Stripe', 'PostgreSQL'],
+      features: ['პროდუქტების კატალოგი', 'გადახდის სისტემა', '3D პრევიუ', 'ინვენტარის მართვა']
     },
     {
       id: 7,
-      title: 'სამედიცინო კლინიკა "MediCare"',
-      category: 'healthcare',
-      image: '/images/portfolio/medical.jpg',
-      description: 'თანამედროვე საიტი კლინიკისთვის ექიმებთან ვიზიტის დაჯავშნით',
-      technologies: ['Next.js', 'PostgreSQL', 'Calendar API'],
-      deliveryTime: '14 დღე',
-      price: '3,200 ₾',
-      features: ['ვიზიტის დაჯავშნა', 'ექიმების პროფილები', 'ბლოგი', 'ონლაინ კონსულტაცია']
+      title: 'Restaurant Website - რესტორნის ვებსაიტი',
+      category: 'restaurant',
+      images: ['/images/Restauran1.jpg', '/images/Restauran2.jpg'],
+      description: 'ელეგანტური ვებსაიტი რესტორნისთვის თანამედროვე დიზაინით და ფუნქციონალით',
+      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
+      features: ['მენიუს გალერეა', 'დაჯავშნის სისტემა', 'რესპონსიული დიზაინი', 'ფოტო გალერეა']
     },
     {
       id: 8,
-      title: 'IT სპეციალისტის პორტფოლიო',
-      category: 'personal',
-      image: '/images/portfolio/dev-portfolio.jpg',
-      description: 'კრეატიული პორტფოლიო საიტი დეველოპერისთვის',
-      technologies: ['Next.js', 'Three.js', 'Framer Motion'],
-      deliveryTime: '6 დღე',
-      price: '900 ₾',
-      features: ['3D ანიმაციები', 'პროექტების showcase', 'ბლოგი', 'კონტაქტის ფორმა']
-    },
-    {
-      id: 9,
-      title: 'უძრავი ქონების სააგენტო "HomeHub"',
-      category: 'realestate',
-      image: '/images/portfolio/realestate.jpg',
-      description: 'ვებ პლატფორმა უძრავი ქონების ყიდვა-გაყიდვისთვის',
-      technologies: ['Next.js', 'MongoDB', 'Mapbox'],
-      deliveryTime: '16 დღე',
-      price: '3,800 ₾',
-      features: ['ძიების ფილტრები', 'ინტერაქტიული რუკა', 'ფოტო გალერეა', 'CRM სისტემა']
+      title: 'Luka Partenadze - პირადი პორტფოლიო',
+      category: 'portfolio',
+      images: ['/images/portfolio.jpg'],
+      description: 'თანამედროვე პორტფოლიო ვებსაიტი პროექტების showcase-ით',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      features: ['პროექტების გალერეა', 'ინტერაქტიული დიზაინი', 'კონტაქტის ფორმა', 'სწრაფი ჩატვირთვა'],
+      liveUrl: 'https://lukapartenadze.vercel.app'
     }
   ]
 
+  const handleProjectClick = (project: any) => {
+    setSelectedProject(project)
+    setIsModalOpen(true)
+  }
+
   const categories = [
     { id: 'all', label: 'ყველა' },
-    { id: 'corporate', label: 'კორპორატიული' },
+    { id: 'mobile', label: 'მობილური აპლიკაციები' },
+    { id: 'education', label: 'საგანმანათლებო' },
     { id: 'ecommerce', label: 'E-Commerce' },
-    { id: 'restaurant', label: 'რესტორანი/კაფე' },
-    { id: 'personal', label: 'პირადი/პორტფოლიო' },
-    { id: 'healthcare', label: 'ჯანდაცვა' },
-    { id: 'realestate', label: 'უძრავი ქონება' }
+    { id: 'restaurant', label: 'რესტორანი' },
+    { id: 'portfolio', label: 'პორტფოლიო' }
   ]
 
   const filteredProjects = filter === 'all' 
@@ -124,9 +111,10 @@ const PortfolioPage = () => {
     : projects.filter(project => project.category === filter)
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-700 text-white py-20">
+    <PageTransition>
+      <div className="min-h-screen pt-20">
+        {/* Hero Section */}
+      <section className="bg-gradient-to-br from-primary-600 to-primary-700 text-white py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -134,10 +122,10 @@ const PortfolioPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
               ჩვენი პროექტები
             </h1>
-            <p className="text-xl text-primary-100">
+            <p className="text-base sm:text-lg lg:text-xl text-primary-100">
               ნახეთ რას ვქმნით ჩვენი კლიენტებისთვის. თითოეული პროექტი არის უნიკალური და შექმნილია სიყვარულით.
             </p>
           </motion.div>
@@ -145,41 +133,61 @@ const PortfolioPage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-white border-b">
+      <section className="py-8 sm:py-10 md:py-12 bg-white border-b">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
-            <div>
-              <div className="text-3xl lg:text-4xl font-bold text-primary-600 mb-2">100+</div>
-              <div className="text-gray-600">დასრულებული პროექტი</div>
-            </div>
-            <div>
-              <div className="text-3xl lg:text-4xl font-bold text-primary-600 mb-2">85+</div>
-              <div className="text-gray-600">კმაყოფილი კლიენტი</div>
-            </div>
-            <div>
-              <div className="text-3xl lg:text-4xl font-bold text-primary-600 mb-2">99%</div>
-              <div className="text-gray-600">წარმატების მაჩვენებელი</div>
-            </div>
-            <div>
-              <div className="text-3xl lg:text-4xl font-bold text-primary-600 mb-2">24/7</div>
-              <div className="text-gray-600">მხარდაჭერა</div>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">100+</div>
+              <div className="text-xs sm:text-sm md:text-base text-gray-600">დასრულებული პროექტი</div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">85+</div>
+              <div className="text-xs sm:text-sm md:text-base text-gray-600">კმაყოფილი კლიენტი</div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">99%</div>
+              <div className="text-xs sm:text-sm md:text-base text-gray-600">წარმატების მაჩვენებელი</div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">24/7</div>
+              <div className="text-xs sm:text-sm md:text-base text-gray-600">მხარდაჭერა</div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 bg-gray-50 sticky top-20 z-40 shadow-sm">
+      <section className="py-4 sm:py-6 md:py-8 bg-gray-50 sticky top-16 sm:top-20 z-40 shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setFilter(category.id)}
-                className={`px-6 py-2.5 rounded-lg font-medium transition-all ${
+                className={`px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-lg font-medium transition-all text-sm sm:text-base ${
                   filter === category.id
-                    ? 'bg-primary-600 text-white shadow-lg'
-                    : 'bg-white text-gray-700 hover:bg-primary-50 hover:text-primary-600'
+                    ? 'bg-primary-600 text-white shadow-lg scale-105'
+                    : 'bg-white text-gray-700 hover:bg-primary-50 hover:text-primary-600 hover:scale-105'
                 }`}
               >
                 {category.label}
@@ -190,56 +198,44 @@ const PortfolioPage = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group"
+                onClick={() => handleProjectClick(project)}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group hover:-translate-y-2 cursor-pointer"
               >
-                {/* Image Placeholder */}
-                <div className="relative h-64 bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center bg-primary-600 bg-opacity-0 group-hover:bg-opacity-90 transition-all duration-300">
-                    <div className="transform scale-0 group-hover:scale-100 transition-transform duration-300 flex gap-4">
-                      <button className="bg-white text-primary-600 p-3 rounded-full hover:bg-primary-50">
-                        <FaExternalLinkAlt size={20} />
-                      </button>
-                      <button className="bg-white text-primary-600 p-3 rounded-full hover:bg-primary-50">
-                        <FaCode size={20} />
-                      </button>
-                    </div>
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-6xl text-primary-300 opacity-30">
-                      {project.category === 'ecommerce' && '🛒'}
-                      {project.category === 'restaurant' && '🍽️'}
-                      {project.category === 'corporate' && '🏢'}
-                      {project.category === 'personal' && '👤'}
-                      {project.category === 'healthcare' && '⚕️'}
-                      {project.category === 'realestate' && '🏠'}
+                {/* Image with Slider */}
+                <div className="relative h-48 sm:h-56 md:h-64 bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">
+                  <ImageSlider images={project.images} alt={project.title} />
+                  {/* View hint overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 z-20 pointer-events-none">
+                    <div className="transform scale-0 group-hover:scale-100 transition-transform duration-300 text-white text-lg font-semibold">
+                      დააჭირე სანახავად
                     </div>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+                <div className="p-5 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors line-clamp-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 text-sm">
+                  <p className="text-gray-600 mb-3 sm:mb-4 text-sm line-clamp-2">
                     {project.description}
                   </p>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                     {project.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="text-xs bg-primary-50 text-primary-700 px-3 py-1 rounded-full"
+                        className="text-xs bg-primary-50 text-primary-700 px-2.5 sm:px-3 py-1 rounded-full hover:bg-primary-100 transition-colors"
                       >
                         {tech}
                       </span>
@@ -247,25 +243,13 @@ const PortfolioPage = () => {
                   </div>
 
                   {/* Features */}
-                  <div className="mb-4">
-                    <div className="flex flex-wrap gap-2">
+                  <div>
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {project.features.slice(0, 3).map((feature, i) => (
-                        <span key={i} className="text-xs text-gray-500">
-                          ✓ {feature}
+                        <span key={i} className="text-xs text-gray-500 flex items-center">
+                          <span className="text-green-500 mr-1">✓</span> {feature}
                         </span>
                       ))}
-                    </div>
-                  </div>
-
-                  {/* Footer */}
-                  <div className="flex justify-between items-center pt-4 border-t">
-                    <div>
-                      <div className="text-xs text-gray-500">მიწოდება</div>
-                      <div className="font-semibold text-gray-900">{project.deliveryTime}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xs text-gray-500">ღირებულება</div>
-                      <div className="text-xl font-bold text-primary-600">{project.price}</div>
                     </div>
                   </div>
                 </div>
@@ -280,6 +264,13 @@ const PortfolioPage = () => {
           )}
         </div>
       </section>
+
+      {/* Project Modal */}
+      <ProjectModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        project={selectedProject || projects[0]}
+      />
 
       {/* Testimonials Section */}
       <section className="py-20 bg-white">
@@ -359,7 +350,8 @@ const PortfolioPage = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </PageTransition>
   )
 }
 
