@@ -99,14 +99,14 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <FaEnvelope className="text-primary-600 dark:text-primary-400" />
-                <span>info@websmiths.btw</span>
+                <span>info@pixelweb.ge</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-300 dark:border-gray-800 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400">
-          <p>&copy; {currentYear} WebSmiths.btw. ყველა უფლება დაცულია.</p>
+          <p>&copy; {currentYear} PixelWeb.ge. ყველა უფლება დაცულია.</p>
         </div>
       </div>
     </footer>

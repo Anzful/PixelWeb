@@ -4,14 +4,16 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import PageLoader from '@/components/PageLoader'
+import VisitorTracker from '@/components/VisitorTracker'
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
-  title: 'WebSmiths.btw - ხელმისაწვდომი ვებსაიტების შექმნა საქართველოში',
+  title: 'PixelWeb.ge - ხელმისაწვდომი ვებსაიტების შექმნა საქართველოში',
   description: 'პროფესიონალური ვებსაიტები ხელმისაწვდომ ფასად. ჩვენ ვქმნით თანამედროვე, სწრაფ და ხარისხიან ვებსაიტებს თქვენი ბიზნესისთვის.',
-  keywords: 'ვებსაიტის შექმნა, ვებ დეველოპმენტი, საქართველო, ხელმისაწვდომი ფასები, WebSmiths',
-  authors: [{ name: 'WebSmiths.btw' }],
+  keywords: 'ვებსაიტის შექმნა, ვებ დეველოპმენტი, საქართველო, ხელმისაწვდომი ფასები, PixelWeb',
+  authors: [{ name: 'PixelWeb.ge' }],
   openGraph: {
-    title: 'WebSmiths.btw - ხელმისაწვდომი ვებსაიტების შექმნა',
+    title: 'PixelWeb.ge - ხელმისაწვდომი ვებსაიტების შექმნა',
     description: 'პროფესიონალური ვებსაიტები ხელმისაწვდომ ფასად',
     type: 'website',
   }
@@ -43,16 +45,18 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>
-        <ThemeProvider>
-          <PageLoader />
-          <Navbar />
-          <main className="min-h-screen">
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
-      </body>
+    <body>
+      <ThemeProvider>
+        <PageLoader />
+        <VisitorTracker />
+        <Navbar />
+        <main className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
+        <Analytics />
+      </ThemeProvider>
+    </body>
     </html>
   )
 }

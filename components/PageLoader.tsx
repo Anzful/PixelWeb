@@ -39,7 +39,7 @@ const PageLoader = () => {
                   transition={{ delay: 0.2, duration: 0.5 }}
                   className="text-white"
                 >
-                  Web
+                  Pixel
                 </motion.span>
                 <motion.span
                   initial={{ x: -50, opacity: 0 }}
@@ -47,7 +47,7 @@ const PageLoader = () => {
                   transition={{ delay: 0.3, duration: 0.5 }}
                   className="text-accent-400"
                 >
-                  Smiths
+                  Web
                 </motion.span>
                 <motion.span
                   initial={{ x: -50, opacity: 0 }}
@@ -55,7 +55,7 @@ const PageLoader = () => {
                   transition={{ delay: 0.4, duration: 0.5 }}
                   className="text-primary-200"
                 >
-                  .btw
+                  .ge
                 </motion.span>
               </div>
             </motion.div>

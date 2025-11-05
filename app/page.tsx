@@ -124,7 +124,7 @@ const HomePage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
-              რატომ ავირჩიოთ WebSmiths?
+              რატომ ავირჩიოთ PixelWeb?
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               ჩვენ გთავაზობთ საუკეთესო ხარისხს ყველაზე ხელმისაწვდომ ფასად საქართველოში

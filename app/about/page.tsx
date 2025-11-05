@@ -115,7 +115,7 @@ const AboutPage = () => {
                 ჩვენი მისია
               </h2>
               <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-4 sm:mb-6">
-                <strong className="text-primary-600">WebSmiths.btw</strong> შეიქმნა იმ იდეით, რომ პროფესიონალური ვებსაიტები ხელმისაწვდომი უნდა იყოს ყველასთვის - პატარა ბიზნესიდან დიდ კორპორაციებამდე.
+                <strong className="text-primary-600">PixelWeb.ge</strong> შეიქმნა იმ იდეით, რომ პროფესიონალური ვებსაიტები ხელმისაწვდომი უნდა იყოს ყველასთვის - პატარა ბიზნესიდან დიდ კორპორაციებამდე.
               </p>
               <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
                 ჩვენ გვესმის, რომ საქართველოში ბევრი მცირე და საშუალო ბიზნესი ვერ იძენს ვებსაიტს მაღალი ფასების გამო. ჩვენი მიზანია შევცვალოთ ეს რეალობა და შევთავაზოთ ბაზარზე არსებულზე 60%-მდე იაფი, მაგრამ იგივე ხარისხის ან უფრო მაღალი ხარისხის ვებსაიტები.
@@ -217,7 +217,7 @@ const AboutPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              რატომ ავირჩიოთ WebSmiths?
+              რატომ ავირჩიოთ PixelWeb?
             </h2>
           </div>
 
