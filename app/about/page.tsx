@@ -7,22 +7,22 @@ import PageTransition from '@/components/PageTransition'
 const AboutPage = () => {
   const values = [
     {
-      icon: <FaHeart className="text-4xl text-primary-600" />,
+      icon: <FaHeart className="text-4xl text-primary-600 dark:text-primary-400" />,
       title: 'ვაფასებთ თითოეულ კლიენტს',
       description: 'თითოეული პროექტი ჩვენთვის უნიკალურია. ჩვენ ვუსმენთ თქვენს საჭიროებებს და მაქსიმალურად ვცდილობთ დაგეხმაროთ მათ გადაჭრაში.'
     },
     {
-      icon: <FaLightbulb className="text-4xl text-primary-600" />,
+      icon: <FaLightbulb className="text-4xl text-primary-600 dark:text-primary-400" />,
       title: 'ინოვაცია და ხარისხი',
       description: 'ვიყენებთ უახლეს ტექნოლოგიებს და საუკეთესო პრაქტიკას, რათა შევქმნათ თანამედროვე, სწრაფი და მომხმარებლისთვის მოსახერხებელი ვებსაიტები.'
     },
     {
-      icon: <FaRocket className="text-4xl text-primary-600" />,
+      icon: <FaRocket className="text-4xl text-primary-600 dark:text-primary-400" />,
       title: 'სწრაფი მიწოდება',
       description: 'ჩვენ ვაფასებთ და გვესმის დროის მნიშვნელობა ჩვენი მომხმარებლებისთვის და ვმუშაობთ წინასწარ გათვალისწინებული ვადების მკაცრად დაცვით.'
     },
     {
-      icon: <FaCheckCircle className="text-4xl text-primary-600" />,
+      icon: <FaCheckCircle className="text-4xl text-primary-600 dark:text-primary-400" />,
       title: 'გამჭვირვალობა',
       description: 'ღია და გამჭვირვალე ფასები, ნათელი კომუნიკაცია და რეგულარული განახლებები პროექტის მიმდინარეობის შესახებ.'
     }
@@ -30,17 +30,17 @@ const AboutPage = () => {
 
   const achievements = [
     {
-      icon: <FaRocket className="text-5xl text-primary-600" />,
+      icon: <FaRocket className="text-5xl text-primary-600 dark:text-primary-400" />,
       number: '10+',
       label: 'დასრულებული პროექტი'
     },
     {
-      icon: <FaAward className="text-5xl text-primary-600" />,
+      icon: <FaAward className="text-5xl text-primary-600 dark:text-primary-400" />,
       number: '100%',
       label: 'წარმატების მაჩვენებელი'
     },
     {
-      icon: <FaHeart className="text-5xl text-primary-600" />,
+      icon: <FaHeart className="text-5xl text-primary-600 dark:text-primary-400" />,
       number: '4+',
       label: 'წლიანი გამოცდილება'
     }
@@ -106,13 +106,13 @@ const AboutPage = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
                 ჩვენი მისია
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-4 sm:mb-6">
-                <strong className="text-primary-600">PixelWeb</strong> შეიქმნა იმ იდეით, რომ პროფესიონალური ვებსაიტები ხელმისაწვდომი უნდა იყოს ყველასთვის - პატარა ბიზნესიდან დიდ კორპორაციებამდე.
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-4 sm:mb-6">
+                <strong className="text-primary-600 dark:text-primary-400">PixelWeb</strong> შეიქმნა იმ იდეით, რომ პროფესიონალური ვებსაიტები ხელმისაწვდომი უნდა იყოს ყველასთვის - პატარა ბიზნესიდან დიდ კორპორაციებამდე.
               </p>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                 ჩვენ გვესმის, რომ საქართველოში გადაჭარბებული ფასების გამო მცირე და საშუალო ბიზნესებს არ აქვთ საშუალება რომ ქონდეთ გამართული ვებსაიტი. ჩვენი მიზანია შევცვალოთ ეს რეალობა და შევთავაზოთ ქართულ ბაზარს არსებულზე 40%-ით იაფი პროდუქცია.
               </p>
             </motion.div>
@@ -122,25 +122,25 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-primary-50 to-accent-50 p-6 sm:p-8 rounded-xl sm:rounded-2xl"
+              className="bg-gradient-to-br from-primary-50 to-accent-50 dark:from-gray-800 dark:to-gray-700 p-6 sm:p-8 rounded-xl sm:rounded-2xl"
             >
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">რატომ არის ფასები ჩვენთან ხელმისაწვდომი?</h3>
-              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-700">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">რატომ არის ფასები ჩვენთან ხელმისაწვდომი?</h3>
+              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-700 dark:text-gray-300">
                 <li className="flex items-start">
-                  <FaCheckCircle className="text-green-500 mt-1 mr-3 flex-shrink-0" />
-                  <span>ვმუშაობთ გარე თანამშრომლების გარეშე, რაც ამცირებს ხარჯებს</span>
+                  <FaCheckCircle className="text-green-500 dark:text-green-400 mt-1 mr-3 flex-shrink-0" />
+                  <span className="text-gray-700 dark:text-gray-300">ვმუშაობთ გარე თანამშრომლების გარეშე, რაც ამცირებს ხარჯებს</span>
                 </li>
                 <li className="flex items-start">
-                  <FaCheckCircle className="text-green-500 mt-1 mr-3 flex-shrink-0" />
-                  <span>ვიყენებთ თანამედროვე ინსტრუმენტებს და ფრეიმვორკებს, რაც აჩქარებს დეველოპმენტს</span>
+                  <FaCheckCircle className="text-green-500 dark:text-green-400 mt-1 mr-3 flex-shrink-0" />
+                  <span className="text-gray-700 dark:text-gray-300">ვიყენებთ თანამედროვე ინსტრუმენტებს და ფრეიმვორკებს, რაც აჩქარებს დეველოპმენტს</span>
                 </li>
                 <li className="flex items-start">
-                  <FaCheckCircle className="text-green-500 mt-1 mr-3 flex-shrink-0" />
-                  <span>გვაქვს ოპტიმიზირებული სამუშაო პროცესები</span>
+                  <FaCheckCircle className="text-green-500 dark:text-green-400 mt-1 mr-3 flex-shrink-0" />
+                  <span className="text-gray-700 dark:text-gray-300">გვაქვს ოპტიმიზირებული სამუშაო პროცესები</span>
                 </li>
                 <li className="flex items-start">
-                  <FaCheckCircle className="text-green-500 mt-1 mr-3 flex-shrink-0" />
-                  <span>ჩვენი მიზანია დავეხმაროთ საქართველოს ციფრულ განვითარებას.</span>
+                  <FaCheckCircle className="text-green-500 dark:text-green-400 mt-1 mr-3 flex-shrink-0" />
+                  <span className="text-gray-700 dark:text-gray-300">ჩვენი მიზანია დავეხმაროთ საქართველოს ციფრულ განვითარებას.</span>
                 </li>
               </ul>
             </motion.div>
@@ -227,7 +227,7 @@ const AboutPage = () => {
                 className="bg-white p-5 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-all hover:-translate-y-1 duration-300"
               >
                 <div className="flex items-start">
-                  <FaCheckCircle className="text-primary-600 text-lg sm:text-xl mt-1 mr-2 sm:mr-3 flex-shrink-0" />
+                  <FaCheckCircle className="text-primary-600 dark:text-primary-400 text-lg sm:text-xl mt-1 mr-2 sm:mr-3 flex-shrink-0" />
                   <div>
                     <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2">{reason.title}</h3>
                     <p className="text-gray-600 text-xs sm:text-sm">{reason.description}</p>

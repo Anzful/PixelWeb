@@ -144,7 +144,7 @@ const PortfolioPage = () => {
               transition={{ duration: 0.4 }}
               viewport={{ once: true }}
             >
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">10+</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-1 sm:mb-2">10+</div>
               <div className="text-xs sm:text-sm md:text-base text-gray-600">დასრულებული პროექტი</div>
             </motion.div>
             <motion.div
@@ -153,7 +153,7 @@ const PortfolioPage = () => {
               transition={{ duration: 0.4, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">100%</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-1 sm:mb-2">100%</div>
               <div className="text-xs sm:text-sm md:text-base text-gray-600">წარმატების მაჩვენებელი</div>
             </motion.div>
             <motion.div
@@ -162,7 +162,7 @@ const PortfolioPage = () => {
               transition={{ duration: 0.4, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">24/7</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-1 sm:mb-2">24/7</div>
               <div className="text-xs sm:text-sm md:text-base text-gray-600">მხარდაჭერა</div>
             </motion.div>
           </div>
@@ -180,7 +180,7 @@ const PortfolioPage = () => {
                 className={`px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-lg font-medium transition-all text-sm sm:text-base ${
                   filter === category.id
                     ? 'bg-primary-600 text-white shadow-lg scale-105'
-                    : 'bg-white text-gray-700 hover:bg-primary-50 hover:text-primary-600 hover:scale-105'
+                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 hover:scale-105'
                 }`}
               >
                 {category.label}
@@ -216,7 +216,7 @@ const PortfolioPage = () => {
 
                 {/* Content */}
                 <div className="p-5 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors line-clamp-2">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-2">
                     {project.title}
                   </h3>
                   <p className="text-gray-600 mb-3 sm:mb-4 text-sm line-clamp-2">
@@ -239,8 +239,8 @@ const PortfolioPage = () => {
                   <div>
                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {project.features.slice(0, 3).map((feature, i) => (
-                        <span key={i} className="text-xs text-gray-500 flex items-center">
-                          <span className="text-green-500 mr-1">✓</span> {feature}
+                        <span key={i} className="text-xs text-gray-500 dark:text-gray-400 flex items-center">
+                          <span className="text-green-500 dark:text-green-400 mr-1">✓</span> {feature}
                         </span>
                       ))}
                     </div>
@@ -264,60 +264,6 @@ const PortfolioPage = () => {
         onClose={() => setIsModalOpen(false)}
         project={selectedProject || projects[0]}
       />
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              რას ამბობენ კლიენტები
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                name: 'გიორგი მელაძე',
-                company: 'მშენებლობის კომპანია',
-                text: 'შესანიშნავი სამუშაო! საიტი მზად იყო 7 დღეში და ფასი ნამდვილად ხელმისაწვდომი იყო. რეკომენდაციას ვუწევ!',
-                rating: 5
-              },
-              {
-                name: 'ნინო ლობჟანიძე',
-                company: 'ონლაინ მაღაზია',
-                text: 'პროფესიონალური გუნდი, მაღალი ხარისხი. E-commerce საიტმა გაყიდვები 40%-ით გაზარდა. მადლობა!',
-                rating: 5
-              },
-              {
-                name: 'დავით წულაძე',
-                company: 'რესტორანი',
-                text: 'სწრაფი მიწოდება, თანამედროვე დიზაინი და ხელმისაწვდომი ფასი. ზუსტად ის რაც მჭირდებოდა!',
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 p-6 rounded-xl"
-              >
-                <div className="flex mb-3">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-xl">★</span>
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
-                <div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-500">{testimonial.company}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-700 text-white">

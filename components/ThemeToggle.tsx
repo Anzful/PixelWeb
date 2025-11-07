@@ -31,21 +31,21 @@ const ThemeToggle = () => {
   // Prevent rendering until mounted to avoid hydration mismatch
   if (!mounted) {
     return (
-      <div className="relative w-14 h-7 rounded-full bg-gray-300 dark:bg-gray-700" />
+      <div className="relative w-20 sm:w-20 md:w-22 lg:w-24 h-9 sm:h-9 md:h-10 rounded-full bg-gray-300 dark:bg-gray-700 flex-shrink-0" />
     )
   }
 
   return (
     <button
       onClick={toggleTheme}
-      className="relative w-16 h-8 rounded-full bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 dark:from-indigo-500 dark:via-purple-600 dark:to-indigo-700 transition-all duration-500 hover:shadow-lg hover:shadow-amber-400/50 dark:hover:shadow-purple-500/50"
+      className="relative w-20 sm:w-20 md:w-22 lg:w-24 h-9 sm:h-9 md:h-10 rounded-full bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 dark:from-indigo-500 dark:via-purple-600 dark:to-indigo-700 transition-all duration-500 hover:shadow-lg hover:shadow-amber-400/50 dark:hover:shadow-purple-500/50 flex-shrink-0"
       aria-label="Toggle theme"
     >
       {/* Sliding toggle circle */}
       <motion.div
-        className="absolute top-1 left-1 w-6 h-6 rounded-full bg-white dark:bg-gray-900 shadow-lg flex items-center justify-center z-10"
+        className="absolute top-1 left-1 w-7 sm:w-7 md:w-8 h-7 sm:h-7 md:h-8 rounded-full bg-white dark:bg-gray-900 shadow-lg flex items-center justify-center z-10"
         animate={{
-          x: theme === 'dark' ? 32 : 0,
+          x: theme === 'dark' ? 44 : 0,
         }}
         transition={{
           type: 'spring',
@@ -62,9 +62,9 @@ const ThemeToggle = () => {
           transition={{ duration: 0.3 }}
         >
           {theme === 'light' ? (
-            <FaSun className="text-amber-500 text-sm" />
+            <FaSun className="text-amber-500 text-sm md:text-base" />
           ) : (
-            <FaMoon className="text-indigo-400 text-sm" />
+            <FaMoon className="text-indigo-400 text-sm md:text-base" />
           )}
         </motion.div>
       </motion.div>

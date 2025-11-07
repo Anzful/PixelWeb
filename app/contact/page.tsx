@@ -77,19 +77,19 @@ const ContactPage = () => {
 
   const contactInfo = [
     {
-      icon: <FaMapMarkerAlt className="text-3xl text-primary-600" />,
+      icon: <FaMapMarkerAlt className="text-3xl text-primary-600 dark:text-primary-400" />,
       title: 'მისამართი',
       info: 'თბილისი, საქართველო',
       subInfo: 'დისტანციურად მივიღებთ შეკვეთებს მთელი საქართველოდან'
     },
     {
-      icon: <FaPhone className="text-3xl text-primary-600" />,
+      icon: <FaPhone className="text-3xl text-primary-600 dark:text-primary-400" />,
       title: 'ტელეფონი',
       info: '+995 591 410 914',
       subInfo: 'ორშაბათი - პარასკევი: 10:00 - 21:00'
     },
     {
-      icon: <FaEnvelope className="text-3xl text-primary-600" />,
+      icon: <FaEnvelope className="text-3xl text-primary-600 dark:text-primary-400" />,
       title: 'ელ-ფოსტა',
       info: 'pixelweb2026@gmail.com',
       subInfo: 'პასუხს გიგზავნით მაქსიმალურად სწრაფად'
@@ -149,7 +149,7 @@ const ContactPage = () => {
               >
                 <div className="flex justify-center mb-4">{item.icon}</div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-primary-600 font-medium mb-1">{item.info}</p>
+                <p className="text-primary-600 dark:text-primary-400 font-medium mb-1">{item.info}</p>
                 <p className="text-sm text-gray-500">{item.subInfo}</p>
               </motion.div>
             ))}
@@ -175,14 +175,14 @@ const ContactPage = () => {
                 </h2>
 
                 {submitStatus === 'success' && (
-                  <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 flex items-center">
+                  <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg text-green-700 dark:text-green-300 flex items-center">
                     <span className="text-2xl mr-3">✅</span>
                     <span>თქვენი შეტყობინება წარმატებით გაიგზავნა! ჩვენ დაგიკავშირდებით მალე.</span>
                   </div>
                 )}
 
                 {submitStatus === 'error' && (
-                  <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 flex items-center">
+                  <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 rounded-lg text-red-700 dark:text-red-300 flex items-center">
                     <span className="text-2xl mr-3">❌</span>
                     <span>დაფიქსირდა შეცდომა. გთხოვთ სცადოთ თავიდან ან დაგვიკავშირდით ტელეფონით.</span>
                   </div>
@@ -365,20 +365,20 @@ const ContactPage = () => {
                 </div>
 
                 {/* FAQ */}
-                <div className="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">ხშირი კითხვები</h3>
+                <div className="bg-gradient-to-br from-primary-50 to-accent-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-6">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">ხშირი კითხვები</h3>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">რამდენი ხანი სჭირდება?</h4>
-                      <p className="text-sm text-gray-600">Landing Page - 3-5 დღე, საწარმოს საიტი - 7-10 დღე, E-commerce - 14-21 დღე</p>
+                      <h4 className="font-semibold text-gray-900 dark:text-gray-200 mb-1">რამდენი ხანი სჭირდება?</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">Landing Page - 3-5 დღე, საწარმოს საიტი - 7-10 დღე, E-commerce - 14-21 დღე</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">შევძლებ გადახდას ეტაპობრივად?</h4>
-                      <p className="text-sm text-gray-600">დიახ, შესაძლებელია 50% წინასწარ და 50% გაშვებისას</p>
+                      <h4 className="font-semibold text-gray-900 dark:text-gray-200 mb-1">შევძლებ გადახდას ეტაპობრივად?</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">დიახ, შესაძლებელია 50% წინასწარ და 50% გაშვებისას</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">მოიცავს ჰოსტინგს?</h4>
-                      <p className="text-sm text-gray-600">ჰოსტინგი და დომენი ცალკე იხდის, ჩვენ დაგეხმარებით მოწყობაში</p>
+                      <h4 className="font-semibold text-gray-900 dark:text-gray-200 mb-1">მოიცავს ჰოსტინგს?</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">ჰოსტინგი და დომენი ცალკე იხდის, ჩვენ დაგეხმარებით მოწყობაში</p>
                     </div>
                   </div>
                 </div>
@@ -389,19 +389,19 @@ const ContactPage = () => {
                   <div className="flex space-x-4">
                     <a
                       href="#"
-                      className="w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"
+                      className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"
                     >
                       <FaFacebook size={24} />
                     </a>
                     <a
                       href="#"
-                      className="w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"
+                      className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"
                     >
                       <FaInstagram size={24} />
                     </a>
                     <a
                       href="#"
-                      className="w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"
+                      className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"
                     >
                       <FaLinkedin size={24} />
                     </a>

@@ -56,7 +56,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-2 sm:p-4"
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6"
           onClick={handleBackdropClick}
         >
           <motion.div
@@ -64,21 +64,21 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl max-w-6xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto relative"
+            className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl max-w-6xl w-full max-h-[96vh] sm:max-h-[92vh] overflow-y-auto relative shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="sticky top-2 sm:top-4 right-2 sm:right-4 float-right z-50 bg-white/95 dark:bg-gray-800/95 text-gray-800 dark:text-white p-2 sm:p-3 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all shadow-lg backdrop-blur-sm"
+              className="sticky top-1 sm:top-2 md:top-4 right-1 sm:right-2 md:right-4 float-right z-50 bg-white/95 dark:bg-gray-800/95 text-gray-800 dark:text-white p-2 sm:p-2.5 md:p-3 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all shadow-lg backdrop-blur-sm m-1 sm:m-2 md:m-0"
               aria-label="Close modal"
             >
-              <FaTimes size={20} className="sm:w-6 sm:h-6" />
+              <FaTimes className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </button>
 
             {/* Image Gallery */}
             <div className="relative bg-gray-100 dark:bg-gray-900 overflow-hidden rounded-t-xl sm:rounded-t-2xl">
-              <div className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh]">
+              <div className="relative h-[35vh] sm:h-[45vh] md:h-[55vh] lg:h-[65vh]">
                 <AnimatePresence initial={false} custom={direction}>
                   <motion.div
                     key={currentIndex}
@@ -109,21 +109,21 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                   <>
                     <button
                       onClick={prevSlide}
-                      className="absolute left-1 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 text-gray-800 dark:text-white p-2 sm:p-3 md:p-4 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all z-10 shadow-lg"
+                      className="absolute left-1 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 text-gray-800 dark:text-white p-1.5 sm:p-2 md:p-3 lg:p-4 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all z-10 shadow-lg active:scale-95"
                       aria-label="Previous image"
                     >
-                      <FaChevronLeft size={16} className="sm:w-5 sm:h-5" />
+                      <FaChevronLeft className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                     </button>
                     <button
                       onClick={nextSlide}
-                      className="absolute right-1 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 text-gray-800 dark:text-white p-2 sm:p-3 md:p-4 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all z-10 shadow-lg"
+                      className="absolute right-1 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 text-gray-800 dark:text-white p-1.5 sm:p-2 md:p-3 lg:p-4 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all z-10 shadow-lg active:scale-95"
                       aria-label="Next image"
                     >
-                      <FaChevronRight size={16} className="sm:w-5 sm:h-5" />
+                      <FaChevronRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                     </button>
 
                     {/* Dots Indicator */}
-                    <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-10">
+                    <div className="absolute bottom-1.5 sm:bottom-2 md:bottom-4 left-1/2 -translate-x-1/2 flex gap-1 sm:gap-1.5 md:gap-2 z-10 bg-black/30 backdrop-blur-sm px-2 py-1 rounded-full">
                       {project.images.map((_, index) => (
                         <button
                           key={index}
@@ -131,10 +131,10 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                             setDirection(index > currentIndex ? 1 : -1)
                             setCurrentIndex(index)
                           }}
-                          className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 rounded-full transition-all ${
+                          className={`rounded-full transition-all ${
                             index === currentIndex
-                              ? 'bg-white w-4 sm:w-6 md:w-8'
-                              : 'bg-white/50 hover:bg-white/75'
+                              ? 'bg-white w-3 sm:w-4 md:w-6 lg:w-8 h-1.5 sm:h-2 md:h-2.5'
+                              : 'bg-white/50 hover:bg-white/75 w-1.5 sm:w-2 md:w-2.5 h-1.5 sm:h-2 md:h-2.5'
                           }`}
                           aria-label={`Go to image ${index + 1}`}
                         />
@@ -142,7 +142,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                     </div>
 
                     {/* Image Counter */}
-                    <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-black/50 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium z-10">
+                    <div className="absolute top-1.5 sm:top-2 md:top-4 left-1.5 sm:left-2 md:left-4 bg-black/50 backdrop-blur-sm text-white px-2 sm:px-2.5 md:px-3 py-0.5 sm:py-1 md:py-1.5 rounded-full text-xs sm:text-sm font-medium z-10">
                       {currentIndex + 1} / {project.images.length}
                     </div>
                   </>
@@ -151,9 +151,9 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
             </div>
 
             {/* Project Details */}
-            <div className="p-4 sm:p-6 md:p-8">
-              <div className="flex flex-col gap-3 sm:gap-4 mb-4">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white pr-8">
+            <div className="p-3 sm:p-4 md:p-6 lg:p-8">
+              <div className="flex flex-col gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white pr-4 sm:pr-8 leading-tight">
                   {project.title}
                 </h2>
                 {project.liveUrl && (
@@ -161,28 +161,28 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-primary-700 transition-all font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-105 w-full sm:w-auto"
+                    className="inline-flex items-center justify-center gap-2 bg-primary-600 dark:bg-primary-500 text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg hover:bg-primary-700 dark:hover:bg-primary-600 transition-all font-semibold text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl hover:scale-105 w-full sm:w-auto active:scale-95"
                   >
-                    <FaExternalLinkAlt size={14} className="sm:w-4 sm:h-4" />
+                    <FaExternalLinkAlt className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
                     ვებსაიტის ნახვა
                   </a>
                 )}
               </div>
 
-              <p className="text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 md:mb-6 text-xs sm:text-sm md:text-base leading-relaxed">
                 {project.description}
               </p>
 
               {/* Technologies */}
-              <div className="mb-4 sm:mb-6">
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3">
+              <div className="mb-3 sm:mb-4 md:mb-6">
+                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-2.5 md:mb-3">
                   გამოყენებული ტექნოლოგიები
                 </h3>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {project.technologies.map((tech, i) => (
                     <span
                       key={i}
-                      className="text-xs sm:text-sm bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full"
+                      className="text-xs sm:text-sm bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full whitespace-nowrap"
                     >
                       {tech}
                     </span>
@@ -192,14 +192,14 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
 
               {/* Features */}
               <div>
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3">
+                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-2.5 md:mb-3">
                   მთავარი ფუნქციები
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2 md:gap-3">
                   {project.features.map((feature, i) => (
                     <div key={i} className="flex items-start text-gray-600 dark:text-gray-300 text-xs sm:text-sm md:text-base">
-                      <span className="text-green-500 mr-2 mt-0.5 flex-shrink-0">✓</span>
-                      <span>{feature}</span>
+                      <span className="text-green-500 dark:text-green-400 mr-1.5 sm:mr-2 mt-0.5 flex-shrink-0 text-sm sm:text-base">✓</span>
+                      <span className="leading-snug">{feature}</span>
                     </div>
                   ))}
                 </div>

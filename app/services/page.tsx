@@ -8,7 +8,7 @@ import PageTransition from '@/components/PageTransition'
 const ServicesPage = () => {
   const services = [
     {
-      icon: <FaFileAlt className="text-5xl text-primary-600" />,
+      icon: <FaFileAlt className="text-5xl text-primary-600 dark:text-primary-400" />,
       name: 'Landing Page',
       price: '500-700',
       duration: '3-5 დღე',
@@ -29,7 +29,7 @@ const ServicesPage = () => {
       marketPrice: '1,000-2,000'
     },
     {
-      icon: <FaBriefcase className="text-5xl text-primary-600" />,
+      icon: <FaBriefcase className="text-5xl text-primary-600 dark:text-primary-400" />,
       name: 'საიტი ბიზნესისთვის',
       price: '1,000-2,500',
       duration: '7-10 დღე',
@@ -53,7 +53,7 @@ const ServicesPage = () => {
       popular: true
     },
     {
-      icon: <FaShoppingCart className="text-5xl text-primary-600" />,
+      icon: <FaShoppingCart className="text-5xl text-primary-600 dark:text-primary-400" />,
       name: 'E-Commerce (ელექტრონული კომერცია)',
       price: '3,000-5,000',
       duration: '14-21 დღე',
@@ -77,7 +77,7 @@ const ServicesPage = () => {
       marketPrice: '3,000-5,000+'
     },
     {
-      icon: <FaRocket className="text-5xl text-primary-600" />,
+      icon: <FaRocket className="text-5xl text-primary-600 dark:text-primary-400" />,
       name: 'მორგებული ვებსაიტი',
       price: 'მოლაპარაკებით',
       duration: 'მოლაპარაკებით',
@@ -199,7 +199,7 @@ const ServicesPage = () => {
                   
                   <div className="mb-6">
                     <div className="flex items-baseline mb-2">
-                      <span className="text-4xl font-bold text-primary-600">{service.price}</span>
+                      <span className="text-4xl font-bold text-primary-600 dark:text-primary-400">{service.price}</span>
                       {service.price !== 'მოლაპარაკებით' && (
                         <span className="text-gray-600 ml-2">₾</span>
                       )}
@@ -214,7 +214,7 @@ const ServicesPage = () => {
                     <ul className="space-y-2">
                       {service.features.map((feature, i) => (
                         <li key={i} className="flex items-start">
-                          <FaCheck className="text-green-500 mt-1 mr-3 flex-shrink-0" />
+                          <FaCheck className="text-green-500 dark:text-green-400 mt-1 mr-3 flex-shrink-0" />
                           <span className="text-gray-600 text-sm">{feature}</span>
                         </li>
                       ))}
@@ -293,7 +293,7 @@ const ServicesPage = () => {
               >
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.name}</h3>
                 <p className="text-gray-600 text-sm mb-3">{service.description}</p>
-                <div className="text-primary-600 font-bold text-lg">{service.price}</div>
+                <div className="text-primary-600 dark:text-primary-400 font-bold text-lg">{service.price}</div>
               </motion.div>
             ))}
           </div>
@@ -301,13 +301,13 @@ const ServicesPage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-primary-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-primary-50 dark:from-gray-800 dark:to-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               როგორ ვმუშაობთ
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 dark:text-gray-300">
               მარტივი და გამჭვირვალე პროცესი დაწყებიდან გაშვებამდე
             </p>
           </div>
@@ -322,10 +322,10 @@ const ServicesPage = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="bg-white p-6 rounded-xl shadow-lg">
-                  <div className="text-5xl font-bold text-primary-100 mb-4">{item.step}</div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+                  <div className="text-5xl font-bold text-primary-100 dark:text-primary-900 mb-4">{item.step}</div>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
                 </div>
               </motion.div>
             ))}
