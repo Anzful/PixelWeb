@@ -201,7 +201,7 @@ const ContactPage = () => {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-600"
                         placeholder="თქვენი სახელი"
                       />
                     </div>
@@ -217,7 +217,7 @@ const ContactPage = () => {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-600"
                         placeholder="example@email.com"
                       />
                     </div>
@@ -235,7 +235,7 @@ const ContactPage = () => {
                         required
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-600"
                         placeholder="+995 XXX XX XX XX"
                       />
                     </div>
@@ -250,7 +250,7 @@ const ContactPage = () => {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-600"
                         placeholder="კომპანიის სახელი"
                       />
                     </div>
@@ -310,7 +310,7 @@ const ContactPage = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition resize-none"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition resize-none text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-600"
                       placeholder="მოგვიყევით თქვენი პროექტის შესახებ..."
                     />
                   </div>
@@ -378,7 +378,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 dark:text-gray-200 mb-1">მოიცავს ჰოსტინგს?</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">ჰოსტინგი და დომენი ცალკე იხდის, ჩვენ დაგეხმარებით მოწყობაში</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">ჰოსტინგი და დომენი ცალკე სერვისია (ემატება ფასი), ჩვენ დაგეხმარებით მოწყობაში</p>
                     </div>
                   </div>
                 </div>
@@ -440,4 +440,3 @@ const ContactPage = () => {
 }
 
 export default ContactPage
-
