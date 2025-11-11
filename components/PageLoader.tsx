@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const PageLoader = () => {
   const [isLoading, setIsLoading] = useState(true)
+  const [activeDot, setActiveDot] = useState(0)
 
   useEffect(() => {
     // Simulate loading time
@@ -14,6 +15,14 @@ const PageLoader = () => {
 
     return () => clearTimeout(timer)
   }, [])
+
+  useEffect(() => {
+    if (!isLoading) return
+    const interval = setInterval(() => {
+      setActiveDot((prev) => (prev + 1) % 3)
+    }, 280)
+    return () => clearInterval(interval)
+  }, [isLoading])
 
   return (
     <AnimatePresence>
@@ -67,44 +76,28 @@ const PageLoader = () => {
               transition={{ delay: 0.5 }}
               className="flex justify-center space-x-2"
             >
-              <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [1, 0.5, 1],
-                }}
-                transition={{
-                  duration: 1,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                }}
-                className="w-3 h-3 bg-white rounded-full"
-              />
-              <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [1, 0.5, 1],
-                }}
-                transition={{
-                  duration: 1,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  delay: 0.2,
-                }}
-                className="w-3 h-3 bg-accent-400 rounded-full"
-              />
-              <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [1, 0.5, 1],
-                }}
-                transition={{
-                  duration: 1,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  delay: 0.4,
-                }}
-                className="w-3 h-3 bg-primary-200 rounded-full"
-              />
+              {[0, 1, 2].map((i) => {
+                const isActive = i === activeDot
+                return (
+                  <motion.div
+                    key={i}
+                    animate={{
+                      scale: isActive ? 1.25 : 1,
+                      opacity: isActive ? 1 : 0.7,
+                    }}
+                    transition={{
+                      type: 'spring',
+                      stiffness: 300,
+                      damping: 20,
+                    }}
+                    className={`w-3 h-3 rounded-full ${
+                      isActive
+                        ? 'bg-accent-400'
+                        : 'bg-white dark:bg-gray-500'
+                    }`}
+                  />
+                )
+              })}
             </motion.div>
 
             {/* Loading Text */}
