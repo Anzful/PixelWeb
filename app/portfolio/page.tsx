@@ -90,6 +90,15 @@ const PortfolioPage = () => {
       features: ['სერვერის ინფორმაცია', 'რეკრუტმენტის სისტემა', 'Discord ინტეგრაცია', 'თამაშის წესები'],
       liveUrl: 'https://fib-unit-rp.vercel.app'
     },
+    {
+      id: 9,
+      title: 'CaseDelight - მოდერნ თემატიკის რესტორანი',
+      category: 'ecommerce',
+      images: ['/images/casedelight.jpg', '/images/casedelight2.jpg', '/images/casedelight3.jpg', '/images/casedelight4.jpg', '/images/casedelight5.jpg'],
+      description: 'თანამედროვე რესტორნის ვებსაიტი.',
+      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
+      features: ['პროდუქტების კატალოგი', 'მობილურზე ოპტიმიზაცია', 'სწრაფი ჩატვირთვა']
+    },
 
   ]
 

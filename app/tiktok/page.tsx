@@ -86,7 +86,7 @@ function TikTokContent() {
   ]
 
   const showcase = [
-    { title: 'AndCook', img: '/images/AndCook.jpg' },
+    { title: 'CaseDelight', img: '/images/casedelight.jpg' },
     { title: 'AndWatch', img: '/images/andwatch.jpg' },
     { title: 'Furniture Store', img: '/images/Furniture1.jpg' },
   ]
