@@ -44,17 +44,17 @@ const PortfolioPage = () => {
     },
     {
       id: 4,
-      title: 'AndWatch - სმარტ საათის აპი',
+      title: 'AndWatch - ფილმების, სერიალების და ანიმეების ტრეკინგი',
       category: 'mobile',
       images: ['/images/andwatch.jpg', '/images/Andwatch2.jpg'],
-      description: 'ჯანმრთელობის მონიტორინგის აპლიკაცია სმარტ საათებისთვის',
-      technologies: ['React Native', 'Health API', 'Firebase'],
-      features: ['ნაბიჯების დათვლა', 'პულსის მონიტორინგი', 'ძილის ანალიზი', 'ვარჯიშის ტრეკერი'],
+      description: 'ფილმების, სერიალების, ანიმაციური ფილმებისა და ანიმეების ტრეკინგი, API',
+      technologies: ['React & Next.Js', 'TMDB, MyAnimeList API', 'MongoDB'],
+      features: ['ტრეკინგი', 'შეფასება', 'პროფილში შენახვა', 'ინფორმაციის გაგება'],
       liveUrl: 'https://andwatch.vercel.app'
     },
     {
       id: 5,
-      title: 'TypingY - ტექსტის სისწრაფის ტრენერი',
+      title: 'TypingY - ტექსტის სისწრაფის (MonkeyType და ა.შ)',
       category: 'education',
       images: ['/images/TypingY.png'],
       description: 'საგანმანათლებო ვებ აპლიკაცია ბეჭდვის სისწრაფისა და სიზუსტის გასაუმჯობესებლად',
@@ -93,7 +93,7 @@ const PortfolioPage = () => {
     {
       id: 9,
       title: 'CaseDelight - მოდერნ თემატიკის რესტორანი',
-      category: 'ecommerce',
+      category: 'restaurant',
       images: ['/images/casedelight.jpg', '/images/casedelight2.jpg', '/images/casedelight3.jpg', '/images/casedelight4.jpg', '/images/casedelight5.jpg'],
       description: 'თანამედროვე რესტორნის ვებსაიტი.',
       technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
@@ -179,7 +179,7 @@ const PortfolioPage = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="py-4 sm:py-6 md:py-8 bg-white/80 dark:bg-gray-900/70 backdrop-blur-sm sticky top-16 sm:top-20 z-40 shadow-sm border-b border-gray-200 dark:border-gray-700">
+      <section className="py-4 sm:py-6 md:py-8 bg-white/80 dark:bg-gray-900/70 backdrop-blur-sm md:sticky md:top-20 z-40 shadow-sm border-b border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {categories.map((category) => (
