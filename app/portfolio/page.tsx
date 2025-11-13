@@ -93,7 +93,7 @@ const PortfolioPage = () => {
     {
       id: 9,
       title: 'CaseDelight - მოდერნ თემატიკის რესტორანი',
-      category: 'ecommerce',
+      category: 'restaurant',
       images: ['/images/casedelight.jpg', '/images/casedelight2.jpg', '/images/casedelight3.jpg', '/images/casedelight4.jpg', '/images/casedelight5.jpg'],
       description: 'თანამედროვე რესტორნის ვებსაიტი.',
       technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
@@ -179,7 +179,7 @@ const PortfolioPage = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="py-4 sm:py-6 md:py-8 bg-white/80 dark:bg-gray-900/70 backdrop-blur-sm sticky top-16 sm:top-20 z-40 shadow-sm border-b border-gray-200 dark:border-gray-700">
+      <section className="py-4 sm:py-6 md:py-8 bg-white/80 dark:bg-gray-900/70 backdrop-blur-sm md:sticky md:top-20 z-40 shadow-sm border-b border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {categories.map((category) => (
