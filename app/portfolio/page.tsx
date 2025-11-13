@@ -44,17 +44,17 @@ const PortfolioPage = () => {
     },
     {
       id: 4,
-      title: 'AndWatch - სმარტ საათის აპი',
+      title: 'AndWatch - ფილმების, სერიალების და ანიმეების ტრეკინგი',
       category: 'mobile',
       images: ['/images/andwatch.jpg', '/images/Andwatch2.jpg'],
-      description: 'ჯანმრთელობის მონიტორინგის აპლიკაცია სმარტ საათებისთვის',
-      technologies: ['React Native', 'Health API', 'Firebase'],
-      features: ['ნაბიჯების დათვლა', 'პულსის მონიტორინგი', 'ძილის ანალიზი', 'ვარჯიშის ტრეკერი'],
+      description: 'ფილმების, სერიალების, ანიმაციური ფილმებისა და ანიმეების ტრეკინგი, API',
+      technologies: ['React & Next.Js', 'TMDB, MyAnimeList API', 'MongoDB'],
+      features: ['ტრეკინგი', 'შეფასება', 'პროფილში შენახვა', 'ინფორმაციის გაგება'],
       liveUrl: 'https://andwatch.vercel.app'
     },
     {
       id: 5,
-      title: 'TypingY - ტექსტის სისწრაფის ტრენერი',
+      title: 'TypingY - ტექსტის სისწრაფის (MonkeyType და ა.შ)',
       category: 'education',
       images: ['/images/TypingY.png'],
       description: 'საგანმანათლებო ვებ აპლიკაცია ბეჭდვის სისწრაფისა და სიზუსტის გასაუმჯობესებლად',
