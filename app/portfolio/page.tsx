@@ -99,7 +99,16 @@ const PortfolioPage = () => {
       technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
       features: ['პროდუქტების კატალოგი', 'მობილურზე ოპტიმიზაცია', 'სწრაფი ჩატვირთვა']
     },
-
+    {
+      id: 10,
+      title: 'Demo Ecommerce Website - E-commerce პლატფორმა (ტექნიკის მაღაზია)',
+      category: 'ecommerce',
+      images: ['/images/ecom1.png', '/images/ecom2.png', '/images/ecom3.png'],
+      description: 'თანამედროვე E-commerce პლატფორმა ტექნიკის მაღაზიისთვის',
+      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
+      features: ['პროდუქტების კატალოგი', 'მობილურზე ოპტიმიზაცია', 'სწრაფი ჩატვირთვა'],
+      liveUrl: 'https://ecomm-flax-ten.vercel.app/'
+    }
   ]
 
   const handleProjectClick = (project: any) => {
