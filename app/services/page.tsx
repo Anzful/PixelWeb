@@ -10,7 +10,7 @@ const ServicesPage = () => {
     {
       icon: <FaFileAlt className="text-5xl text-primary-600 dark:text-primary-400" />,
       name: 'Landing Page',
-      price: '500-700',
+      price: '400-700',
       duration: '3-5 დღე',
       description: 'იდეალური მცირე ბიზნესისთვის ან პროდუქტის წარმოსაჩენად',
       features: [
@@ -31,7 +31,7 @@ const ServicesPage = () => {
     {
       icon: <FaBriefcase className="text-5xl text-primary-600 dark:text-primary-400" />,
       name: 'საიტი ბიზნესისთვის',
-      price: '1,000-2,500',
+      price: '1,000-დან',
       duration: '7-10 დღე',
       description: 'სრული ფუნქციონალის საიტი ბიზნესისთვის',
       features: [
@@ -55,7 +55,7 @@ const ServicesPage = () => {
     {
       icon: <FaShoppingCart className="text-5xl text-primary-600 dark:text-primary-400" />,
       name: 'E-Commerce (ელექტრონული კომერცია)',
-      price: '3,000-5,000',
+      price: '3,000დან',
       duration: '14-21 დღე',
       description: 'სრული ფუნქციონალის ონლაინ მაღაზია',
       features: [
