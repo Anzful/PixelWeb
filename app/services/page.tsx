@@ -55,7 +55,7 @@ const ServicesPage = () => {
     {
       icon: <FaShoppingCart className="text-5xl text-primary-600 dark:text-primary-400" />,
       name: 'E-Commerce (ელექტრონული კომერცია)',
-      price: '3,000დან',
+      price: '3,000-დან',
       duration: '14-21 დღე',
       description: 'სრული ფუნქციონალის ონლაინ მაღაზია',
       features: [
