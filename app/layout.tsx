@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     title: 'PixelWeb.ge - საიტის დამზადება და ვებსაიტების შექმნა საქართველოში',
     description: 'საიტის დამზადება, თანამედროვე დიზაინი და სწრაფი ვებსაიტები თქვენი ბიზნესისთვის.',
   },
+  verification: {
+    google: 'jkjsLT2q8ghWwf2_0CR7O4dOyVh8Bg2aDQZPJn1yLeE',
+  },
   icons: {
     icon: '/images/logo.png',
     shortcut: '/images/logo.png',
