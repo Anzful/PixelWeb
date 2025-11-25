@@ -422,15 +422,25 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Map Section (Placeholder) */}
+      {/* Map Section - Google Maps Embed */}
       <section className="py-0">
         <div className="w-full h-96 bg-gray-200 relative overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary-200 to-primary-300">
-            <div className="text-center">
-              <div className="text-6xl mb-4">📍</div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">თბილისი, საქართველო</h3>
-              <p className="text-gray-600">დისტანციურად ვმუშაობთ მთელი საქართველოს მასშტაბით</p>
-            </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190515.91556052843!2d44.68385575!3d41.7151377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cd7e64f626b%3A0x61d084ede2576ea3!2sTbilisi%2C%20Georgia!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="PixelWeb Location - Tbilisi, Georgia"
+            className="grayscale hover:grayscale-0 transition-all duration-500"
+          />
+          {/* Overlay with contact info */}
+          <div className="absolute bottom-4 left-4 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-4 max-w-xs">
+            <h3 className="font-bold text-gray-900 dark:text-white mb-1">PixelWeb.ge</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300">თბილისი, საქართველო</p>
+            <p className="text-sm text-primary-600 dark:text-primary-400">დისტანციურად ვმუშაობთ მთელი საქართველოს მასშტაბით</p>
           </div>
         </div>
       </section>

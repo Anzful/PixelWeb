@@ -8,6 +8,7 @@ import VisitorTracker from '@/components/VisitorTracker'
 import { Analytics } from '@vercel/analytics/react'
 import ScrollToTopButton from '@/components/ScrollToTopButton'
 import StickyContactBar from '@/components/StickyContactBar'
+import TawkTo from '@/components/TawkTo'
 import { Suspense } from 'react'
 
 export const metadata: Metadata = {
@@ -25,6 +26,15 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://pixelweb.ge',
     locale: 'ka_GE',
+    siteName: 'PixelWeb.ge',
+    images: [
+      {
+        url: '/images/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'PixelWeb - ვებსაიტების დამზადება საქართველოში',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -131,6 +141,85 @@ export default function RootLayout({
             }),
           }}
         />
+        {/* FAQ Structured Data for Google Rich Results */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: [
+                {
+                  '@type': 'Question',
+                  name: 'რამდენი დრო სჭირდება საიტის დამზადებას?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Landing Page - 3-5 დღე, კორპორატიული საიტი - 7-10 დღე, E-commerce - 14-21 დღე.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'რა ღირს საიტის გაკეთება?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Landing Page იწყება 500 ₾-დან, ბიზნეს საიტები 1,000-2,500 ₾, E-commerce 3,000-5,000 ₾+.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'შესაძლებელია საიტები იაფად?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'დიახ, PixelWeb გთავაზობთ საიტების დამზადებას ბაზრის ფასებზე 30%-მდე იაფად, ხარისხის შენარჩუნებით.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'შედის თუ არა SEO ოპტიმიზაცია?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'ძირითადი SEO შედის ყველა პაკეტში: სუფთა კოდი, სწრაფი ჩატვირთვა, meta თეგები, სტრუქტურული მონაცემები.',
+                  },
+                },
+              ],
+            }),
+          }}
+        />
+        {/* LocalBusiness Schema for Local SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              name: 'PixelWeb.ge',
+              description: 'პროფესიონალური ვებსაიტების დამზადება ხელმისაწვდომ ფასად საქართველოში',
+              url: 'https://pixelweb.ge',
+              telephone: '+995591410914',
+              email: 'pixelweb2026@gmail.com',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'თბილისი',
+                addressCountry: 'GE',
+              },
+              priceRange: '₾₾',
+              openingHoursSpecification: [
+                {
+                  '@type': 'OpeningHoursSpecification',
+                  dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                  opens: '09:00',
+                  closes: '21:00',
+                },
+                {
+                  '@type': 'OpeningHoursSpecification',
+                  dayOfWeek: 'Saturday',
+                  opens: '11:00',
+                  closes: '19:00',
+                },
+              ],
+            }),
+          }}
+        />
       </head>
     <body>
       <ThemeProvider>
@@ -145,6 +234,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <StickyContactBar />
         </Suspense>
+        <TawkTo />
         <Analytics />
       </ThemeProvider>
     </body>

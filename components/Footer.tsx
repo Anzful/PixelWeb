@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { FaFacebook, FaInstagram, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaEnvelope, FaPhone, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -24,14 +24,44 @@ const Footer = () => {
               პროფესიონალური ვებსაიტები ხელმისაწვდომ ფასად. გთავაზობთ საუკეთესო ხარისხს ხელმისაწვდომ ფასად საქართველოში
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              <a 
+                href="https://www.facebook.com/profile.php?id=61584036537327" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                aria-label="Facebook"
+              >
                 <FaFacebook size={24} />
               </a>
-              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              <a 
+                href="https://www.instagram.com/pixelweb.ge/" 
+                className="text-gray-600 dark:text-gray-400 hover:text-pink-600 dark:hover:text-pink-400 transition-colors"
+                aria-label="Instagram"
+              >
                 <FaInstagram size={24} />
               </a>
-              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                <FaLinkedin size={24} />
+              <a 
+                href="https://wa.me/995591410914" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors"
+                aria-label="WhatsApp"
+              >
+                <FaWhatsapp size={24} />
+              </a>
+              <a 
+                href="mailto:pixelweb2026@gmail.com" 
+                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                aria-label="Email"
+              >
+                <FaEnvelope size={24} />
+              </a>
+              <a 
+                href="tel:+995591410914" 
+                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                aria-label="Phone"
+              >
+                <FaPhone size={24} />
               </a>
             </div>
           </div>
