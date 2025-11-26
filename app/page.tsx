@@ -348,43 +348,6 @@ const HomePage = () => {
           </motion.div>
         </motion.div>
 
-        {/* Mobile Animated Element - Floating Code Tag */}
-        <motion.div
-          className="absolute top-20 right-4 xl:hidden pointer-events-none"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <motion.div
-            animate={{ y: [0, -8, 0], rotate: [0, 3, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="bg-gray-900/80 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg border border-gray-700/50"
-          >
-            <span className="text-xs font-mono">
-              <span className="text-gray-400">&lt;</span>
-              <span className="text-green-400">PixelWeb</span>
-              <span className="text-gray-400"> /&gt;</span>
-            </span>
-          </motion.div>
-        </motion.div>
-
-        {/* Mobile Floating Tech Badge */}
-        <motion.div
-          className="absolute bottom-28 left-4 xl:hidden pointer-events-none"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-        >
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-            className="flex items-center gap-1.5 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-lg border border-gray-200 dark:border-gray-700"
-          >
-            <FaReact className="text-cyan-500 text-sm animate-spin" style={{ animationDuration: '8s' }} />
-            <span className="text-[10px] font-medium text-gray-700 dark:text-gray-300">React & Next.js</span>
-          </motion.div>
-        </motion.div>
-
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -692,13 +655,13 @@ const HomePage = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
+            <Link
+              href="/contact"
                 className="group bg-white text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-gray-100 transition-all hover:shadow-xl hover:shadow-white/20 transform hover:-translate-y-1 font-semibold text-base sm:text-lg inline-flex items-center justify-center gap-2"
-              >
-                დაგვიკავშირდით
+            >
+              დაგვიკავშირდით
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </Link>
+            </Link>
               <a
                 href="https://wa.me/995591410914"
                 target="_blank"

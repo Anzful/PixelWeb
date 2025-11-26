@@ -7,8 +7,8 @@ import PageLoader from '@/components/PageLoader'
 import VisitorTracker from '@/components/VisitorTracker'
 import { Analytics } from '@vercel/analytics/react'
 import ScrollToTopButton from '@/components/ScrollToTopButton'
-import StickyContactBar from '@/components/StickyContactBar'
 import TawkTo from '@/components/TawkTo'
+import StickyContactBar from '@/components/StickyContactBar'
 import { Suspense } from 'react'
 
 export const metadata: Metadata = {
@@ -231,9 +231,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <ScrollToTopButton />
-        <Suspense fallback={null}>
-          <StickyContactBar />
-        </Suspense>
+        <StickyContactBar />
         <TawkTo />
         <Analytics />
       </ThemeProvider>

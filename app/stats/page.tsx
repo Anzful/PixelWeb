@@ -2,8 +2,14 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { FaEye, FaUsers, FaChartBar, FaClock } from 'react-icons/fa'
+import { FaEye, FaUsers, FaChartBar, FaClock, FaShieldAlt, FaSpinner } from 'react-icons/fa'
 import PageTransition from '@/components/PageTransition'
+import Link from 'next/link'
+
+// Admin IP whitelist
+const ADMIN_IPS = [
+  '31.146.70.219',
+]
 
 interface VisitData {
   totalVisits: number
@@ -20,6 +26,25 @@ interface VisitData {
 export default function StatsPage() {
   const [data, setData] = useState<VisitData | null>(null)
   const [loading, setLoading] = useState(true)
+  const [isAdmin, setIsAdmin] = useState<boolean | null>(null)
+  const [userIP, setUserIP] = useState<string>('')
+
+  // Check admin access
+  useEffect(() => {
+    const checkAdminAccess = async () => {
+      try {
+        const response = await fetch('https://api.ipify.org?format=json')
+        const data = await response.json()
+        const ip = data.ip
+        setUserIP(ip)
+        setIsAdmin(ADMIN_IPS.includes(ip))
+      } catch (error) {
+        console.error('Failed to verify admin access')
+        setIsAdmin(false)
+      }
+    }
+    checkAdminAccess()
+  }, [])
 
   const fetchStats = async () => {
     try {
@@ -34,19 +59,68 @@ export default function StatsPage() {
   }
 
   useEffect(() => {
-    fetchStats()
-    // Refresh every 30 seconds
-    const interval = setInterval(fetchStats, 30000)
-    return () => clearInterval(interval)
-  }, [])
+    if (isAdmin) {
+      fetchStats()
+      const interval = setInterval(fetchStats, 30000)
+      return () => clearInterval(interval)
+    }
+  }, [isAdmin])
+
+  // Checking access
+  if (isAdmin === null) {
+    return (
+      <PageTransition>
+        <div className="min-h-screen pt-32 pb-20 flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+          <div className="text-center">
+            <FaSpinner className="text-4xl text-primary-600 animate-spin mx-auto mb-4" />
+            <p className="text-gray-600 dark:text-gray-400">იტვირთება...</p>
+          </div>
+        </div>
+      </PageTransition>
+    )
+  }
+
+  // Access denied
+  if (!isAdmin) {
+    return (
+      <PageTransition>
+        <div className="min-h-screen pt-32 pb-20 flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-center max-w-md mx-auto px-4"
+          >
+            <div className="w-20 h-20 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+              <FaShieldAlt className="text-4xl text-red-500" />
+            </div>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              წვდომა აკრძალულია
+            </h1>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
+              სტატისტიკის გვერდი მხოლოდ ადმინისტრატორებისთვისაა ხელმისაწვდომი.
+            </p>
+            <p className="text-xs text-gray-400 dark:text-gray-500 mb-6">
+              თქვენი IP: {userIP}
+            </p>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors"
+            >
+              მთავარ გვერდზე დაბრუნება
+            </Link>
+          </motion.div>
+        </div>
+      </PageTransition>
+    )
+  }
 
   if (loading) {
     return (
       <PageTransition>
-        <div className="min-h-screen pt-32 pb-20 flex items-center justify-center">
+        <div className="min-h-screen pt-32 pb-20 flex items-center justify-center bg-gray-50 dark:bg-gray-900">
           <div className="text-center">
-            <div className="animate-spin text-6xl mb-4">⏳</div>
-            <p className="text-gray-600 dark:text-gray-400">იტვირთება...</p>
+            <FaSpinner className="text-4xl text-primary-600 animate-spin mx-auto mb-4" />
+            <p className="text-gray-600 dark:text-gray-400">სტატისტიკა იტვირთება...</p>
           </div>
         </div>
       </PageTransition>
@@ -59,6 +133,9 @@ export default function StatsPage() {
     '/portfolio': 'პორტფოლიო',
     '/about': 'ჩვენ შესახებ',
     '/contact': 'კონტაქტი',
+    '/admin': 'ადმინ პანელი',
+    '/stats': 'სტატისტიკა',
+    '/tiktok': 'TikTok Downloader',
   }
 
   return (
@@ -67,18 +144,32 @@ export default function StatsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           {/* Header */}
           <div className="mb-8">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="inline-flex items-center gap-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-medium px-3 py-1 rounded-full">
+                <FaShieldAlt className="text-xs" />
+                ადმინისტრატორი
+              </span>
+            </div>
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
               📊 ვებსაიტის სტატისტიკა
             </h1>
             <p className="text-gray-600 dark:text-gray-400">
               რეალურ დროში განახლებული მონაცემები
             </p>
-            <button
-              onClick={fetchStats}
-              className="mt-4 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm"
-            >
-              🔄 განახლება
-            </button>
+            <div className="flex gap-3 mt-4">
+              <button
+                onClick={fetchStats}
+                className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm"
+              >
+                🔄 განახლება
+              </button>
+              <Link
+                href="/admin"
+                className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-sm"
+              >
+                ← ადმინ პანელი
+              </Link>
+            </div>
           </div>
 
           {/* Stats Cards */}
@@ -231,4 +322,3 @@ export default function StatsPage() {
     </PageTransition>
   )
 }
-
