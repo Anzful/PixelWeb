@@ -86,6 +86,21 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'AW-17780075400');
+
+              window.reportConversion = function(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17780075400/7yHCCKyB9csbEIjXmZ5C',
+                    'value': 1.0,
+                    'currency': 'USD',
+                    'event_callback': callback
+                });
+                return false;
+              }
             `,
           }}
         />

@@ -1,11 +1,19 @@
 'use client'
 
-import Link from 'next/link'
-import { FaRocket, FaMoneyBillWave, FaClock, FaCheck, FaArrowRight, FaCode, FaMobile, FaPalette, FaChevronDown, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaFileAlt, FaBriefcase, FaShoppingCart, FaTimes } from 'react-icons/fa'
-import { SiNextdotjs, SiTailwindcss, SiTypescript } from 'react-icons/si'
-import { motion, AnimatePresence, useInView } from 'framer-motion'
-import PageTransition from '@/components/PageTransition'
 import { useState, useEffect, useRef } from 'react'
+import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from 'framer-motion'
+import { FaCode, FaPaintBrush, FaRocket, FaMobile, FaSearch, FaChartLine, FaCheck, FaArrowRight, FaWhatsapp, FaTimes, FaFileAlt, FaBriefcase, FaShoppingCart, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaMoneyBillWave, FaClock, FaPalette } from 'react-icons/fa'
+import { SiNextdotjs, SiTailwindcss, SiTypescript } from 'react-icons/si'
+import Link from 'next/link'
+import Image from 'next/image'
+import { FaChevronDown } from 'react-icons/fa'
+import PageTransition from '@/components/PageTransition'
+
+declare global {
+  interface Window {
+    reportConversion?: (url?: string) => boolean;
+  }
+}
 
 // Animated counter component
 const AnimatedCounter = ({ end, duration = 2000 }: { end: number; duration?: number }) => {
@@ -589,7 +597,7 @@ const HomePage = () => {
                       <div key={i} className="flex items-start gap-3 opacity-50">
                         <FaTimes className="text-gray-400 mt-1 flex-shrink-0 text-sm" />
                         <span className="text-sm text-gray-400 line-through">{feature}</span>
-                </div>
+                      </div>
                     ))}
                   </div>
 
@@ -730,13 +738,15 @@ const HomePage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-                className="group bg-white text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-gray-100 transition-all hover:shadow-xl hover:shadow-white/20 transform hover:-translate-y-1 font-semibold text-base sm:text-lg inline-flex items-center justify-center gap-2"
+              onClick={() => window.reportConversion?.()}
+              className="group bg-white text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-gray-100 transition-all hover:shadow-xl hover:shadow-white/20 transform hover:-translate-y-1 font-semibold text-base sm:text-lg inline-flex items-center justify-center gap-2"
             >
               დაგვიკავშირდით
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Link>
               <a
                 href="https://wa.me/995591410914"
+                onClick={() => window.reportConversion?.()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-green-600 transition-all hover:shadow-xl hover:shadow-green-500/20 transform hover:-translate-y-1 font-semibold text-base sm:text-lg inline-flex items-center justify-center gap-2"
