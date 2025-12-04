@@ -36,6 +36,7 @@ const Navbar = () => {
     { href: '/', label: 'მთავარი' },
     { href: '/services', label: 'სერვისები' },
     { href: '/portfolio', label: 'პორტფოლიო' },
+    { href: '/blog', label: 'ბლოგი' },
     { href: '/about', label: 'ჩვენ შესახებ' },
     { href: '/contact', label: 'კონტაქტი' },
   ]

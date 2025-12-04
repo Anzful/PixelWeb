@@ -86,6 +86,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/blog" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                  ბლოგი
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                   ჩვენ შესახებ
                 </Link>
