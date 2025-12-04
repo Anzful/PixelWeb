@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { FaRocket, FaMoneyBillWave, FaClock, FaCheck, FaArrowRight, FaCode, FaMobile, FaPalette, FaChevronDown, FaHtml5, FaCss3Alt, FaReact, FaNodeJs } from 'react-icons/fa'
+import { FaRocket, FaMoneyBillWave, FaClock, FaCheck, FaArrowRight, FaCode, FaMobile, FaPalette, FaChevronDown, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaFileAlt, FaBriefcase, FaShoppingCart, FaTimes } from 'react-icons/fa'
 import { SiNextdotjs, SiTailwindcss, SiTypescript } from 'react-icons/si'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import PageTransition from '@/components/PageTransition'
@@ -80,23 +80,72 @@ const HomePage = () => {
   ]
 
 
-  const pricingPreview = [
+  const services = [
     {
+      icon: <FaFileAlt />,
       name: 'Landing Page',
-      price: '500-800',
-      features: ['1-2 გვერდი', 'რესპონსიული დიზაინი', 'კონტაქტის ფორმა', 'მიწოდების ვადა (მაქს. 3 დღე)']
+      price: '400-700',
+      duration: '3-5 დღე',
+      description: 'იდეალური მცირე ბიზნესისთვის ან პროდუქტის წარმოსაჩენად',
+      features: [
+        '1-3 გვერდი თანამედროვე დიზაინით',
+        'სრულად რესპონსიული დიზაინი',
+        'კონტაქტის ფორმა',
+        'Google Maps ინტეგრაცია',
+        'სოციალური მედიის ლინკები',
+        'ძირითადი SEO ოპტიმიზაცია',
+      ],
+      notIncluded: [
+        'მონაცემთა ბაზა',
+        'მომხმარებლის ავტორიზაცია'
+      ],
+      marketPrice: '1,000-2,000',
+      color: 'from-blue-500 to-cyan-500',
+      bgColor: 'bg-blue-50 dark:bg-blue-900/20'
     },
     {
+      icon: <FaBriefcase />,
       name: 'საიტი ბიზნესისთვის',
-      price: '1000-2500',
+      price: '1,000-დან',
+      duration: '7-10 დღე',
+      description: 'სრული ფუნქციონალის საიტი ბიზნესისთვის',
+      features: [
+        '3-7 გვერდი პროფესიონალური დიზაინით',
+        'სრულად რესპონსიული',
+        'კონტენტის მართვის სისტემა (CMS)',
+        'ბლოგის სექცია',
+        'მრავალენოვანი მხარდაჭერა',
+        'სრული SEO ოპტიმიზაცია',
+        'სოციალური მედიის ინტეგრაცია',
+      ],
+      notIncluded: [
+        'ონლაინ გადახდის სისტემა',
+      ],
+      marketPrice: '2,000-4,000',
       popular: true,
-      features: ['3-7 გვერდი', 'თანამედროვე დიზაინი', 'ადმინ პანელი', 'SEO ოპტიმიზაცია', 'მიწოდების ვადა (მაქს. 7 დღე)']
+      color: 'from-primary-500 to-primary-600',
+      bgColor: 'bg-primary-50 dark:bg-primary-900/20'
     },
     {
-      name: 'მასშტაბური პროექტები',
-      price: '3000-5000',
-      features: ['უსასრულო პროდუქტი', 'გადახდის სისტემა', 'ინვენტარის მართვა', 'ანალიტიკა', '14 დღიანი მიწოდება']
-    }
+      icon: <FaShoppingCart />,
+      name: 'E-Commerce',
+      price: '3,000-დან',
+      duration: '14-21 დღე',
+      description: 'სრული ფუნქციონალის ონლაინ მაღაზია',
+      features: [
+        'უსასრულო პროდუქტების დამატება',
+        'პროდუქტის ძიება და ფილტრაცია',
+        'კალათა და Checkout',
+        'შეკვეთების მართვა',
+        'გადახდის სისტემების ინტეგრაცია',
+        'ადმინ პანელი',
+        'ანალიტიკა და რეპორტები',
+      ],
+      notIncluded: [],
+      marketPrice: '4,000-6,000+',
+      color: 'from-purple-500 to-pink-500',
+      bgColor: 'bg-purple-50 dark:bg-purple-900/20'
+    },
   ]
 
   const faqs = [
@@ -472,66 +521,90 @@ const HomePage = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto items-start">
-            {pricingPreview.map((plan, index) => (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+            {services.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`relative bg-white dark:bg-gray-800 rounded-2xl p-6 lg:p-8 transition-all duration-300 hover:shadow-xl ${
-                  plan.popular 
-                    ? 'ring-2 ring-primary-500 shadow-lg md:-mt-4 md:mb-4' 
-                    : 'shadow-md hover:-translate-y-1'
+                className={`relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl ${
+                  service.popular 
+                    ? 'ring-2 ring-primary-500 shadow-xl lg:-mt-4 lg:mb-4' 
+                    : 'shadow-lg hover:-translate-y-2'
                 }`}
               >
-                {/* Popular Badge - Inside Card */}
-                {plan.popular && (
-                  <div className="mb-4">
-                    <span className="inline-flex items-center gap-1.5 bg-primary-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                      <span>⭐</span> რეკომენდებული
-                    </span>
+                {/* Top Gradient Bar */}
+                <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
+                
+                <div className="p-6 lg:p-8">
+                  {/* Popular Badge */}
+                  {service.popular && (
+                    <div className="mb-4">
+                      <span className="inline-flex items-center gap-1.5 bg-primary-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                        ⭐ რეკომენდებული
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Icon & Title */}
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className={`w-12 h-12 rounded-xl ${service.bgColor} flex items-center justify-center text-2xl bg-gradient-to-br ${service.color} text-white`}>
+                      {service.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white">{service.name}</h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{service.description}</p>
+                    </div>
                   </div>
-                )}
-                
-                {/* Plan Name */}
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">
-                  {plan.name}
-                </h3>
-                
-                {/* Price */}
-                <div className="mb-6">
-                  <span className="text-3xl sm:text-4xl font-bold text-primary-600 dark:text-primary-400">
-                    {plan.price}
-                  </span>
-                  <span className="text-gray-500 dark:text-gray-400 ml-1">₾</span>
+
+                  {/* Price */}
+                  <div className="mb-6 pb-6 border-b border-gray-100 dark:border-gray-700">
+                    <div className="flex items-baseline gap-2">
+                      <span className={`text-4xl font-bold bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>
+                        {service.price}
+                      </span>
+                      {service.price !== 'მოლაპარაკებით' && (
+                        <span className="text-gray-500">₾</span>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-4 mt-2 text-sm">
+                      <span className="text-gray-500">⏱️ {service.duration}</span>
+                      {service.marketPrice && (
+                        <span className="text-red-400 line-through text-xs">ბაზარზე: {service.marketPrice}₾</span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Features */}
+                  <div className="space-y-3 mb-6">
+                    {service.features.map((feature, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <FaCheck className="text-green-500 mt-1 flex-shrink-0 text-sm" />
+                        <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
+                      </div>
+                    ))}
+                    {service.notIncluded.map((feature, i) => (
+                      <div key={i} className="flex items-start gap-3 opacity-50">
+                        <FaTimes className="text-gray-400 mt-1 flex-shrink-0 text-sm" />
+                        <span className="text-sm text-gray-400 line-through">{feature}</span>
                 </div>
-                
-                {/* Divider */}
-                <div className="h-px bg-gray-200 dark:bg-gray-700 mb-6"></div>
-                
-                {/* Features */}
-                <ul className="space-y-3 mb-6">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <FaCheck className="text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                {/* Button */}
+                    ))}
+                  </div>
+
+                  {/* Button */}
                 <Link
-                  href="/services"
-                  className={`block w-full text-center py-3 rounded-lg font-semibold transition-all duration-300 ${
-                    plan.popular
-                      ? 'bg-primary-600 text-white hover:bg-primary-700'
-                      : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'
-                  }`}
-                >
-                  შეიტყვეთ მეტი
+                    href="/contact"
+                    className={`block w-full text-center py-3 rounded-xl font-semibold transition-all duration-300 ${
+                      service.popular
+                        ? `bg-gradient-to-r ${service.color} text-white hover:shadow-lg hover:scale-105`
+                        : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'
+                    }`}
+                  >
+                    დაიწყე ახლავე
                 </Link>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -647,10 +720,10 @@ const HomePage = () => {
               <span className="text-5xl">🚀</span>
             </motion.div>
             
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
               მზად ხართ დასაწყებად?
             </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-primary-100 dark:text-primary-200 mb-6 sm:mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
               დაგვიკავშირდით დღესვე და მიიღეთ უფასო კონსულტაცია თქვენი პროექტის შესახებ
             </p>
             
@@ -683,4 +756,3 @@ const HomePage = () => {
 }
 
 export default HomePage
-
