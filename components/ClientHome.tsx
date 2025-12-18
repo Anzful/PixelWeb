@@ -7,6 +7,12 @@ import { SiNextdotjs, SiTailwindcss, SiTypescript } from 'react-icons/si'
 import Link from 'next/link'
 import PageTransition from '@/components/PageTransition'
 
+declare global {
+  interface Window {
+    reportConversion?: (url?: string) => void
+  }
+}
+
 // Animated counter component
 const AnimatedCounter = ({ end, duration = 2000 }: { end: number; duration?: number }) => {
   const [count, setCount] = useState(0)

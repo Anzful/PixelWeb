@@ -5,6 +5,12 @@ import { motion } from 'framer-motion'
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebook, FaInstagram, FaLinkedin, FaPaperPlane } from 'react-icons/fa'
 import PageTransition from '@/components/PageTransition'
 
+declare global {
+  interface Window {
+    reportConversion?: (url?: string) => void
+  }
+}
+
 const ClientContact = () => {
   const [formData, setFormData] = useState({
     name: '',
