@@ -7,6 +7,9 @@ import { FaCalendar, FaUser, FaArrowRight } from 'react-icons/fa'
 export const metadata: Metadata = {
   title: 'ბლოგი | სასარგებლო რჩევები ვებსაიტებზე | PixelWeb',
   description: 'გაიგეთ მეტი საიტის დამზადების, SEO ოპტიმიზაციის და ციფრული მარკეტინგის შესახებ ჩვენს ბლოგზე.',
+  alternates: {
+    canonical: 'https://pixelweb.ge/blog',
+  },
 }
 
 // Sample blog data (In a real app, this would come from a CMS or MDX files)

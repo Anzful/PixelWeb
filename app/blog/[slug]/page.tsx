@@ -75,7 +75,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: `${post.title} | PixelWeb Blog`,
     description: post.content.substring(0, 160).replace(/<[^>]*>?/gm, ''), // Strip HTML tags for description
-    keywords: post.keywords
+    keywords: post.keywords,
+    alternates: {
+      canonical: `https://pixelweb.ge/blog/${params.slug}`,
+    },
   }
 }
 

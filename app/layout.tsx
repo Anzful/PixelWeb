@@ -17,9 +17,6 @@ export const metadata: Metadata = {
   keywords: 'საიტის დამზადება, ვებსაიტის შექმნა, საიტის გაკეთება, ვებ დეველოპმენტი, საქართველო, ხელმისაწვდომი ფასები, PixelWeb',
   authors: [{ name: 'PixelWeb.ge' }],
   metadataBase: new URL('https://pixelweb.ge'),
-  alternates: {
-    canonical: '/',
-  },
   openGraph: {
     title: 'PixelWeb.ge - საიტის დამზადება და ვებსაიტების შექმნა საქართველოში',
     description: 'ვებსაიტების დამზადება, საიტის გაკეთება და თანამედროვე ვებგვერდები ხელმისაწვდომ ფასად.',
