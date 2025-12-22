@@ -81,7 +81,7 @@ const ClientHome = () => {
 
   const stats = [
     { number: 30, suffix: '%', label: 'იაფი ბაზართან შედარებით' },
-    { number: 10, suffix: '+', label: 'დასრულებული პროექტი' },
+    { number: 11, suffix: '+', label: 'დასრულებული პროექტი' },
     { number: 100, suffix: '%', label: 'კმაყოფილი კლიენტები' }
   ]
 

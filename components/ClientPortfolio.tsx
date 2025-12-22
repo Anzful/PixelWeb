@@ -13,6 +13,16 @@ const ClientPortfolio = () => {
 
   const projects = [
     {
+      id: 11,
+      title: 'DecoConcept - საღებავებისა და მოსაპირკეთებელი მასალების მაღაზია',
+      category: 'ecommerce',
+      images: ['/images/decoconcept1.png', '/images/decoconcept2.png', '/images/decoconcept3.png'],
+      description: 'საღებავებისა და მოსაპირკეთებელი მასალების პრემიუმ მაღაზიის ვებსაიტი საქართველოში.',
+      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
+      features: ['პროდუქციის კატალოგი', 'თანამედროვე დიზაინი', 'სრულიად რესპონსიული', 'SEO ოპტიმიზაცია'],
+      liveUrl: 'https://decoconcept.ge'
+    },
+    {
       id: 1,
       title: 'AndCook - რეცეპტების აპლიკაცია',
       category: 'mobile',
@@ -162,7 +172,7 @@ const ClientPortfolio = () => {
               transition={{ duration: 0.4 }}
               viewport={{ once: true }}
             >
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-1 sm:mb-2">10+</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-1 sm:mb-2">11+</div>
               <div className="text-xs sm:text-sm md:text-base text-gray-600">დასრულებული პროექტი</div>
             </motion.div>
             <motion.div
