@@ -272,62 +272,81 @@ const ClientHome = () => {
           <FaShieldAlt />
         </motion.div>
 
-        {/* Floating Agency Status Card - Realistic & Professional */}
+        {/* Floating iPhone Mockup - Ultra-Realistic & Polished */}
         <motion.div
-          className="absolute top-32 right-[4%] hidden xl:block pointer-events-none"
-          initial={{ opacity: 0, x: 30 }}
+          className="absolute top-32 right-[6%] hidden xl:block pointer-events-none"
+          initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
         >
           <motion.div
             animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl rounded-[2rem] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100/50 dark:border-gray-800/50 w-[280px]"
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+            className="relative w-[145px] h-[290px] bg-[#08090a] rounded-[2.2rem] p-[5px] shadow-[0_20px_50px_rgba(0,0,0,0.2)] ring-1 ring-white/10 overflow-hidden"
           >
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-primary-600 to-primary-700 flex items-center justify-center text-white shadow-lg shadow-primary-600/30">
-                  <span className="font-bold text-xl">P</span>
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-gray-900 dark:text-white">PixelWeb სააგენტო</div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                    <span className="text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">ვერიფიცირებული</span>
+            {/* Inner Bezels */}
+            <div className="absolute inset-0 border-[2px] border-[#1a1c1e] rounded-[2.2rem] z-10 pointer-events-none"></div>
+            
+            {/* Dynamic Island */}
+            <div className="absolute top-2 left-1/2 -translate-x-1/2 w-11 h-3.5 bg-black rounded-full z-30 shadow-inner"></div>
+            
+            {/* Screen Content */}
+            <div className="h-full bg-white dark:bg-gray-900 rounded-[1.85rem] overflow-hidden flex flex-col relative z-20">
+              {/* Header */}
+              <div className="pt-5 px-3 flex justify-between items-center mb-4">
+                <div className="text-[6px] font-black text-primary-600 tracking-tighter">PixelWeb</div>
+                <div className="flex items-center gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_5px_rgba(251,191,36,0.5)]"></div>
+                  <div className="flex flex-col gap-0.5">
+                    <div className="w-2.5 h-[1px] bg-gray-400 rounded-full"></div>
+                    <div className="w-2.5 h-[1px] bg-gray-400 rounded-full"></div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="space-y-3">
-              <div className="bg-gray-50/50 dark:bg-gray-800/50 rounded-2xl p-4 border border-gray-100/50 dark:border-gray-700/50 flex items-center justify-between">
-                <div>
-                  <div className="text-[9px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mb-0.5">პროექტები</div>
-                  <div className="text-base font-bold text-gray-900 dark:text-white">11+ დასრულებული</div>
+              {/* Mobile Hero */}
+              <div className="px-2 text-center flex-1">
+                <div className="text-[8px] font-black text-gray-900 dark:text-white leading-[1.1] mb-0.5 tracking-tight">პროფესიონალური ვებსაიტები</div>
+                <div className="text-[8px] font-black text-primary-600 leading-[1.1] mb-2 tracking-tight">ხელმისაწვდომ ფასად</div>
+                
+                {/* Visual Content Placeholder (Image-like) */}
+                <div className="mx-auto w-[90%] h-16 bg-gradient-to-br from-primary-50 to-indigo-50 dark:from-gray-800 dark:to-primary-900/20 rounded-xl border border-primary-100/50 dark:border-primary-800/50 mb-3 flex items-center justify-center overflow-hidden">
+                  <div className="w-6 h-6 rounded-full bg-white/50 dark:bg-white/5 flex items-center justify-center">
+                    <FaRocket className="text-primary-500 text-[8px]" />
+                  </div>
                 </div>
-                <div className="w-8 h-8 rounded-lg bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center text-primary-600">
-                  <FaRocket className="text-xs" />
+
+                {/* Real Stats Horizontal */}
+                <div className="grid grid-cols-2 gap-1 mb-3 px-1">
+                  <div className="bg-gray-50 dark:bg-gray-800/50 p-1.5 rounded-lg border border-gray-100 dark:border-gray-800">
+                    <div className="text-[7px] font-black text-primary-600">30%</div>
+                    <div className="text-[3.5px] text-gray-400 uppercase font-bold tracking-tighter">იაფი ფასი</div>
+                  </div>
+                  <div className="bg-gray-50 dark:bg-gray-800/50 p-1.5 rounded-lg border border-gray-100 dark:border-gray-800">
+                    <div className="text-[7px] font-black text-primary-600">11+</div>
+                    <div className="text-[3.5px] text-gray-400 uppercase font-bold tracking-tighter">პროექტი</div>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="space-y-1 px-1">
+                  <div className="bg-primary-600 h-3 w-full rounded-md flex items-center justify-center shadow-sm shadow-primary-600/20">
+                    <span className="text-[4px] text-white font-black uppercase tracking-wider">სერვისები →</span>
+                  </div>
+                  <div className="border border-primary-600 h-3 w-full rounded-md flex items-center justify-center">
+                    <span className="text-[4px] text-primary-600 font-black uppercase tracking-wider">პორტფოლიო</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="bg-gray-50/50 dark:bg-gray-800/50 rounded-2xl p-4 border border-gray-100/50 dark:border-gray-700/50 flex items-center justify-between">
-                <div>
-                  <div className="text-[9px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mb-0.5">წარმატება</div>
-                  <div className="text-base font-bold text-gray-900 dark:text-white">100% გარანტია</div>
+              {/* Bottom Navigation / Contact Bar - FIXED DARK SPOTS */}
+              <div className="mt-auto p-2 flex gap-1.5 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 relative z-30">
+                <div className="flex-1 bg-[#25D366] h-4 rounded-lg flex items-center justify-center gap-1 shadow-sm shadow-green-500/20">
+                  <span className="text-[4px] text-white font-black">WhatsApp</span>
                 </div>
-                <div className="w-8 h-8 rounded-lg bg-accent-50 dark:bg-accent-900/30 flex items-center justify-center text-accent-500">
-                  <FaCheck className="text-xs" />
+                <div className="flex-1 bg-primary-600 h-4 rounded-lg flex items-center justify-center gap-1 shadow-sm shadow-primary-600/20">
+                  <span className="text-[4px] text-white font-black">დარეკვა</span>
                 </div>
-              </div>
-            </div>
-
-            <div className="mt-5 pt-5 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
-              <div className="text-[11px] font-bold text-gray-600 dark:text-gray-300 flex items-center gap-2">
-                <span className="text-primary-600 text-lg leading-none">★</span>
-                ხარისხი გარანტირებულია
-              </div>
-              <div className="text-[10px] font-bold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 px-2 py-1 rounded-md">
-                -30% ფასი
               </div>
             </div>
           </motion.div>
