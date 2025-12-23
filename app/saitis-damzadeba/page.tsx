@@ -33,8 +33,8 @@ export default function SaitisDamzadebaPage() {
               მიიღეთ <strong>თანამედროვე</strong>, <strong>სწრაფი</strong> და <strong>SEO-ზე მორგებული</strong> ვებგვერდი.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
+            <Link
+              href="/contact"
                 className="bg-primary-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary-500 transition-all shadow-lg hover:shadow-primary-500/30 hover:-translate-y-1"
               >
                 უფასო კონსულტაცია
@@ -42,9 +42,9 @@ export default function SaitisDamzadebaPage() {
               <Link
                 href="#prices"
                 className="bg-white/10 backdrop-blur-sm text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all"
-              >
+            >
                 იხილეთ ფასები
-              </Link>
+            </Link>
             </div>
           </div>
         </section>
@@ -221,12 +221,12 @@ export default function SaitisDamzadebaPage() {
               დაგვიკავშირდით და მიიღეთ უფასო კონსულტაცია. ჩვენ დაგეხმარებით საუკეთესო გადაწყვეტილების მიღებაში.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link
-                href="/contact"
+            <Link
+              href="/contact"
                 className="bg-white text-primary-700 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all shadow-xl hover:scale-105"
-              >
+            >
                 მოგვწერეთ
-              </Link>
+            </Link>
               <a
                 href="tel:+995591410914"
                 className="bg-primary-800 text-white px-8 py-4 rounded-xl font-bold hover:bg-primary-900 transition-all border border-primary-600"

@@ -193,23 +193,6 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                 {project.description}
               </p>
 
-              {/* Technologies */}
-              <div className="mb-3 sm:mb-4 md:mb-6">
-                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-2.5 md:mb-3">
-                  გამოყენებული ტექნოლოგიები
-                </h3>
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {project.technologies.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="text-xs sm:text-sm bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full whitespace-nowrap"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
               {/* Features */}
               <div>
                 <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-2.5 md:mb-3">

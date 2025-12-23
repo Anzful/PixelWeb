@@ -2,8 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { FaCode, FaRocket, FaMobile, FaCheck, FaArrowRight, FaFileAlt, FaBriefcase, FaShoppingCart, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaMoneyBillWave, FaClock, FaPalette, FaTimes, FaChevronDown } from 'react-icons/fa'
-import { SiNextdotjs, SiTailwindcss, SiTypescript } from 'react-icons/si'
+import { FaCode, FaRocket, FaMobile, FaCheck, FaArrowRight, FaFileAlt, FaBriefcase, FaShoppingCart, FaMoneyBillWave, FaClock, FaPalette, FaTimes, FaChevronDown, FaGlobe, FaShieldAlt, FaChartLine, FaLaptopCode, FaMousePointer, FaChartBar } from 'react-icons/fa'
 import Link from 'next/link'
 import PageTransition from '@/components/PageTransition'
 
@@ -236,86 +235,101 @@ const ClientHome = () => {
           }}
         />
 
-        {/* Floating Tech Icons */}
+        {/* Floating Decorative Icons - More Business Suited */}
         <motion.div
-          className="absolute top-20 left-[5%] text-4xl text-orange-500/60 dark:text-orange-400/40 hidden lg:block"
+          className="absolute top-20 left-[5%] text-4xl text-primary-500/40 dark:text-primary-400/30 hidden lg:block"
           animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         >
-          <FaHtml5 />
+          <FaGlobe />
         </motion.div>
         <motion.div
-          className="absolute top-32 right-[8%] text-4xl text-blue-500/60 dark:text-blue-400/40 hidden lg:block"
+          className="absolute top-32 right-[8%] text-4xl text-accent-500/40 dark:text-accent-400/30 hidden lg:block"
           animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         >
-          <FaCss3Alt />
+          <FaChartLine />
         </motion.div>
         <motion.div
-          className="absolute top-48 left-[10%] text-4xl text-cyan-500/60 dark:text-cyan-400/40 hidden lg:block"
+          className="absolute top-48 left-[10%] text-4xl text-primary-400/40 dark:text-primary-300/20 hidden lg:block"
           animate={{ y: [0, 12, 0], x: [0, 5, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         >
-          <FaReact />
+          <FaMousePointer />
         </motion.div>
         <motion.div
-          className="absolute bottom-32 right-[12%] text-4xl text-black/40 dark:text-white/30 hidden lg:block"
+          className="absolute bottom-32 right-[12%] text-4xl text-gray-400/30 dark:text-white/20 hidden lg:block"
           animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
         >
-          <SiNextdotjs />
+          <FaLaptopCode />
         </motion.div>
         <motion.div
-          className="absolute bottom-48 left-[7%] text-4xl text-green-500/60 dark:text-green-400/40 hidden lg:block"
+          className="absolute bottom-48 left-[7%] text-4xl text-green-500/30 dark:text-green-400/20 hidden lg:block"
           animate={{ y: [0, 10, 0], x: [0, -5, 0] }}
           transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
         >
-          <FaNodeJs />
-        </motion.div>
-        <motion.div
-          className="absolute top-40 right-[15%] text-3xl text-cyan-400/60 dark:text-cyan-300/40 hidden lg:block"
-          animate={{ y: [0, -8, 0], rotate: [0, -5, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
-        >
-          <SiTailwindcss />
-        </motion.div>
-        <motion.div
-          className="absolute bottom-40 right-[5%] text-3xl text-blue-600/60 dark:text-blue-400/40 hidden lg:block"
-          animate={{ y: [0, 12, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-        >
-          <SiTypescript />
+          <FaShieldAlt />
         </motion.div>
 
-        {/* Floating Code Snippet */}
+        {/* Floating Agency Status Card - Realistic & Professional */}
         <motion.div
-          className="absolute top-28 right-[3%] hidden xl:block pointer-events-none"
-          initial={{ opacity: 0, x: 50 }}
+          className="absolute top-32 right-[4%] hidden xl:block pointer-events-none"
+          initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="bg-gray-900/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-4 shadow-2xl border border-gray-700/50"
+            animate={{ y: [0, -12, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl rounded-[2rem] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100/50 dark:border-gray-800/50 w-[280px]"
           >
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              <span className="text-gray-400 text-xs ml-2">index.tsx</span>
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-primary-600 to-primary-700 flex items-center justify-center text-white shadow-lg shadow-primary-600/30">
+                  <span className="font-bold text-xl">P</span>
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-gray-900 dark:text-white">PixelWeb სააგენტო</div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                    <span className="text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">ვერიფიცირებული</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <pre className="text-xs font-mono">
-              <code>
-                <span className="text-purple-400">const</span> <span className="text-blue-300">Website</span> <span className="text-white">=</span> <span className="text-yellow-300">()</span> <span className="text-purple-400">=&gt;</span> <span className="text-yellow-300">{'{'}</span>{'\n'}
-                {'  '}<span className="text-purple-400">return</span> <span className="text-yellow-300">(</span>{'\n'}
-                {'    '}<span className="text-gray-400">&lt;</span><span className="text-green-400">div</span><span className="text-gray-400">&gt;</span>{'\n'}
-                {'      '}<span className="text-orange-300">✨ თქვენი საიტი</span>{'\n'}
-                {'    '}<span className="text-gray-400">&lt;/</span><span className="text-green-400">div</span><span className="text-gray-400">&gt;</span>{'\n'}
-                {'  '}<span className="text-yellow-300">)</span>{'\n'}
-                <span className="text-yellow-300">{'}'}</span>
-              </code>
-            </pre>
+
+            <div className="space-y-3">
+              <div className="bg-gray-50/50 dark:bg-gray-800/50 rounded-2xl p-4 border border-gray-100/50 dark:border-gray-700/50 flex items-center justify-between">
+                <div>
+                  <div className="text-[9px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mb-0.5">პროექტები</div>
+                  <div className="text-base font-bold text-gray-900 dark:text-white">11+ დასრულებული</div>
+                </div>
+                <div className="w-8 h-8 rounded-lg bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center text-primary-600">
+                  <FaRocket className="text-xs" />
+                </div>
+              </div>
+
+              <div className="bg-gray-50/50 dark:bg-gray-800/50 rounded-2xl p-4 border border-gray-100/50 dark:border-gray-700/50 flex items-center justify-between">
+                <div>
+                  <div className="text-[9px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mb-0.5">წარმატება</div>
+                  <div className="text-base font-bold text-gray-900 dark:text-white">100% გარანტია</div>
+                </div>
+                <div className="w-8 h-8 rounded-lg bg-accent-50 dark:bg-accent-900/30 flex items-center justify-center text-accent-500">
+                  <FaCheck className="text-xs" />
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-5 pt-5 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+              <div className="text-[11px] font-bold text-gray-600 dark:text-gray-300 flex items-center gap-2">
+                <span className="text-primary-600 text-lg leading-none">★</span>
+                ხარისხი გარანტირებულია
+              </div>
+              <div className="text-[10px] font-bold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 px-2 py-1 rounded-md">
+                -30% ფასი
+              </div>
+            </div>
           </motion.div>
         </motion.div>
 
@@ -360,22 +374,8 @@ const ClientHome = () => {
                 <div className="text-[7px] font-bold text-gray-800 dark:text-white mb-1">პროფესიონალური</div>
                 <div className="text-[7px] font-bold text-primary-600 dark:text-primary-400 mb-2">ვებსაიტები</div>
                 <div className="flex gap-1">
-                  <motion.div 
-                    className="bg-primary-600 text-white text-[5px] px-1.5 py-0.5 rounded"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 1.5 }}
-                  >
-                    სერვისები
-                  </motion.div>
-                  <motion.div 
-                    className="border border-primary-600 text-primary-600 text-[5px] px-1.5 py-0.5 rounded"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 1.7 }}
-                  >
-                    პორტფოლიო
-                  </motion.div>
+                  <div className="bg-primary-600 text-white text-[5px] px-1.5 py-0.5 rounded">სერვისები</div>
+                  <div className="border border-primary-600 text-primary-600 text-[5px] px-1.5 py-0.5 rounded">პორტფოლიო</div>
                 </div>
               </motion.div>
               {/* Mini Stats */}
@@ -390,7 +390,7 @@ const ClientHome = () => {
                   <div className="text-[5px] text-gray-500">იაფი</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-[8px] font-bold text-primary-600 dark:text-primary-400">10+</div>
+                  <div className="text-[8px] font-bold text-primary-600 dark:text-primary-400">11+</div>
                   <div className="text-[5px] text-gray-500">პროექტი</div>
                 </div>
                 <div className="text-center">

@@ -255,7 +255,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <ScrollToTopButton />
-        <StickyContactBar />
+          <StickyContactBar />
         <TawkTo />
         <Analytics />
       </ThemeProvider>

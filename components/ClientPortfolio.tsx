@@ -251,18 +251,6 @@ const ClientPortfolio = () => {
                     {project.description}
                   </p>
 
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
-                    {project.technologies.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="text-xs bg-primary-50 text-primary-700 px-2.5 sm:px-3 py-1 rounded-full hover:bg-primary-100 transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
                   {/* Features */}
                   <div>
                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
