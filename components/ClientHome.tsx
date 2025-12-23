@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { useState, useEffect, useRef, memo } from 'react'
+import { motion, useInView, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { FaCode, FaRocket, FaMobile, FaCheck, FaArrowRight, FaFileAlt, FaBriefcase, FaShoppingCart, FaMoneyBillWave, FaClock, FaPalette, FaTimes, FaChevronDown, FaGlobe, FaShieldAlt, FaChartLine, FaLaptopCode, FaMousePointer, FaChartBar } from 'react-icons/fa'
 import Link from 'next/link'
 import PageTransition from '@/components/PageTransition'
@@ -44,7 +44,57 @@ const AnimatedCounter = ({ end, duration = 2000 }: { end: number; duration?: num
   return <span ref={ref}>{count}</span>
 }
 
+// Animated stat component
+const AnimatedStat = ({ number, suffix, label }: { number: number; suffix: string; label: string }) => {
+  return (
+    <div className="text-center">
+      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-1 sm:mb-2">
+        <AnimatedCounter end={number} />{suffix}
+      </div>
+      <div className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">{label}</div>
+    </div>
+  )
+}
+
 const ClientHome = () => {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Smooth out the mouse movement
+  const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
+  const springY = useSpring(mouseY, { stiffness: 50, damping: 20 });
+
+  // Parallax transforms for various elements
+  const bg1X = useTransform(springX, (val) => val * 0.2);
+  const bg1Y = useTransform(springY, (val) => val * 0.2);
+  const bg2X = useTransform(springX, (val) => val * -0.3);
+  const bg2Y = useTransform(springY, (val) => val * -0.3);
+  
+  const icon1X = useTransform(springX, (val) => val * 0.5);
+  const icon2X = useTransform(springX, (val) => val * -0.4);
+  const icon3X = useTransform(springX, (val) => val * 0.3);
+  const icon3Y = useTransform(springY, (val) => val * 0.3);
+  const icon4X = useTransform(springX, (val) => val * 0.4);
+  const icon5X = useTransform(springX, (val) => val * -0.5);
+
+  const phoneY = useTransform(springY, (val) => val * 0.8);
+  const phoneRotateX = useTransform(springY, (val) => val * -0.1);
+  const phoneRotateY = useTransform(springX, (val) => val * 0.1);
+
+  const macY = useTransform(springY, (val) => val * -0.6);
+  const macRotateX = useTransform(springY, (val) => val * 0.05);
+  const macRotateY = useTransform(springX, (val) => val * -0.05);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      // Calculate position relative to center
+      mouseX.set((e.clientX / window.innerWidth - 0.5) * 20);
+      mouseY.set((e.clientY / window.innerHeight - 0.5) * 20);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [mouseX, mouseY]);
+
   const features = [
     {
       icon: <FaMoneyBillWave className="text-4xl text-primary-600 dark:text-primary-400" />,
@@ -177,96 +227,96 @@ const ClientHome = () => {
 
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
-  // Animated stat component
-  const AnimatedStat = ({ number, suffix, label }: { number: number; suffix: string; label: string }) => {
-    return (
-      <div className="text-center">
-        <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-1 sm:mb-2">
-          <AnimatedCounter end={number} />{suffix}
-        </div>
-        <div className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">{label}</div>
-      </div>
-    )
-  }
-
   return (
     <PageTransition>
       <div className="min-h-screen">
         {/* Hero Section */}
-      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 bg-gradient-to-br from-primary-50 via-white to-accent-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden transition-colors duration-300">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        {/* Animated decorative gradient orbs */}
-        <motion.div 
-          className="pointer-events-none absolute -top-10 -left-10 w-72 h-72 rounded-full bg-primary-400/25 blur-3xl"
-          animate={{ 
-            x: [0, 30, 0],
-            y: [0, 20, 0],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{ 
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div 
-          className="pointer-events-none absolute bottom-0 right-0 w-80 h-80 rounded-full bg-accent-400/25 blur-3xl"
-          animate={{ 
-            x: [0, -20, 0],
-            y: [0, -30, 0],
-            scale: [1, 1.15, 1]
-          }}
-          transition={{ 
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div 
-          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-primary-300/10 dark:bg-primary-400/5 blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3]
-          }}
-          transition={{ 
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 bg-white dark:bg-gray-950 overflow-hidden transition-colors duration-300">
+        {/* Enhanced Animated Background Mesh */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <motion.div 
+            style={{ 
+              x: bg1X,
+              y: bg1Y,
+            }}
+            animate={{ 
+              scale: [1, 1.2, 1],
+              rotate: [0, 45, 0],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-1/4 -left-1/4 w-full h-full bg-gradient-to-br from-primary-200/40 to-transparent dark:from-primary-900/20 rounded-full blur-[120px] will-change-transform" 
+          />
+          <motion.div 
+            style={{ 
+              x: bg2X,
+              y: bg2Y,
+            }}
+            animate={{ 
+              scale: [1, 1.3, 1],
+              rotate: [0, -45, 0],
+              opacity: [0.2, 0.4, 0.2],
+            }}
+            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            className="absolute -bottom-1/4 -right-1/4 w-full h-full bg-gradient-to-tl from-accent-200/30 to-transparent dark:from-accent-900/10 rounded-full blur-[120px] will-change-transform" 
+          />
+        </div>
 
-        {/* Floating Decorative Icons - More Business Suited */}
+        {/* Floating Decorative Icons - More Business Suited & Reactive */}
         <motion.div
-          className="absolute top-20 left-[5%] text-4xl text-primary-500/40 dark:text-primary-400/30 hidden lg:block"
-          animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
+          className="absolute top-20 left-[5%] text-4xl text-primary-500/40 dark:text-primary-400/30 hidden lg:block will-change-transform"
+          style={{ x: icon1X }}
+          animate={{ 
+            y: [0, -15, 0], 
+            rotate: [0, 10, 0],
+          }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         >
           <FaGlobe />
         </motion.div>
         <motion.div
-          className="absolute top-32 right-[8%] text-4xl text-accent-500/40 dark:text-accent-400/30 hidden lg:block"
-          animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
+          className="absolute top-32 right-[8%] text-4xl text-accent-500/40 dark:text-accent-400/30 hidden lg:block will-change-transform"
+          style={{ x: icon2X }}
+          animate={{ 
+            y: [0, 15, 0], 
+            rotate: [0, -10, 0],
+          }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         >
           <FaChartLine />
         </motion.div>
         <motion.div
-          className="absolute top-48 left-[10%] text-4xl text-primary-400/40 dark:text-primary-300/20 hidden lg:block"
-          animate={{ y: [0, 12, 0], x: [0, 5, 0] }}
+          className="absolute top-48 left-[10%] text-4xl text-primary-400/40 dark:text-primary-300/20 hidden lg:block will-change-transform"
+          style={{ 
+            x: icon3X,
+            y: icon3Y
+          }}
+          animate={{ 
+            y: [0, 12, 0], 
+            x: [0, 5, 0],
+          }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         >
           <FaMousePointer />
         </motion.div>
         <motion.div
-          className="absolute bottom-32 right-[12%] text-4xl text-gray-400/30 dark:text-white/20 hidden lg:block"
-          animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
+          className="absolute bottom-32 right-[12%] text-4xl text-gray-400/30 dark:text-white/20 hidden lg:block will-change-transform"
+          style={{ x: icon4X }}
+          animate={{ 
+            y: [0, -10, 0], 
+            rotate: [0, 5, 0],
+          }}
           transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
         >
           <FaLaptopCode />
         </motion.div>
         <motion.div
-          className="absolute bottom-48 left-[7%] text-4xl text-green-500/30 dark:text-green-400/20 hidden lg:block"
-          animate={{ y: [0, 10, 0], x: [0, -5, 0] }}
+          className="absolute bottom-48 left-[7%] text-4xl text-green-500/30 dark:text-green-400/20 hidden lg:block will-change-transform"
+          style={{ x: icon5X }}
+          animate={{ 
+            y: [0, 10, 0], 
+            x: [0, -5, 0],
+          }}
           transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
         >
           <FaShieldAlt />
@@ -274,15 +324,24 @@ const ClientHome = () => {
 
         {/* Floating iPhone Mockup - Ultra-Realistic & Polished */}
         <motion.div
-          className="absolute top-32 right-[6%] hidden xl:block pointer-events-none"
+          className="absolute top-32 right-[6%] hidden xl:block pointer-events-none will-change-transform"
           initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
+          animate={{ 
+            opacity: 1, 
+            x: 0,
+          }}
+          style={{ 
+            y: phoneY,
+            rotateX: phoneRotateX,
+            rotateY: phoneRotateY,
+          }}
           transition={{ duration: 0.8, delay: 0.7 }}
         >
           <motion.div
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
             className="relative w-[145px] h-[290px] bg-[#08090a] rounded-[2.2rem] p-[5px] shadow-[0_20px_50px_rgba(0,0,0,0.2)] ring-1 ring-white/10 overflow-hidden"
+            style={{ perspective: "1000px" }}
           >
             {/* Inner Bezels */}
             <div className="absolute inset-0 border-[2px] border-[#1a1c1e] rounded-[2.2rem] z-10 pointer-events-none"></div>
@@ -293,8 +352,8 @@ const ClientHome = () => {
             {/* Screen Content */}
             <div className="h-full bg-white dark:bg-gray-900 rounded-[1.85rem] overflow-hidden flex flex-col relative z-20">
               {/* Header */}
-              <div className="pt-5 px-3 flex justify-between items-center mb-4">
-                <div className="text-[6px] font-black text-primary-600 tracking-tighter">PixelWeb</div>
+              <div className="pt-5 px-3 flex justify-between items-center mb-3">
+                <div className="text-[7px] font-black text-primary-600 tracking-tighter">PixelWeb</div>
                 <div className="flex items-center gap-1.5">
                   <div className="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_5px_rgba(251,191,36,0.5)]"></div>
                   <div className="flex flex-col gap-0.5">
@@ -306,117 +365,131 @@ const ClientHome = () => {
 
               {/* Mobile Hero */}
               <div className="px-2 text-center flex-1">
-                <div className="text-[8px] font-black text-gray-900 dark:text-white leading-[1.1] mb-0.5 tracking-tight">პროფესიონალური ვებსაიტები</div>
-                <div className="text-[8px] font-black text-primary-600 leading-[1.1] mb-2 tracking-tight">ხელმისაწვდომ ფასად</div>
+                <div className="text-[10px] font-black text-gray-900 dark:text-white leading-[1.1] mb-0.5 tracking-tight">პროფესიონალური ვებსაიტები</div>
+                <div className="text-[10px] font-black text-primary-600 leading-[1.1] mb-3 tracking-tight">ხელმისაწვდომ ფასად</div>
                 
-                {/* Visual Content Placeholder (Image-like) */}
-                <div className="mx-auto w-[90%] h-16 bg-gradient-to-br from-primary-50 to-indigo-50 dark:from-gray-800 dark:to-primary-900/20 rounded-xl border border-primary-100/50 dark:border-primary-800/50 mb-3 flex items-center justify-center overflow-hidden">
-                  <div className="w-6 h-6 rounded-full bg-white/50 dark:bg-white/5 flex items-center justify-center">
-                    <FaRocket className="text-primary-500 text-[8px]" />
-                  </div>
+                {/* Visual Content Placeholder */}
+                <div className="mx-auto w-[90%] h-14 bg-gradient-to-br from-primary-50 to-indigo-50 dark:from-gray-800 dark:to-primary-900/20 rounded-xl border border-primary-100/50 dark:border-primary-800/50 mb-3 flex items-center justify-center overflow-hidden">
+                  <FaRocket className="text-primary-500 text-[10px]" />
                 </div>
 
                 {/* Real Stats Horizontal */}
                 <div className="grid grid-cols-2 gap-1 mb-3 px-1">
                   <div className="bg-gray-50 dark:bg-gray-800/50 p-1.5 rounded-lg border border-gray-100 dark:border-gray-800">
-                    <div className="text-[7px] font-black text-primary-600">30%</div>
-                    <div className="text-[3.5px] text-gray-400 uppercase font-bold tracking-tighter">იაფი ფასი</div>
+                    <div className="text-[9px] font-black text-primary-600">30%</div>
+                    <div className="text-[4.5px] text-gray-400 uppercase font-bold tracking-tighter">იაფი ფასი</div>
                   </div>
                   <div className="bg-gray-50 dark:bg-gray-800/50 p-1.5 rounded-lg border border-gray-100 dark:border-gray-800">
-                    <div className="text-[7px] font-black text-primary-600">11+</div>
-                    <div className="text-[3.5px] text-gray-400 uppercase font-bold tracking-tighter">პროექტი</div>
+                    <div className="text-[9px] font-black text-primary-600">11+</div>
+                    <div className="text-[4.5px] text-gray-400 uppercase font-bold tracking-tighter">პროექტი</div>
                   </div>
                 </div>
 
                 {/* Action Buttons */}
                 <div className="space-y-1 px-1">
-                  <div className="bg-primary-600 h-3 w-full rounded-md flex items-center justify-center shadow-sm shadow-primary-600/20">
-                    <span className="text-[4px] text-white font-black uppercase tracking-wider">სერვისები →</span>
+                  <div className="bg-primary-600 h-4 w-full rounded-md flex items-center justify-center shadow-sm shadow-primary-600/20">
+                    <span className="text-[5px] text-white font-black uppercase tracking-wider">სერვისები →</span>
                   </div>
-                  <div className="border border-primary-600 h-3 w-full rounded-md flex items-center justify-center">
-                    <span className="text-[4px] text-primary-600 font-black uppercase tracking-wider">პორტფოლიო</span>
+                  <div className="border border-primary-600 h-4 w-full rounded-md flex items-center justify-center">
+                    <span className="text-[5px] text-primary-600 font-black uppercase tracking-wider">პორტფოლიო</span>
                   </div>
                 </div>
               </div>
 
-              {/* Bottom Navigation / Contact Bar - FIXED DARK SPOTS */}
+              {/* Bottom Navigation / Contact Bar */}
               <div className="mt-auto p-2 flex gap-1.5 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 relative z-30">
-                <div className="flex-1 bg-[#25D366] h-4 rounded-lg flex items-center justify-center gap-1 shadow-sm shadow-green-500/20">
-                  <span className="text-[4px] text-white font-black">WhatsApp</span>
+                <div className="flex-1 bg-[#25D366] h-5 rounded-lg flex items-center justify-center gap-1 shadow-sm shadow-green-500/20">
+                  <span className="text-[5px] text-white font-black">WhatsApp</span>
                 </div>
-                <div className="flex-1 bg-primary-600 h-4 rounded-lg flex items-center justify-center gap-1 shadow-sm shadow-primary-600/20">
-                  <span className="text-[4px] text-white font-black">დარეკვა</span>
+                <div className="flex-1 bg-primary-600 h-5 rounded-lg flex items-center justify-center gap-1 shadow-sm shadow-primary-600/20">
+                  <span className="text-[5px] text-white font-black">დარეკვა</span>
                 </div>
               </div>
             </div>
           </motion.div>
         </motion.div>
 
-        {/* Floating Browser Mockup with Real Content */}
+        {/* Floating MacBook Mockup - Refined & Scaled */}
         <motion.div
-          className="absolute bottom-20 left-[3%] hidden xl:block pointer-events-none"
+          className="absolute bottom-32 left-[5%] hidden xl:block pointer-events-none will-change-transform"
           initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          animate={{ 
+            opacity: 1, 
+            x: 0,
+          }}
+          style={{ 
+            y: macY,
+            rotateX: macRotateX,
+            rotateY: macRotateY,
+          }}
           transition={{ duration: 0.8, delay: 0.7 }}
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="bg-white dark:bg-gray-900 backdrop-blur-sm rounded-lg shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden w-72"
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            className="relative"
+            style={{ perspective: "1000px" }}
           >
-            {/* Browser Header */}
-            <div className="bg-gray-100 dark:bg-gray-800 px-3 py-2 flex items-center gap-2">
-              <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-              <div className="flex-1 bg-white dark:bg-gray-700 rounded text-[10px] px-2 py-1 text-gray-600 dark:text-gray-300 ml-2 flex items-center">
-                <span className="text-green-500 mr-1">🔒</span> pixelweb.ge
+            {/* MacBook Screen - Scaled Down */}
+            <div className="relative w-[280px] bg-[#08090a] rounded-xl p-[5px] shadow-2xl border border-white/10 overflow-hidden z-20">
+              {/* Screen Content */}
+              <div className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden flex flex-col">
+                {/* Browser Header */}
+                <div className="bg-gray-100 dark:bg-gray-800 px-3 py-1 flex items-center gap-1 border-b border-gray-200 dark:border-gray-700">
+                  <div className="flex gap-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#ff5f56]"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#ffbd2e]"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#27c93f]"></div>
+                  </div>
+                  <div className="flex-1 bg-white dark:bg-gray-700 rounded-sm text-[8px] py-0.5 px-2 text-gray-400 flex items-center gap-1 ml-2">
+                    <span className="text-[#27c93f] text-[7px]">🔒</span> pixelweb.ge
+                  </div>
+                </div>
+
+                {/* Website Content with Real Text */}
+                <div className="p-3 bg-gradient-to-br from-primary-50 to-white dark:from-gray-900 dark:to-gray-800 h-40">
+                  {/* Real Navbar */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="text-[11px] font-black text-primary-600 tracking-tighter">PixelWeb</div>
+                    <div className="flex gap-2 text-[6px] font-bold text-gray-400">
+                      <span>მთავარი</span>
+                      <span>სერვისები</span>
+                      <span>პორტფოლიო</span>
+                    </div>
+                  </div>
+                  
+                  {/* Hero Section */}
+                  <div className="text-center mt-4">
+                    <div className="text-[11px] font-black text-gray-900 dark:text-white leading-tight">პროფესიონალური ვებსაიტები</div>
+                    <div className="text-[11px] font-black text-primary-600 mb-3">ხელმისაწვდომ ფასად</div>
+                    
+                    {/* Real Buttons */}
+                    <div className="flex gap-2 justify-center mt-4">
+                      <div className="bg-primary-600 h-4 px-3 rounded-md flex items-center shadow-sm shadow-primary-600/20">
+                        <span className="text-[5px] text-white font-black uppercase tracking-wider">იხილეთ სერვისები</span>
+                      </div>
+                      <div className="border border-primary-600 h-4 px-3 rounded-md flex items-center">
+                        <span className="text-[5px] text-primary-600 font-black uppercase tracking-wider">ნახეთ პორტფოლიო</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+              {/* WebCam */}
+              <div className="absolute top-1 left-1/2 -translate-x-1/2 w-0.5 h-0.5 bg-white/20 rounded-full"></div>
             </div>
-            {/* Mini Website Content */}
-            <div className="p-3 bg-gradient-to-br from-primary-50 to-white dark:from-gray-900 dark:to-gray-800">
-              {/* Mini Navbar */}
-              <div className="flex items-center justify-between mb-3">
-                <div className="text-[8px] font-bold text-primary-600 dark:text-primary-400">PixelWeb</div>
-                <div className="flex gap-1">
-                  <div className="w-4 h-1 bg-gray-300 dark:bg-gray-600 rounded"></div>
-                  <div className="w-4 h-1 bg-gray-300 dark:bg-gray-600 rounded"></div>
-                  <div className="w-4 h-1 bg-gray-300 dark:bg-gray-600 rounded"></div>
-                </div>
+            
+            {/* MacBook Body - Better Perspective/Visibility */}
+            <div className="relative w-[320px] -ml-[20px] z-10">
+              {/* Main Base */}
+              <div className="h-[6px] bg-[#d1d5db] dark:bg-[#1f2123] rounded-t-sm rounded-b-lg shadow-xl relative overflow-hidden">
+                {/* Lip / Indent */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-14 h-1 bg-black/10 rounded-b-full"></div>
+                {/* Top Surface Shine */}
+                <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent"></div>
               </div>
-              {/* Mini Hero */}
-              <motion.div
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 }}
-              >
-                <div className="text-[7px] font-bold text-gray-800 dark:text-white mb-1">პროფესიონალური</div>
-                <div className="text-[7px] font-bold text-primary-600 dark:text-primary-400 mb-2">ვებსაიტები</div>
-                <div className="flex gap-1">
-                  <div className="bg-primary-600 text-white text-[5px] px-1.5 py-0.5 rounded">სერვისები</div>
-                  <div className="border border-primary-600 text-primary-600 text-[5px] px-1.5 py-0.5 rounded">პორტფოლიო</div>
-                </div>
-              </motion.div>
-              {/* Mini Stats */}
-              <motion.div 
-                className="flex justify-between mt-3 pt-2 border-t border-gray-200 dark:border-gray-700"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 2 }}
-              >
-                <div className="text-center">
-                  <div className="text-[8px] font-bold text-primary-600 dark:text-primary-400">30%</div>
-                  <div className="text-[5px] text-gray-500">იაფი</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-[8px] font-bold text-primary-600 dark:text-primary-400">11+</div>
-                  <div className="text-[5px] text-gray-500">პროექტი</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-[8px] font-bold text-primary-600 dark:text-primary-400">100%</div>
-                  <div className="text-[5px] text-gray-500">კმაყოფილი</div>
-                </div>
-              </motion.div>
+              {/* Side Perspective Thickness */}
+              <div className="h-[2px] bg-[#9ca3af] dark:bg-[#111213] mx-1 rounded-b-lg"></div>
             </div>
           </motion.div>
         </motion.div>
@@ -469,8 +542,8 @@ const ClientHome = () => {
       {/* Features Section - Enhanced */}
       <section className="py-12 sm:py-16 md:py-20 bg-white dark:bg-gray-900 transition-colors duration-300 relative overflow-hidden">
         {/* Background decoration */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-primary-100 dark:bg-primary-900/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-100 dark:bg-accent-900/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 opacity-50"></div>
+        <div className="absolute top-0 left-0 w-72 h-72 bg-primary-100 dark:bg-primary-900/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 opacity-50 pointer-events-none"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-100 dark:bg-accent-900/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 opacity-50 pointer-events-none"></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
@@ -716,12 +789,12 @@ const ClientHome = () => {
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            className="absolute top-0 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl"
+            className="absolute top-0 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl will-change-transform"
             animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl"
+            className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl will-change-transform"
             animate={{ y: [0, -20, 0], x: [0, -30, 0] }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           />
