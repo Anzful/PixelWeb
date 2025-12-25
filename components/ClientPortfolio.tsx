@@ -144,7 +144,7 @@ const ClientPortfolio = () => {
     <PageTransition>
       <div className="min-h-screen pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary-600 to-primary-700 dark:from-slate-950 dark:to-slate-900 text-white py-12 sm:py-16 md:py-20 relative overflow-hidden">
+        <section className="bg-gradient-to-br from-primary-600 to-primary-700 dark:from-gray-950 dark:to-gray-900 text-white py-12 sm:py-16 md:py-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div
@@ -164,7 +164,7 @@ const ClientPortfolio = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-8 sm:py-10 md:py-12 bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800">
+        <section className="py-8 sm:py-10 md:py-12 bg-transparent border-none">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-12 max-w-3xl mx-auto text-center">
               <motion.div
@@ -199,7 +199,7 @@ const ClientPortfolio = () => {
         </section>
 
         {/* Filter Section */}
-        <section className="py-4 sm:py-6 md:py-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm md:sticky md:top-20 z-40 shadow-sm border-b border-gray-200 dark:border-slate-800">
+        <section className="py-4 sm:py-6 md:py-8 bg-transparent md:sticky md:top-20 z-40 transition-all duration-300">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
               {categories.map((category) => (
@@ -207,8 +207,8 @@ const ClientPortfolio = () => {
                   key={category.id}
                   onClick={() => setFilter(category.id)}
                   className={`px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-lg font-medium transition-all text-sm sm:text-base ${filter === category.id
-                      ? 'bg-primary-600 text-white shadow-lg scale-105'
-                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-gray-700 hover:text-primary-600 dark:hover:text-primary-400 hover:scale-105 border border-gray-200 dark:border-gray-700'
+                    ? 'bg-primary-600 text-white shadow-lg'
+                    : 'bg-white/5 dark:bg-white/5 text-gray-700 dark:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10 backdrop-blur-sm border border-transparent'
                     }`}
                 >
                   {category.label}
@@ -229,7 +229,7 @@ const ClientPortfolio = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   onClick={() => handleProjectClick(project)}
-                  className="bg-white dark:bg-slate-900 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group hover:-translate-y-2 cursor-pointer border border-gray-100 dark:border-slate-800"
+                  className="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group hover:-translate-y-2 cursor-pointer border border-gray-100 dark:border-gray-800"
                 >
                   {/* Image with Slider */}
                   <div className="relative h-48 sm:h-56 md:h-64 bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">
@@ -282,7 +282,7 @@ const ClientPortfolio = () => {
         />
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-700 dark:from-slate-900 dark:to-slate-800 text-white border-t border-primary-500/20 dark:border-white/5">
+        <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-700 dark:from-gray-900 dark:to-gray-800 text-white border-t border-primary-500/20 dark:border-white/5">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

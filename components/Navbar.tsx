@@ -110,7 +110,7 @@ const Navbar = () => {
         {/* Mobile/Tablet Menu - Enhanced Design */}
         {isOpen && (
           <div className="lg:hidden mt-4 pb-4 animate-fade-in">
-            <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm rounded-xl shadow-xl p-4 border border-gray-200 dark:border-gray-700">
+            <div className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-xl shadow-xl p-4 border border-gray-200 dark:border-gray-700">
               <div className="flex flex-col space-y-2">
                 {navLinks.map((link) => (
                   <Link

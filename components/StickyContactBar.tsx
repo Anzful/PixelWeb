@@ -12,7 +12,7 @@ const StickyContactBar = () => {
   return (
     <div className="fixed bottom-0 left-0 right-20 z-40 md:hidden">
       {/* right-20 leaves space for Tawk.to icon (80px) */}
-      <div className="mx-3 mb-3 rounded-xl shadow-2xl backdrop-blur bg-white/95 dark:bg-slate-900/95 border border-gray-200 dark:border-slate-800">
+      <div className="mx-3 mb-3 rounded-xl shadow-2xl backdrop-blur bg-white/95 dark:bg-gray-900/95 border border-gray-200 dark:border-gray-800">
         <div className="flex items-center gap-2 p-2">
           <a
             href={waHref}

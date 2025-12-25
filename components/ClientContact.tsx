@@ -124,7 +124,7 @@ const ClientContact = () => {
     <PageTransition>
       <div className="min-h-screen pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary-600 to-primary-700 dark:from-slate-950 dark:to-slate-900 text-white py-20 relative overflow-hidden">
+        <section className="bg-gradient-to-br from-primary-600 to-primary-700 dark:from-gray-950 dark:to-gray-900 text-white py-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div
@@ -146,21 +146,24 @@ const ClientContact = () => {
         {/* Contact Info Cards */}
         <section className="py-12 bg-gray-50 dark:bg-transparent transition-colors duration-300 border-b border-gray-100 dark:border-white/5">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto -mt-20 relative z-10">
-              {contactInfo.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all border border-gray-100 dark:border-slate-800"
-                >
-                  <div className="flex justify-center mb-4">{item.icon}</div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
-                  <p className="text-primary-600 dark:text-primary-400 font-medium mb-1">{item.info}</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{item.subInfo}</p>
-                </motion.div>
-              ))}
+            <div className="max-w-5xl mx-auto -mt-10 relative z-10">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl p-8 sm:p-10 border border-gray-100 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-gray-100 dark:divide-gray-800"
+              >
+                {contactInfo.map((item, index) => (
+                  <div key={index} className="flex-1 w-full text-center px-4 pt-6 md:pt-0 first:pt-0">
+                    <div className="flex justify-center mb-4 text-primary-600 dark:text-primary-400 transform scale-110">
+                      {item.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+                    <p className="text-gray-700 dark:text-gray-300 font-medium mb-1">{item.info}</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-500">{item.subInfo}</p>
+                  </div>
+                ))}
+              </motion.div>
             </div>
           </div>
         </section>
@@ -176,7 +179,7 @@ const ClientContact = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-slate-800"
+                  className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-800"
                 >
                   <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
                     გამოგვიგზავნეთ შეტყობინება
@@ -354,7 +357,7 @@ const ClientContact = () => {
                   className="space-y-6"
                 >
                   {/* Working Hours */}
-                  <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-slate-800">
+                  <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-800">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">სამუშაო საათები</h3>
                     <div className="space-y-3 text-gray-600 dark:text-gray-300">
                       <div className="flex justify-between">
@@ -373,7 +376,7 @@ const ClientContact = () => {
                   </div>
 
                   {/* FAQ */}
-                  <div className="bg-gradient-to-br from-primary-50 to-accent-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-6 border border-primary-100 dark:border-slate-700">
+                  <div className="bg-gradient-to-br from-primary-50 to-accent-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-6 border border-primary-100 dark:border-gray-700">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">ხშირი კითხვები</h3>
                     <div className="space-y-4">
                       <div>
@@ -392,7 +395,7 @@ const ClientContact = () => {
                   </div>
 
                   {/* Social Media */}
-                  <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-slate-800">
+                  <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-800">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">დაგვიკავშირდით</h3>
                     <div className="flex space-x-4">
                       <a

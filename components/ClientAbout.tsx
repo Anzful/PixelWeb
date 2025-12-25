@@ -77,7 +77,7 @@ const ClientAbout = () => {
     <PageTransition>
       <div className="min-h-screen pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary-600 to-primary-700 dark:from-slate-950 dark:to-slate-900 text-white py-12 sm:py-16 md:py-20 relative overflow-hidden">
+        <section className="bg-gradient-to-br from-primary-600 to-primary-700 dark:from-gray-950 dark:to-gray-900 text-white py-12 sm:py-16 md:py-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div
@@ -123,7 +123,7 @@ const ClientAbout = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-primary-50 to-accent-50 dark:from-slate-900 dark:to-slate-800 p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-primary-100 dark:border-slate-700"
+                className="bg-gradient-to-br from-primary-50 to-accent-50 dark:from-gray-900 dark:to-gray-800 p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-primary-100 dark:border-gray-700"
               >
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">რატომ არის ფასები ჩვენთან ხელმისაწვდომი?</h3>
                 <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-700 dark:text-gray-300">
@@ -169,7 +169,7 @@ const ClientAbout = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100 dark:border-slate-800"
+                  className="bg-white dark:bg-gray-900 p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100 dark:border-gray-800"
                 >
                   <div className="mb-3 sm:mb-4">{value.icon}</div>
                   <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3">{value.title}</h3>
@@ -181,7 +181,7 @@ const ClientAbout = () => {
         </section>
 
         {/* Achievements Section */}
-        <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-primary-600 to-primary-700 dark:from-slate-900 dark:to-slate-950 text-white border-t border-primary-500/20 dark:border-white/5">
+        <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-primary-600 to-primary-700 dark:from-gray-900 dark:to-gray-950 text-white border-t border-primary-500/20 dark:border-white/5">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-10 md:mb-12">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
@@ -225,7 +225,7 @@ const ClientAbout = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white dark:bg-slate-900 p-5 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-all hover:-translate-y-1 duration-300 border border-gray-100 dark:border-slate-800"
+                  className="bg-white dark:bg-gray-900 p-5 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-all hover:-translate-y-1 duration-300 border border-gray-100 dark:border-gray-800"
                 >
                   <div className="flex items-start">
                     <FaCheckCircle className="text-primary-600 dark:text-primary-400 text-lg sm:text-xl mt-1 mr-2 sm:mr-3 flex-shrink-0" />
@@ -241,7 +241,7 @@ const ClientAbout = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-primary-600 to-primary-700 dark:from-slate-950 dark:to-slate-900 text-white border-t border-primary-500/20 dark:border-white/5">
+        <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-primary-600 to-primary-700 dark:from-gray-950 dark:to-gray-900 text-white border-t border-primary-500/20 dark:border-white/5">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -152,7 +152,7 @@ const ClientServices = () => {
     <PageTransition>
       <div className="min-h-screen pt-20">
         {/* Hero Section - Theme Aware */}
-        <section className="relative bg-gradient-to-br from-gray-50 via-primary-50 to-gray-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 py-20 sm:py-28 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-gray-50 via-primary-50 to-gray-100 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 py-20 sm:py-28 overflow-hidden">
           {/* Animated Background */}
           <div className="absolute inset-0">
             <motion.div
@@ -259,9 +259,9 @@ const ClientServices = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className={`relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-100 dark:border-slate-800 ${service.popular
-                      ? 'ring-2 ring-primary-500 shadow-xl lg:-mt-4 lg:mb-4'
-                      : 'shadow-lg hover:-translate-y-2'
+                  className={`relative bg-white dark:bg-gray-900 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-100 dark:border-gray-800 ${service.popular
+                    ? 'ring-2 ring-primary-500 shadow-xl lg:-mt-4 lg:mb-4'
+                    : 'shadow-lg hover:-translate-y-2'
                     }`}
                 >
                   {/* Top Gradient Bar */}
@@ -326,8 +326,8 @@ const ClientServices = () => {
                     <Link
                       href="/contact"
                       className={`block w-full text-center py-3 rounded-xl font-semibold transition-all duration-300 ${service.popular
-                          ? `bg-gradient-to-r ${service.color} text-white hover:shadow-lg hover:scale-105`
-                          : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'
+                        ? `bg-gradient-to-r ${service.color} text-white hover:shadow-lg hover:scale-105`
+                        : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'
                         }`}
                     >
                       დაიწყე ახლავე
@@ -377,7 +377,7 @@ const ClientServices = () => {
         </section>
 
         {/* Additional Services */}
-        <section className="py-16 sm:py-20 bg-white dark:bg-slate-900/50 border-t border-gray-100 dark:border-white/5">
+        <section className="py-16 sm:py-20 bg-white dark:bg-gray-900/50 border-t border-gray-100 dark:border-white/5">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -468,7 +468,7 @@ const ClientServices = () => {
         </section>
 
         {/* CTA Section - Enhanced */}
-        <section className="py-16 sm:py-24 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 relative overflow-hidden border-t border-primary-500/20 dark:border-white/5">
+        <section className="py-16 sm:py-24 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 relative overflow-hidden border-t border-primary-500/20 dark:border-white/5">
           {/* Background decorations */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <motion.div

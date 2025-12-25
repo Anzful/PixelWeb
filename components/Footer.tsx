@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-100 dark:bg-[#030712] text-gray-700 dark:text-gray-300 transition-colors duration-300 border-t border-transparent dark:border-white/5">
+    <footer className="bg-gray-100 dark:bg-transparent text-gray-700 dark:text-gray-300 transition-colors duration-300 border-t border-transparent dark:border-none">
       <div className="h-1 w-full bg-gradient-to-r from-primary-600/25 via-accent-400/25 to-primary-600/25" aria-hidden="true" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -152,7 +152,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-300 dark:border-gray-800 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400">
+        <div className="border-t border-gray-300 dark:border-white/5 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400">
           <p>&copy; {currentYear} PixelWeb.ge. ყველა უფლება დაცულია.</p>
         </div>
       </div>
