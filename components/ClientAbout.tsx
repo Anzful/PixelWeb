@@ -189,7 +189,7 @@ const ClientAbout = () => {
               </h2>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-8 sm:gap-12 md:gap-16 max-w-6xl mx-auto">
               {achievements.map((achievement, index) => (
                 <motion.div
                   key={index}

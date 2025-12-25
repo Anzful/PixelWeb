@@ -39,10 +39,11 @@ export default function BlogPage() {
     <PageTransition>
       <div className="min-h-screen pt-20 pb-20 bg-gray-50 dark:bg-gray-900">
         {/* Header */}
-        <section className="bg-primary-900 text-white py-16 mb-12">
-          <div className="container mx-auto px-4 text-center">
+        <section className="bg-gradient-to-br from-primary-600 to-primary-700 dark:from-gray-950 dark:to-gray-900 text-white py-12 sm:py-16 md:py-20 relative overflow-hidden mb-12">
+          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+          <div className="container mx-auto px-4 relative z-10 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">ჩვენი ბლოგი</h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-100 dark:text-gray-300 max-w-2xl mx-auto">
               სიახლეები, რჩევები და საინტერესო სტატიები ვებ ტექნოლოგიების შესახებ
             </p>
           </div>
@@ -53,13 +54,13 @@ export default function BlogPage() {
             {posts.map((post) => (
               <article key={post.slug} className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-shadow flex flex-col h-full">
                 <div className="h-48 relative overflow-hidden group">
-                   <Image 
-                     src={post.image} 
-                     alt={post.title}
-                     fill
-                     className="object-cover group-hover:scale-105 transition-transform duration-500"
-                   />
-                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3 space-x-4">
@@ -74,7 +75,7 @@ export default function BlogPage() {
                   <p className="text-gray-600 dark:text-gray-300 mb-4 flex-1 line-clamp-3">
                     {post.excerpt}
                   </p>
-                  <Link 
+                  <Link
                     href={`/blog/${post.slug}`}
                     className="inline-flex items-center text-primary-600 dark:text-primary-400 font-semibold hover:text-primary-700 dark:hover:text-primary-300 transition-colors mt-auto"
                   >
