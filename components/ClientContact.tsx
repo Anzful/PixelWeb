@@ -124,333 +124,334 @@ const ClientContact = () => {
     <PageTransition>
       <div className="min-h-screen pt-20">
         {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-700 text-white py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              დაგვიკავშირდით
-            </h1>
-            <p className="text-xl text-primary-100">
-              მზად ვართ მოვისმინოთ თქვენი მოთხოვნა და დავგეგმოთ თქვენი ვებსაიტი. მიიღეთ უფასო კონსულტაცია.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Contact Info Cards */}
-      <section className="py-12 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto -mt-20 relative z-10">
-            {contactInfo.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all"
-              >
-                <div className="flex justify-center mb-4">{item.icon}</div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
-                <p className="text-primary-600 dark:text-primary-400 font-medium mb-1">{item.info}</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{item.subInfo}</p>
-              </motion.div>
-            ))}
+        <section className="bg-gradient-to-br from-primary-600 to-primary-700 dark:from-slate-950 dark:to-slate-900 text-white py-20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center max-w-3xl mx-auto"
+            >
+              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+                დაგვიკავშირდით
+              </h1>
+              <p className="text-xl text-primary-100 dark:text-gray-300">
+                მზად ვართ მოვისმინოთ თქვენი მოთხოვნა და დავგეგმოთ თქვენი ვებსაიტი. მიიღეთ უფასო კონსულტაცია.
+              </p>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Main Content - Form and Info */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
-              >
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                  გამოგვიგზავნეთ შეტყობინება
-                </h2>
-
-                {submitStatus === 'success' && (
-                  <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg text-green-700 dark:text-green-300 flex items-center">
-                    <span className="text-2xl mr-3">✅</span>
-                    <span>თქვენი შეტყობინება წარმატებით გაიგზავნა! ჩვენ დაგიკავშირდებით მალე.</span>
-                  </div>
-                )}
-
-                {submitStatus === 'error' && (
-                  <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 rounded-lg text-red-700 dark:text-red-300 flex items-center">
-                    <span className="text-2xl mr-3">❌</span>
-                    <span>დაფიქსირდა შეცდომა. გთხოვთ სცადოთ თავიდან ან დაგვიკავშირდით ტელეფონით.</span>
-                  </div>
-                )}
-
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        სახელი და გვარი *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-600"
-                        placeholder="თქვენი სახელი"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        ელ-ფოსტა *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-600"
-                        placeholder="example@email.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        ტელეფონი *
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        required
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-600"
-                        placeholder="+995 XXX XX XX XX"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        კომპანია/ბიზნესი
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-600"
-                        placeholder="კომპანიის სახელი"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        რა სერვისი გაინტერესებთ? *
-                      </label>
-                      <select
-                        id="service"
-                        name="service"
-                        required
-                        value={formData.service}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition bg-white dark:bg-gray-800 dark:text-white dark:border-gray-600"
-                      >
-                        <option value="">აირჩიეთ სერვისი</option>
-                        {services.map((service, index) => (
-                          <option key={index} value={service}>
-                            {service}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
-                    <div>
-                      <label htmlFor="budget" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        თქვენი ბიუჯეტი
-                      </label>
-                      <select
-                        id="budget"
-                        name="budget"
-                        value={formData.budget}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition bg-white dark:bg-gray-800 dark:text-white dark:border-gray-600"
-                      >
-                        <option value="">აირჩიეთ ბიუჯეტი</option>
-                        {budgets.map((budget, index) => (
-                          <option key={index} value={budget}>
-                            {budget}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      შეტყობინება *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition resize-none text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-600"
-                      placeholder="მოგვიყევით თქვენი პროექტის შესახებ..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-primary-600 text-white px-8 py-4 rounded-lg hover:bg-primary-700 transition-all hover:shadow-xl transform hover:-translate-y-1 font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <span className="animate-spin mr-2">⏳</span>
-                        იგზავნება...
-                      </>
-                    ) : (
-                      <>
-                        გაგზავნა
-                        <FaPaperPlane className="ml-2" />
-                      </>
-                    )}
-                  </button>
-                </form>
-              </motion.div>
-            </div>
-
-            {/* Sidebar Info */}
-            <div className="lg:col-span-1">
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="space-y-6"
-              >
-                {/* Working Hours */}
-                <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">სამუშაო საათები</h3>
-                  <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                    <div className="flex justify-between">
-                      <span>ორშაბათი - პარასკევი</span>
-                      <span className="font-semibold">09:00 - 21:00</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>შაბათი</span>
-                      <span className="font-semibold">11:00 - 19:00</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>კვირა</span>
-                      <span className="font-semibold text-red-500">დახურულია</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* FAQ */}
-                <div className="bg-gradient-to-br from-primary-50 to-accent-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">ხშირი კითხვები</h3>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-gray-200 mb-1">რამდენი ხანი სჭირდება?</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">Landing Page - 3-5 დღე, საწარმოს საიტი - 7-10 დღე, E-commerce - 14-21 დღე</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-gray-200 mb-1">შევძლებ გადახდას ეტაპობრივად?</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">დიახ, შესაძლებელია 50% წინასწარ და 50% გაშვებისას</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-gray-200 mb-1">მოიცავს ჰოსტინგს?</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">ჰოსტინგი და დომენი ცალკე სერვისია (ემატება ფასი), ჩვენ დაგეხმარებით მოწყობაში</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Social Media */}
-                <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">დაგვიკავშირდით</h3>
-                  <div className="flex space-x-4">
-                    <a
-                      href="#"
-                      className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"
-                    >
-                      <FaFacebook size={24} />
-                    </a>
-                    <a
-                      href="#"
-                      className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"
-                    >
-                      <FaInstagram size={24} />
-                    </a>
-                    <a
-                      href="#"
-                      className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"
-                    >
-                      <FaLinkedin size={24} />
-                    </a>
-                  </div>
-                </div>
-
-                {/* Response Time */}
-                <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl p-6 text-center">
-                  <div className="text-4xl mb-2">⚡</div>
-                  <h3 className="text-xl font-bold mb-2">სწრაფი პასუხი</h3>
-                  <p className="text-primary-100">
-                    პასუხს გიგზავნით მაქსიმალურად სწრაფად
-                  </p>
-                </div>
-              </motion.div>
+        {/* Contact Info Cards */}
+        <section className="py-12 bg-gray-50 dark:bg-transparent transition-colors duration-300 border-b border-gray-100 dark:border-white/5">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto -mt-20 relative z-10">
+              {contactInfo.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all border border-gray-100 dark:border-slate-800"
+                >
+                  <div className="flex justify-center mb-4">{item.icon}</div>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+                  <p className="text-primary-600 dark:text-primary-400 font-medium mb-1">{item.info}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{item.subInfo}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Map Section - Google Maps Embed */}
-      <section className="py-0">
-        <div className="w-full h-96 bg-gray-200 relative overflow-hidden">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190515.91556052843!2d44.68385575!3d41.7151377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cd7e64f626b%3A0x61d084ede2576ea3!2sTbilisi%2C%20Georgia!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="PixelWeb Location - Tbilisi, Georgia"
-            className="grayscale hover:grayscale-0 transition-all duration-500"
-          />
-          {/* Overlay with contact info */}
-          <div className="absolute bottom-4 left-4 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-4 max-w-xs">
-            <h3 className="font-bold text-gray-900 dark:text-white mb-1">PixelWeb.ge</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">თბილისი, საქართველო</p>
-            <p className="text-sm text-primary-600 dark:text-primary-400">დისტანციურად ვმუშაობთ მთელი საქართველოს მასშტაბით</p>
+        {/* Main Content - Form and Info */}
+        <section className="py-20 bg-gray-50 dark:bg-transparent transition-colors duration-300">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
+              {/* Contact Form */}
+              <div className="lg:col-span-2">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-slate-800"
+                >
+                  <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    გამოგვიგზავნეთ შეტყობინება
+                  </h2>
+
+                  {submitStatus === 'success' && (
+                    <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg text-green-700 dark:text-green-300 flex items-center">
+                      <span className="text-2xl mr-3">✅</span>
+                      <span>თქვენი შეტყობინება წარმატებით გაიგზავნა! ჩვენ დაგიკავშირდებით მალე.</span>
+                    </div>
+                  )}
+
+                  {submitStatus === 'error' && (
+                    <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 rounded-lg text-red-700 dark:text-red-300 flex items-center">
+                      <span className="text-2xl mr-3">❌</span>
+                      <span>დაფიქსირდა შეცდომა. გთხოვთ სცადოთ თავიდან ან დაგვიკავშირდით ტელეფონით.</span>
+                    </div>
+                  )}
+
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                          სახელი და გვარი *
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-600"
+                          placeholder="თქვენი სახელი"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                          ელ-ფოსტა *
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-600"
+                          placeholder="example@email.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                          ტელეფონი *
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          required
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-600"
+                          placeholder="+995 XXX XX XX XX"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                          კომპანია/ბიზნესი
+                        </label>
+                        <input
+                          type="text"
+                          id="company"
+                          name="company"
+                          value={formData.company}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-600"
+                          placeholder="კომპანიის სახელი"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                          რა სერვისი გაინტერესებთ? *
+                        </label>
+                        <select
+                          id="service"
+                          name="service"
+                          required
+                          value={formData.service}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition bg-white dark:bg-gray-800 dark:text-white dark:border-gray-600"
+                        >
+                          <option value="">აირჩიეთ სერვისი</option>
+                          {services.map((service, index) => (
+                            <option key={index} value={service}>
+                              {service}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      <div>
+                        <label htmlFor="budget" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                          თქვენი ბიუჯეტი
+                        </label>
+                        <select
+                          id="budget"
+                          name="budget"
+                          value={formData.budget}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition bg-white dark:bg-gray-800 dark:text-white dark:border-gray-600"
+                        >
+                          <option value="">აირჩიეთ ბიუჯეტი</option>
+                          {budgets.map((budget, index) => (
+                            <option key={index} value={budget}>
+                              {budget}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        შეტყობინება *
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        required
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows={6}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition resize-none text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-600"
+                        placeholder="მოგვიყევით თქვენი პროექტის შესახებ..."
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-primary-600 text-white px-8 py-4 rounded-lg hover:bg-primary-700 transition-all hover:shadow-xl transform hover:-translate-y-1 font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <span className="animate-spin mr-2">⏳</span>
+                          იგზავნება...
+                        </>
+                      ) : (
+                        <>
+                          გაგზავნა
+                          <FaPaperPlane className="ml-2" />
+                        </>
+                      )}
+                    </button>
+                  </form>
+                </motion.div>
+              </div>
+
+              {/* Sidebar Info */}
+              <div className="lg:col-span-1">
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="space-y-6"
+                >
+                  {/* Working Hours */}
+                  <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-slate-800">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">სამუშაო საათები</h3>
+                    <div className="space-y-3 text-gray-600 dark:text-gray-300">
+                      <div className="flex justify-between">
+                        <span>ორშაბათი - პარასკევი</span>
+                        <span className="font-semibold">09:00 - 21:00</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>შაბათი</span>
+                        <span className="font-semibold">11:00 - 19:00</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>კვირა</span>
+                        <span className="font-semibold text-red-500">დახურულია</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* FAQ */}
+                  <div className="bg-gradient-to-br from-primary-50 to-accent-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-6 border border-primary-100 dark:border-slate-700">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">ხშირი კითხვები</h3>
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-200 mb-1">რამდენი ხანი სჭირდება?</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">Landing Page - 3-5 დღე, საწარმოს საიტი - 7-10 დღე, E-commerce - 14-21 დღე</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-200 mb-1">შევძლებ გადახდას ეტაპობრივად?</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">დიახ, შესაძლებელია 50% წინასწარ და 50% გაშვებისას</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-200 mb-1">მოიცავს ჰოსტინგს?</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">ჰოსტინგი და დომენი ცალკე სერვისია (ემატება ფასი), ჩვენ დაგეხმარებით მოწყობაში</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Social Media */}
+                  <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-slate-800">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">დაგვიკავშირდით</h3>
+                    <div className="flex space-x-4">
+                      <a
+                        href="#"
+                        className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"
+                      >
+                        <FaFacebook size={24} />
+                      </a>
+                      <a
+                        href="#"
+                        className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"
+                      >
+                        <FaInstagram size={24} />
+                      </a>
+                      <a
+                        href="#"
+                        className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all"
+                      >
+                        <FaLinkedin size={24} />
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Response Time */}
+                  <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl p-6 text-center">
+                    <div className="text-4xl mb-2">⚡</div>
+                    <h3 className="text-xl font-bold mb-2">სწრაფი პასუხი</h3>
+                    <p className="text-primary-100">
+                      პასუხს გიგზავნით მაქსიმალურად სწრაფად
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Map Section - Google Maps Embed */}
+        <section className="py-0">
+          <div className="w-full h-96 bg-gray-200 relative overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190515.91556052843!2d44.68385575!3d41.7151377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cd7e64f626b%3A0x61d084ede2576ea3!2sTbilisi%2C%20Georgia!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="PixelWeb Location - Tbilisi, Georgia"
+              className="grayscale hover:grayscale-0 transition-all duration-500"
+            />
+            {/* Overlay with contact info */}
+            <div className="absolute bottom-4 left-4 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-4 max-w-xs">
+              <h3 className="font-bold text-gray-900 dark:text-white mb-1">PixelWeb.ge</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">თბილისი, საქართველო</p>
+              <p className="text-sm text-primary-600 dark:text-primary-400">დისტანციურად ვმუშაობთ მთელი საქართველოს მასშტაბით</p>
+            </div>
+          </div>
+        </section>
       </div>
     </PageTransition>
   )

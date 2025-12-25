@@ -13,7 +13,7 @@ const ThemeToggle = () => {
 
   useEffect(() => {
     setMounted(true)
-    // Get theme from localStorage
+    // Get theme from localStorage, default to dark for winter vibes
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null
     setTheme(savedTheme || 'dark')
   }, [])
@@ -37,7 +37,7 @@ const ThemeToggle = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light'
     setTheme(newTheme)
     localStorage.setItem('theme', newTheme)
-    
+
     // Update DOM
     if (newTheme === 'dark') {
       document.documentElement.classList.add('dark')
@@ -63,7 +63,7 @@ const ThemeToggle = () => {
       {/* Sliding toggle circle */}
       <motion.div
         ref={circleRef}
-        className="absolute top-1 left-1 w-7 sm:w-7 md:w-8 h-7 sm:h-7 md:h-8 rounded-full bg-white dark:bg-gray-900 shadow-lg flex items-center justify-center z-10"
+        className="absolute top-1 left-1 w-7 sm:w-7 md:w-8 h-7 sm:h-7 md:h-8 rounded-full bg-white dark:bg-[#030712] shadow-lg flex items-center justify-center z-10"
         animate={{
           x: theme === 'dark' ? slideDistance : 0,
         }}
@@ -75,9 +75,9 @@ const ThemeToggle = () => {
       >
         <motion.div
           initial={false}
-          animate={{ 
+          animate={{
             scale: [1, 1.2, 1],
-            rotate: theme === 'dark' ? 0 : 180 
+            rotate: theme === 'dark' ? 0 : 180
           }}
           transition={{ duration: 0.3 }}
         >

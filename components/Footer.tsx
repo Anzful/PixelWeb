@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 transition-colors duration-300">
+    <footer className="bg-gray-100 dark:bg-[#030712] text-gray-700 dark:text-gray-300 transition-colors duration-300 border-t border-transparent dark:border-white/5">
       <div className="h-1 w-full bg-gradient-to-r from-primary-600/25 via-accent-400/25 to-primary-600/25" aria-hidden="true" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -24,8 +24,8 @@ const Footer = () => {
               პროფესიონალური ვებსაიტები ხელმისაწვდომ ფასად. გთავაზობთ საუკეთესო ხარისხს ხელმისაწვდომ ფასად საქართველოში
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="https://www.facebook.com/profile.php?id=61584036537327" 
+              <a
+                href="https://www.facebook.com/profile.php?id=61584036537327"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -33,15 +33,15 @@ const Footer = () => {
               >
                 <FaFacebook size={24} />
               </a>
-              <a 
-                href="https://www.instagram.com/pixelweb.ge/" 
+              <a
+                href="https://www.instagram.com/pixelweb.ge/"
                 className="text-gray-600 dark:text-gray-400 hover:text-pink-600 dark:hover:text-pink-400 transition-colors"
                 aria-label="Instagram"
               >
                 <FaInstagram size={24} />
               </a>
-              <a 
-                href="https://wa.me/995591410914" 
+              <a
+                href="https://wa.me/995591410914"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors"
@@ -49,15 +49,15 @@ const Footer = () => {
               >
                 <FaWhatsapp size={24} />
               </a>
-              <a 
-                href="mailto:pixelweb2026@gmail.com" 
+              <a
+                href="mailto:pixelweb2026@gmail.com"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 aria-label="Email"
               >
                 <FaEnvelope size={24} />
               </a>
-              <a 
-                href="tel:+995591410914" 
+              <a
+                href="tel:+995591410914"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 aria-label="Phone"
               >

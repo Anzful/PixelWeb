@@ -6,12 +6,15 @@ import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import ThemeToggle from './ThemeToggle'
+import SnowToggle from './SnowToggle'
+import { useSnow } from './SnowProvider'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
   const pathname = usePathname()
+  const { snowEnabled, toggleSnow } = useSnow()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,9 +45,8 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm backdrop-saturate-150 shadow-lg py-3 sm:py-4' : 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm backdrop-saturate-150 py-4 sm:py-6'
-    }`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 dark:bg-[#030712]/95 backdrop-blur-sm backdrop-saturate-150 shadow-lg py-3 sm:py-4' : 'bg-white/90 dark:bg-[#030712]/90 backdrop-blur-sm backdrop-saturate-150 py-4 sm:py-6'
+      }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -66,18 +68,16 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-3 xl:px-4 py-2 font-medium text-sm xl:text-base transition-all duration-300 rounded-lg group ${
-                  isActive(link.href)
-                    ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800'
-                }`}
+                className={`relative px-3 xl:px-4 py-2 font-medium text-sm xl:text-base transition-all duration-300 rounded-lg group ${isActive(link.href)
+                  ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800'
+                  }`}
               >
                 {link.label}
                 {/* Active indicator line */}
                 <span
-                  className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 ${
-                    isActive(link.href) ? 'w-3/4' : 'w-0 group-hover:w-3/4'
-                  }`}
+                  className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 ${isActive(link.href) ? 'w-3/4' : 'w-0 group-hover:w-3/4'
+                    }`}
                 />
               </Link>
             ))}
@@ -87,13 +87,15 @@ const Navbar = () => {
             >
               დაგვიკავშირდით
             </Link>
-            <div className="ml-3 xl:ml-4">
+            <div className="ml-3 xl:ml-4 flex items-center gap-2">
+              <SnowToggle enabled={snowEnabled} onToggle={toggleSnow} />
               <ThemeToggle />
             </div>
           </div>
 
           {/* Mobile/Tablet Menu Button & Theme Toggle */}
-          <div className="lg:hidden flex items-center space-x-3">
+          <div className="lg:hidden flex items-center space-x-2">
+            <SnowToggle enabled={snowEnabled} onToggle={toggleSnow} />
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -108,18 +110,17 @@ const Navbar = () => {
         {/* Mobile/Tablet Menu - Enhanced Design */}
         {isOpen && (
           <div className="lg:hidden mt-4 pb-4 animate-fade-in">
-            <div className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-xl shadow-xl p-4 border border-gray-200 dark:border-gray-700">
+            <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm rounded-xl shadow-xl p-4 border border-gray-200 dark:border-gray-700">
               <div className="flex flex-col space-y-2">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`relative font-medium py-3 px-4 rounded-lg transition-all ${
-                      isActive(link.href)
-                        ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 shadow-sm'
-                        : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-700'
-                    }`}
+                    className={`relative font-medium py-3 px-4 rounded-lg transition-all ${isActive(link.href)
+                      ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 shadow-sm'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-700'
+                      }`}
                   >
                     <span className="flex items-center justify-between">
                       {link.label}

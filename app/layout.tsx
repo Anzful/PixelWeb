@@ -3,6 +3,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { SnowProvider } from '@/components/SnowProvider'
 import PageLoader from '@/components/PageLoader'
 import VisitorTracker from '@/components/VisitorTracker'
 import { Analytics } from '@vercel/analytics/react'
@@ -245,21 +246,23 @@ export default function RootLayout({
           }}
         />
       </head>
-    <body>
-      <ThemeProvider>
-        <PageLoader />
-        <VisitorTracker />
-        <Navbar />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
-        <ScrollToTopButton />
-          <StickyContactBar />
-        <TawkTo />
-        <Analytics />
-      </ThemeProvider>
-    </body>
+      <body>
+        <ThemeProvider>
+          <SnowProvider>
+            <PageLoader />
+            <VisitorTracker />
+            <Navbar />
+            <main className="min-h-screen">
+              {children}
+            </main>
+            <Footer />
+            <ScrollToTopButton />
+            <StickyContactBar />
+            <TawkTo />
+            <Analytics />
+          </SnowProvider>
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

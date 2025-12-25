@@ -37,7 +37,7 @@ body {
 
 /* Dark Mode */
 .dark body {
-  background: #0f172a;
+  background: #030712;
   color: #e2e8f0;
 }
 
@@ -56,11 +56,11 @@ body {
 
 /* Make white backgrounds dark */
 .dark .bg-white {
-  background-color: #1e293b !important;
+  background-color: #0f172a !important;
 }
 
 .dark .bg-gray-50 {
-  background-color: #0f172a !important;
+  background-color: #030712 !important;
 }
 
 .dark .bg-gray-100 {

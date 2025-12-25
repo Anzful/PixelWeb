@@ -81,20 +81,20 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl max-w-4xl w-full max-h-[85vh] sm:max-h-[88vh] md:max-h-[90vh] overflow-y-auto relative shadow-2xl"
+            className="bg-white dark:bg-slate-900 rounded-xl sm:rounded-2xl max-w-4xl w-full max-h-[85vh] sm:max-h-[88vh] md:max-h-[90vh] overflow-y-auto relative shadow-2xl border border-gray-200 dark:border-slate-800"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-50 bg-white/95 dark:bg-gray-800/95 text-gray-800 dark:text-white p-2.5 sm:p-3 md:p-3.5 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all shadow-lg backdrop-blur-sm"
+              className="absolute top-4 right-4 z-50 bg-white/95 dark:bg-slate-900/95 text-gray-800 dark:text-white p-2.5 sm:p-3 md:p-3.5 rounded-full hover:bg-white dark:hover:bg-slate-800 transition-all shadow-lg backdrop-blur-sm border border-gray-200 dark:border-slate-800"
               aria-label="Close modal"
             >
               <FaTimes className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </button>
 
             {/* Image Gallery */}
-            <div className="relative bg-gray-100 dark:bg-gray-900 overflow-hidden rounded-t-xl sm:rounded-t-2xl">
+            <div className="relative bg-gray-100 dark:bg-slate-950 overflow-hidden rounded-t-xl sm:rounded-t-2xl">
               <div className="relative h-[40vh] sm:h-[45vh] md:h-[50vh] lg:h-[55vh] w-full">
                 <AnimatePresence initial={false} custom={direction}>
                   <motion.div
@@ -103,7 +103,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                     initial={{ x: direction > 0 ? '100%' : '-100%', opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: direction > 0 ? '-100%' : '100%', opacity: 0 }}
-                    transition={{ 
+                    transition={{
                       x: { type: "spring", stiffness: 300, damping: 30 },
                       opacity: { duration: 0.2 }
                     }}
@@ -151,11 +151,10 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                             setDirection(index > currentIndex ? 1 : -1)
                             setCurrentIndex(index)
                           }}
-                          className={`rounded-full transition-all ${
-                            index === currentIndex
+                          className={`rounded-full transition-all ${index === currentIndex
                               ? 'bg-white w-3 sm:w-4 md:w-6 lg:w-8 h-1.5 sm:h-2 md:h-2.5'
                               : 'bg-white/50 hover:bg-white/75 w-1.5 sm:w-2 md:w-2.5 h-1.5 sm:h-2 md:h-2.5'
-                          }`}
+                            }`}
                           aria-label={`Go to image ${index + 1}`}
                         />
                       ))}
