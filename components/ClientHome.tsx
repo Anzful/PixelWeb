@@ -99,7 +99,7 @@ const ClientHome = () => {
     {
       icon: <FaMoneyBillWave className="text-4xl text-primary-600 dark:text-primary-400" />,
       title: 'ხელმისაწვდომი ფასები',
-      description: 'ბაზრის ფასებთან შედარებით 60%-მდე იაფია. ხარისხიანი ვებსაიტები ყველასთვის ხელმისაწვდომ ფასად.'
+      description: 'ბაზრის ფასებთან შედარებით 30%-მდე იაფია. ხარისხიანი ვებსაიტები ყველასთვის ხელმისაწვდომ ფასად.'
     },
     {
       icon: <FaClock className="text-4xl text-primary-600 dark:text-primary-400" />,

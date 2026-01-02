@@ -35,10 +35,10 @@ const AdminPage = () => {
     // Update time
     const updateTime = () => {
       const now = new Date()
-      setCurrentTime(now.toLocaleString('ka-GE', { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
+      setCurrentTime(now.toLocaleString('ka-GE', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit'
@@ -65,7 +65,7 @@ const AdminPage = () => {
   if (!isAdmin) {
     return (
       <div className="min-h-screen pt-20 bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           className="text-center max-w-md mx-auto px-4"
@@ -96,10 +96,10 @@ const AdminPage = () => {
   // Admin Dashboard
   const quickLinks = [
     {
-      title: 'Tawk.to Dashboard',
-      description: 'ჩატის მართვა და მესიჯების ნახვა',
-      icon: <FaComments className="text-2xl" />,
-      href: 'https://dashboard.tawk.to/',
+      title: 'WhatsApp Business',
+      description: 'მომხმარებლების მესიჯები',
+      icon: <FaWhatsapp className="text-2xl" />,
+      href: 'https://wa.me/995591410914',
       color: 'from-green-500 to-green-600',
       external: true
     },
@@ -280,7 +280,7 @@ const AdminPage = () => {
             📝 შენიშვნები
           </h3>
           <ul className="text-sm text-primary-800 dark:text-primary-200 space-y-1">
-            <li>• Tawk.to ჩატი არ ჩანს თქვენს IP-ზე (31.146.70.219)</li>
+            <li>• WhatsApp ღილაკი ჩანს დესკტოპზე, მობილურზე sticky bar-ში</li>
             <li>• ადმინ პანელზე წვდომა მხოლოდ თქვენი IP-დანაა შესაძლებელი</li>
             <li>• სტატისტიკის სანახავად გადადით /stats გვერდზე</li>
           </ul>

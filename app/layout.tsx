@@ -8,7 +8,7 @@ import PageLoader from '@/components/PageLoader'
 import VisitorTracker from '@/components/VisitorTracker'
 import { Analytics } from '@vercel/analytics/react'
 import ScrollToTopButton from '@/components/ScrollToTopButton'
-import TawkTo from '@/components/TawkTo'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import StickyContactBar from '@/components/StickyContactBar'
 import { Suspense } from 'react'
 
@@ -258,7 +258,7 @@ export default function RootLayout({
             <Footer />
             <ScrollToTopButton />
             <StickyContactBar />
-            <TawkTo />
+            <WhatsAppButton />
             <Analytics />
           </SnowProvider>
         </ThemeProvider>
@@ -266,4 +266,3 @@ export default function RootLayout({
     </html>
   )
 }
-
