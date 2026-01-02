@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { FaCheck, FaTimes, FaRocket, FaShoppingCart, FaBriefcase, FaFileAlt, FaArrowRight, FaGlobe, FaServer, FaHeadset, FaLightbulb, FaPencilRuler, FaCode, FaCogs, FaCheckCircle, FaPlay } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import PageTransition from '@/components/PageTransition'
+import PricingCard from '@/components/PricingCard'
 
 interface Service {
   icon: JSX.Element;
@@ -253,87 +254,7 @@ const ClientServices = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
               {services.map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className={`relative bg-white dark:bg-gray-900 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-100 dark:border-gray-800 ${service.popular
-                    ? 'ring-2 ring-primary-500 shadow-xl lg:-mt-4 lg:mb-4'
-                    : 'shadow-lg hover:-translate-y-2'
-                    }`}
-                >
-                  {/* Top Gradient Bar */}
-                  <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
-
-                  <div className="p-6 lg:p-8">
-                    {/* Popular Badge */}
-                    {service.popular && (
-                      <div className="mb-4">
-                        <span className="inline-flex items-center gap-1.5 bg-primary-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                          ⭐ რეკომენდებული
-                        </span>
-                      </div>
-                    )}
-
-                    {/* Icon & Title */}
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className={`w-12 h-12 rounded-xl ${service.bgColor} flex items-center justify-center text-2xl bg-gradient-to-br ${service.color} text-white`}>
-                        {service.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">{service.name}</h3>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">{service.description}</p>
-                      </div>
-                    </div>
-
-                    {/* Price */}
-                    <div className="mb-6 pb-6 border-b border-gray-100 dark:border-gray-700">
-                      <div className="flex items-baseline gap-2">
-                        <span className={`text-4xl font-bold bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>
-                          {service.price}
-                        </span>
-                        {service.price !== 'მოლაპარაკებით' && (
-                          <span className="text-gray-500">₾</span>
-                        )}
-                      </div>
-                      <div className="flex items-center gap-4 mt-2 text-sm">
-                        <span className="text-gray-500">⏱️ {service.duration}</span>
-                        {service.marketPrice && (
-                          <span className="text-red-400 line-through text-xs">ბაზარზე: {service.marketPrice}₾</span>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Features */}
-                    <div className="space-y-3 mb-6">
-                      {service.features.map((feature, i) => (
-                        <div key={i} className="flex items-start gap-3">
-                          <FaCheck className="text-green-500 mt-1 flex-shrink-0 text-sm" />
-                          <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
-                        </div>
-                      ))}
-                      {service.notIncluded.map((feature, i) => (
-                        <div key={i} className="flex items-start gap-3 opacity-50">
-                          <FaTimes className="text-gray-400 mt-1 flex-shrink-0 text-sm" />
-                          <span className="text-sm text-gray-400 line-through">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Button */}
-                    <Link
-                      href="/contact"
-                      className={`block w-full text-center py-3 rounded-xl font-semibold transition-all duration-300 ${service.popular
-                        ? `bg-gradient-to-r ${service.color} text-white hover:shadow-lg hover:scale-105`
-                        : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'
-                        }`}
-                    >
-                      დაიწყე ახლავე
-                    </Link>
-                  </div>
-                </motion.div>
+                <PricingCard key={index} service={service} index={index} />
               ))}
             </div>
 

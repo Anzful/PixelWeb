@@ -5,6 +5,7 @@ import { motion, useInView, AnimatePresence, useMotionValue, useSpring, useTrans
 import { FaCode, FaRocket, FaMobile, FaCheck, FaArrowRight, FaFileAlt, FaBriefcase, FaShoppingCart, FaMoneyBillWave, FaClock, FaPalette, FaTimes, FaChevronDown, FaGlobe, FaShieldAlt, FaChartLine, FaLaptopCode, FaMousePointer, FaChartBar } from 'react-icons/fa'
 import Link from 'next/link'
 import PageTransition from '@/components/PageTransition'
+import PricingCard from '@/components/PricingCard'
 
 declare global {
   interface Window {
@@ -628,116 +629,7 @@ const ClientHome = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
               {services.map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -8 }}
-                  className={`relative group ${service.popular ? 'lg:-mt-6 lg:mb-6 z-10' : ''}`}
-                >
-                  {/* Card */}
-                  <div className={`h-full bg-white dark:bg-gray-900 rounded-2xl transition-all duration-300 overflow-hidden relative ${service.popular
-                    ? 'ring-2 ring-primary-500 shadow-2xl shadow-primary-500/20'
-                    : 'shadow-lg hover:shadow-2xl border border-gray-200 dark:border-gray-800'
-                    }`}>
-
-                    {/* Gradient Top Bar */}
-                    <div className={`h-2 ${index === 0 ? 'bg-gradient-to-r from-blue-400 via-cyan-500 to-blue-500' :
-                      index === 1 ? 'bg-gradient-to-r from-primary-500 via-primary-400 to-primary-600' :
-                        'bg-gradient-to-r from-purple-400 via-pink-500 to-purple-500'
-                      }`} />
-
-                    {/* Gradient overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-accent-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-
-                    <div className="p-6 lg:p-8 relative">
-                      {/* Popular Badge */}
-                      {service.popular && (
-                        <div className="absolute -top-0 right-6">
-                          <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-primary-500 to-primary-600 text-white text-xs font-bold px-4 py-2 rounded-b-xl shadow-lg">
-                            ⭐ რეკომენდებული
-                          </span>
-                        </div>
-                      )}
-
-                      {/* Icon & Title */}
-                      <div className="flex items-start gap-4 mb-6 mt-2">
-                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300 ${index === 0 ? 'bg-gradient-to-br from-blue-400 to-cyan-600' :
-                          index === 1 ? 'bg-gradient-to-br from-primary-500 to-primary-700' :
-                            'bg-gradient-to-br from-purple-500 to-pink-600'
-                          }`}>
-                          {service.icon}
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{service.name}</h3>
-                          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{service.description}</p>
-                        </div>
-                      </div>
-
-                      {/* Price */}
-                      <div className="mb-6 pb-6 border-b border-gray-100 dark:border-gray-700">
-                        <div className="flex items-baseline gap-2">
-                          <span className={`text-5xl font-black bg-gradient-to-r bg-clip-text text-transparent ${index === 0 ? 'from-blue-500 to-cyan-500' :
-                            index === 1 ? 'from-primary-500 to-primary-600' :
-                              'from-purple-500 to-pink-500'
-                            }`}>
-                            {service.price}
-                          </span>
-                          <span className="text-2xl font-bold text-gray-400">₾</span>
-                        </div>
-                        <div className="flex flex-wrap items-center gap-3 mt-3">
-                          <span className="inline-flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-700/50 px-3 py-1 rounded-full">
-                            ⏱️ {service.duration}
-                          </span>
-                          {service.marketPrice && (
-                            <span className="text-sm text-red-500 dark:text-red-400 line-through">
-                              ბაზარზე: {service.marketPrice}₾
-                            </span>
-                          )}
-                        </div>
-                      </div>
-
-                      {/* Features */}
-                      <div className="space-y-3 mb-8">
-                        {service.features.map((feature, i) => (
-                          <div key={i} className="flex items-start gap-3">
-                            <div className="w-5 h-5 rounded-full bg-green-100 dark:bg-green-900/40 flex items-center justify-center flex-shrink-0 mt-0.5">
-                              <FaCheck className="text-green-600 dark:text-green-400 text-[10px]" />
-                            </div>
-                            <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
-                          </div>
-                        ))}
-                        {service.notIncluded.map((feature, i) => (
-                          <div key={`not-${i}`} className="flex items-start gap-3 opacity-40">
-                            <div className="w-5 h-5 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center flex-shrink-0 mt-0.5">
-                              <FaTimes className="text-gray-400 text-[10px]" />
-                            </div>
-                            <span className="text-sm text-gray-400 line-through">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* CTA Button */}
-                      <Link
-                        href="/contact"
-                        className={`block w-full text-center py-4 rounded-xl font-bold text-base transition-all duration-300 ${service.popular
-                          ? 'bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/40 transform hover:scale-[1.02]'
-                          : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-primary-50 dark:hover:bg-gray-600 hover:text-primary-600 dark:hover:text-primary-400 border border-gray-200 dark:border-gray-600'
-                          }`}
-                      >
-                        დაიწყე ახლავე
-                      </Link>
-                    </div>
-
-                    {/* Bottom accent line on hover */}
-                    <div className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${index === 0 ? 'from-blue-400 to-cyan-500' :
-                      index === 1 ? 'from-primary-500 to-primary-600' :
-                        'from-purple-400 to-pink-500'
-                      }`} />
-                  </div>
-                </motion.div>
+                <PricingCard key={index} service={service} index={index} />
               ))}
             </div>
 
