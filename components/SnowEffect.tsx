@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState, useMemo } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 
 interface Snowflake {
     id: number
@@ -10,10 +9,7 @@ interface Snowflake {
     duration: number
     size: number
     opacity: number
-    drift: number
-    rotation: number
     character: string
-    color: string
 }
 
 interface SnowEffectProps {
@@ -22,124 +18,86 @@ interface SnowEffectProps {
 
 const SnowEffect = ({ enabled }: SnowEffectProps) => {
     const [mounted, setMounted] = useState(false)
+    const [reducedMotion, setReducedMotion] = useState(false)
 
     useEffect(() => {
         setMounted(true)
+        // Respect user's reduced motion preference
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+        setReducedMotion(mediaQuery.matches)
+
+        const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches)
+        mediaQuery.addEventListener('change', handler)
+        return () => mediaQuery.removeEventListener('change', handler)
     }, [])
 
-    // Generate snowflakes with festive 2026 New Year vibes
+    // Reduced particle count (40 instead of 120) + simpler characters for better performance
     const snowflakes = useMemo(() => {
         const flakes: Snowflake[] = []
-        // Snow + festive sparkles ✨
-        const characters = ['❄', '❅', '❆', '•', '·', '✧', '✦', '⋆', '✨', '🎄', '⭐']
-        // Festive colors - white, gold, light blue
-        const colors = [
-            'rgba(255, 255, 255, 0.9)',
-            'rgba(255, 255, 255, 0.8)',
-            'rgba(255, 215, 0, 0.7)',   // Gold
-            'rgba(255, 223, 186, 0.6)', // Champagne
-            'rgba(173, 216, 230, 0.7)', // Light blue
-        ]
+        const characters = ['❄', '❅', '•', '·', '✦']
 
-        // 120 particles for festive feel
-        for (let i = 0; i < 120; i++) {
-            const charIndex = Math.floor(Math.random() * characters.length)
-            const isSpecial = charIndex >= 5 // Stars and sparkles
-
+        // Only 40 particles for smoother performance
+        for (let i = 0; i < 40; i++) {
             flakes.push({
                 id: i,
                 x: Math.random() * 100,
-                delay: Math.random() * 10,
-                duration: Math.random() * 12 + 12, // 12-24 seconds
-                size: isSpecial
-                    ? Math.random() * 16 + 10  // Larger for stars (10-26px)
-                    : Math.random() * 10 + 6,  // Regular snow (6-16px)
-                opacity: isSpecial
-                    ? Math.random() * 0.5 + 0.4 // Brighter stars
-                    : Math.random() * 0.4 + 0.2,
-                drift: Math.random() * 80 - 40,
-                rotation: Math.random() * 360,
-                character: characters[charIndex],
-                color: isSpecial
-                    ? colors[Math.floor(Math.random() * 2) + 2] // Gold/champagne for stars
-                    : colors[Math.floor(Math.random() * 2)],     // White for snow
+                delay: Math.random() * 8,
+                duration: Math.random() * 10 + 15,
+                size: Math.random() * 10 + 6,
+                opacity: Math.random() * 0.4 + 0.2,
+                character: characters[Math.floor(Math.random() * characters.length)],
             })
         }
         return flakes
     }, [])
 
-    if (!enabled || !mounted) return null
+    if (!enabled || !mounted || reducedMotion) return null
 
     return (
-        <AnimatePresence>
-            <div
-                className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden"
-                aria-hidden="true"
-            >
-                {snowflakes.map(flake => (
-                    <motion.div
-                        key={flake.id}
-                        className="absolute select-none"
-                        initial={{
-                            top: '-10%',
-                            left: `${flake.x}%`,
-                            opacity: 0,
-                            rotate: flake.rotation,
-                            scale: 0.5,
-                        }}
-                        animate={{
-                            top: ['-10%', '110%'],
-                            left: [`${flake.x}%`, `${flake.x + flake.drift}%`],
-                            opacity: [0, flake.opacity, flake.opacity, 0],
-                            rotate: [flake.rotation, flake.rotation + (flake.character.includes('✨') ? 720 : 360)],
-                            scale: [0.5, 1, 1, 0.5],
-                        }}
-                        transition={{
-                            duration: flake.duration,
-                            delay: flake.delay,
-                            repeat: Infinity,
-                            ease: 'linear',
-                        }}
-                        style={{
-                            fontSize: `${flake.size}px`,
-                            color: flake.color,
-                            textShadow: flake.character.includes('✧') || flake.character.includes('✦') || flake.character.includes('⭐')
-                                ? '0 0 8px rgba(255, 215, 0, 0.6), 0 0 4px rgba(255, 255, 255, 0.8)'
-                                : '0 0 3px rgba(255,255,255,0.5)',
-                            filter: flake.character === '•' || flake.character === '·'
-                                ? 'blur(0.5px)'
-                                : 'none',
-                        }}
-                    >
-                        {flake.character}
-                    </motion.div>
-                ))}
-
-                {/* Floating "2026" in the background */}
-                <motion.div
-                    className="absolute top-1/4 left-1/2 -translate-x-1/2 text-6xl sm:text-8xl font-black select-none pointer-events-none"
-                    initial={{ opacity: 0 }}
-                    animate={{
-                        opacity: [0, 0.03, 0.03, 0],
-                        y: [0, -20, 0],
-                        scale: [1, 1.05, 1],
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                    }}
+        <div
+            className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden"
+            aria-hidden="true"
+        >
+            <style jsx>{`
+                @keyframes snowfall {
+                    0% {
+                        transform: translateY(-10vh) translateX(0);
+                        opacity: 0;
+                    }
+                    10% {
+                        opacity: var(--opacity);
+                    }
+                    90% {
+                        opacity: var(--opacity);
+                    }
+                    100% {
+                        transform: translateY(110vh) translateX(20px);
+                        opacity: 0;
+                    }
+                }
+                .snowflake {
+                    position: absolute;
+                    color: rgba(255, 255, 255, 0.8);
+                    animation: snowfall linear infinite;
+                    will-change: transform;
+                }
+            `}</style>
+            {snowflakes.map(flake => (
+                <div
+                    key={flake.id}
+                    className="snowflake"
                     style={{
-                        background: 'linear-gradient(135deg, rgba(255,215,0,0.3), rgba(255,255,255,0.2))',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        textShadow: '0 0 40px rgba(255, 215, 0, 0.1)',
+                        left: `${flake.x}%`,
+                        fontSize: `${flake.size}px`,
+                        animationDuration: `${flake.duration}s`,
+                        animationDelay: `${flake.delay}s`,
+                        ['--opacity' as string]: flake.opacity,
                     }}
                 >
-                    2026
-                </motion.div>
-            </div>
-        </AnimatePresence>
+                    {flake.character}
+                </div>
+            ))}
+        </div>
     )
 }
 
