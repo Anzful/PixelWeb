@@ -458,10 +458,10 @@ const ClientHome = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
                 <Link
-                  href="/services"
+                  href="/saitis-damzadeba"
                   className="bg-primary-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-primary-700 transition-all hover:shadow-xl transform hover:-translate-y-1 font-semibold text-base sm:text-lg inline-flex items-center justify-center"
                 >
-                  {t.home.pricing.viewAll}
+                  {t.footer.serviceItems.websiteCreation}
                   <FaArrowRight className="ml-2" />
                 </Link>
                 <Link
@@ -588,7 +588,7 @@ const ClientHome = () => {
               className="text-center mt-10 sm:mt-12"
             >
               <Link
-                href="/services"
+                href="/saitis-damzadeba-fasi"
                 className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-semibold text-lg hover:text-primary-700 dark:hover:text-primary-300 group"
               >
                 {t.home.pricing.viewAll}
@@ -736,4 +736,3 @@ const ClientHome = () => {
 }
 
 export default ClientHome
-

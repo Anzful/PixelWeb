@@ -23,6 +23,13 @@ interface Service {
 
 const ClientServices = () => {
   const { t } = useLanguage()
+  const seoLinks = [
+    { href: '/saitis-damzadeba', label: t.footer.serviceItems.websiteCreation },
+    { href: '/saitis-damzadeba-fasi', label: t.footer.serviceItems.price },
+    { href: '/landing-page-damzadeba', label: t.footer.serviceItems.landing },
+    { href: '/biznes-saiti', label: t.footer.serviceItems.business },
+    { href: '/internet-magaziis-damzadeba', label: t.footer.serviceItems.ecommerce },
+  ]
 
   const services: Service[] = [
     {
@@ -228,6 +235,18 @@ const ClientServices = () => {
               ))}
             </div>
 
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
+              {seoLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-700 transition hover:border-primary-400 hover:text-primary-700 dark:border-white/10 dark:bg-gray-900 dark:text-gray-300"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
             {/* Custom Project Banner - Theme Aware */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -427,4 +446,3 @@ const ClientServices = () => {
 }
 
 export default ClientServices
-

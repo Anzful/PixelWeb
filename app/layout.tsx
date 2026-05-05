@@ -14,13 +14,13 @@ import { LanguageProvider } from '@/context/LanguageContext'
 import { Suspense } from 'react'
 
 export const metadata: Metadata = {
-  title: 'PixelWeb.ge - საიტის დამზადება და ვებსაიტების შექმნა საქართველოში',
-  description: 'საიტის დამზადება და ვებსაიტების შექმნა საქართველოში ხელმისაწვდომ ფასად. ვქმნით თანამედროვე, სწრაფ და ხარისხიან ვებგვერდებს თქვენი ბიზნესისთვის.',
-  keywords: 'საიტის დამზადება, ვებსაიტის შექმნა, საიტის გაკეთება, ვებ დეველოპმენტი, საქართველო, ხელმისაწვდომი ფასები, PixelWeb',
+  title: 'PixelWeb.ge - საიტის დამზადება საქართველოში 400₾-დან',
+  description: 'საიტის დამზადება საქართველოში 400₾-დან. სწრაფი მიწოდება, თანამედროვე დიზაინი, მობილურზე მორგებული ვებსაიტები და ხელმისაწვდომი ფასები.',
+  keywords: 'საიტის დამზადება, ვებსაიტის შექმნა, საიტის გაკეთება, ვებ დეველოპმენტი, საიტების დამზადება საქართველოში, ხელმისაწვდომი ფასები, PixelWeb',
   authors: [{ name: 'PixelWeb.ge' }],
   metadataBase: new URL('https://pixelweb.ge'),
   openGraph: {
-    title: 'PixelWeb.ge - საიტის დამზადება და ვებსაიტების შექმნა საქართველოში',
+    title: 'PixelWeb.ge - საიტის დამზადება საქართველოში 400₾-დან',
     description: 'ვებსაიტების დამზადება, საიტის გაკეთება და თანამედროვე ვებგვერდები ხელმისაწვდომ ფასად.',
     type: 'website',
     url: 'https://pixelweb.ge',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PixelWeb.ge - საიტის დამზადება და ვებსაიტების შექმნა საქართველოში',
+    title: 'PixelWeb.ge - საიტის დამზადება საქართველოში 400₾-დან',
     description: 'საიტის დამზადება, თანამედროვე დიზაინი და სწრაფი ვებსაიტები თქვენი ბიზნესისთვის.',
   },
   verification: {
@@ -123,7 +123,10 @@ export default function RootLayout({
               name: 'PixelWeb.ge',
               alternateName: 'PixelWeb',
               url: 'https://pixelweb.ge',
-              sameAs: [],
+              sameAs: [
+                'https://www.instagram.com/pixelweb.ge/',
+                'https://www.facebook.com/profile.php?id=61584036537327',
+              ],
             }),
           }}
         />
@@ -132,92 +135,24 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'Service',
-              serviceType: 'Website Development',
-              name: 'ვებსაიტების დამზადება',
-              alternateName: [
-                'საიტების დამზადება',
-                'საიტის გაკეთება',
-                'ვებსაიტების დამზადება',
-                'ვებგვერდების დამზადება',
-                'საიტები იაფად',
-                'საიტები სწრაფად',
-                'ვებსაიტების დამზადება საქართველოში',
-                'ვებსაიტების დამზადება საქართველოში ფასად',
-                'ვებსაიტების დამზადება საქართველოში ხელმისაწვდომი ფასები',
-                'ვებსაიტების დამზადება საქართველოში ხელმისაწვდომი ფასები',
-                'საქართველოში ვებსაიტების დამზადება',
-                'ვებდეველოპმენტი',
-                'ვებდეველოპერი',
-                'ვებდეველოპერი საქართველოში',
-              ],
-              provider: {
-                '@type': 'Organization',
-                name: 'PixelWeb.ge',
-                url: 'https://pixelweb.ge',
-              },
-              areaServed: {
-                '@type': 'Country',
-                name: 'Georgia',
-              },
-              availableChannel: {
-                '@type': 'ServiceChannel',
-                serviceUrl: 'https://pixelweb.ge/contact',
+              '@type': 'WebSite',
+              '@id': 'https://pixelweb.ge/#website',
+              name: 'PixelWeb.ge',
+              url: 'https://pixelweb.ge',
+              inLanguage: 'ka-GE',
+              publisher: {
+                '@id': 'https://pixelweb.ge/#organization',
               },
             }),
           }}
         />
-        {/* FAQ Structured Data for Google Rich Results */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'FAQPage',
-              mainEntity: [
-                {
-                  '@type': 'Question',
-                  name: 'რამდენი დრო სჭირდება საიტის დამზადებას?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Landing Page - 3-5 დღე, კორპორატიული საიტი - 7-10 დღე, E-commerce - 14-21 დღე.',
-                  },
-                },
-                {
-                  '@type': 'Question',
-                  name: 'რა ღირს საიტის გაკეთება?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Landing Page იწყება 500 ₾-დან, ბიზნეს საიტები 1,000-2,500 ₾, E-commerce 3,000-5,000 ₾+.',
-                  },
-                },
-                {
-                  '@type': 'Question',
-                  name: 'შესაძლებელია საიტები იაფად?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'დიახ, PixelWeb გთავაზობთ საიტების დამზადებას ბაზრის ფასებზე 30%-მდე იაფად, ხარისხის შენარჩუნებით.',
-                  },
-                },
-                {
-                  '@type': 'Question',
-                  name: 'შედის თუ არა SEO ოპტიმიზაცია?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'ძირითადი SEO შედის ყველა პაკეტში: სუფთა კოდი, სწრაფი ჩატვირთვა, meta თეგები, სტრუქტურული მონაცემები.',
-                  },
-                },
-              ],
-            }),
-          }}
-        />
-        {/* LocalBusiness Schema for Local SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'LocalBusiness',
+              '@id': 'https://pixelweb.ge/#localbusiness',
               name: 'PixelWeb.ge',
               description: 'პროფესიონალური ვებსაიტების დამზადება ხელმისაწვდომ ფასად საქართველოში',
               url: 'https://pixelweb.ge',

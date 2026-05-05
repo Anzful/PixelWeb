@@ -76,11 +76,11 @@ function TikTokContent() {
   const benefits = [
     '3–5 დღეში მიწოდება',
     'სუფთა, სწრაფი, მობილურზე იდეალური',
-    'ფასები 500 ₾-დან',
+    'ფასები 400 ₾-დან',
   ]
 
   const plans = [
-    { name: 'Landing Page', price: '500–700 ₾', time: '3–5 დღე' },
+    { name: 'Landing Page', price: '400–700 ₾', time: '3–5 დღე' },
     { name: 'ბიზნეს საიტი', price: '1,000–2,500 ₾', time: '7–10 დღე' },
     { name: 'E‑commerce', price: '3,000–5,000 ₾', time: '14–21 დღე' },
   ]
@@ -105,7 +105,7 @@ function TikTokContent() {
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white"
             >
               Landing Page 3–5 დღეში
-              <span className="block text-primary-600 dark:text-primary-400 mt-2">ფასები 500 ₾-დან</span>
+              <span className="block text-primary-600 dark:text-primary-400 mt-2">ფასები 400 ₾-დან</span>
             </motion.h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mt-4">
               შევქმნით თქვენს ლენდინგს სწრაფად და ხარისხიანად.
@@ -274,5 +274,4 @@ export default function TikTokLanding() {
     </PageTransition>
   )
 }
-
 

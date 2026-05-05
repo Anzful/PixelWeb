@@ -251,7 +251,7 @@ export const translations = {
                 submitting: 'იგზავნება...'
             },
             services: [
-                'Landing Page (500-700 ₾)',
+                'Landing Page (400-700 ₾)',
                 'საწარმოს ვებსაიტი (1,000-2,500 ₾)',
                 'E-Commerce (3,000-5,000 ₾)',
                 'მორგებული ვებსაიტი (მოლაპარაკებით)',
@@ -325,6 +325,7 @@ export const translations = {
             whatsappMessage: 'გამარჯობა, მაინტერესებს ვებსაიტი PixelWeb.ge-ზე',
             serviceItems: {
                 websiteCreation: 'საიტის დამზადება',
+                price: 'საიტის დამზადების ფასი',
                 landing: 'Landing Page',
                 business: 'საწარმოს ვებსაიტი',
                 ecommerce: 'ელექტრონული კომერცია',
@@ -583,7 +584,7 @@ export const translations = {
                 submitting: 'Sending...'
             },
             services: [
-                'Landing Page (500-700 ₾)',
+                'Landing Page (400-700 ₾)',
                 'Business Website (1,000-2,500 ₾)',
                 'E-Commerce (3,000-5,000 ₾)',
                 'Custom Website (negotiable)',
@@ -657,6 +658,7 @@ export const translations = {
             whatsappMessage: 'Hello, I am interested in a website on PixelWeb.ge',
             serviceItems: {
                 websiteCreation: 'Website Creation',
+                price: 'Website Pricing',
                 landing: 'Landing Page',
                 business: 'Business Website',
                 ecommerce: 'E-commerce',

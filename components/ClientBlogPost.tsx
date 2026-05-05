@@ -42,6 +42,7 @@ const posts: Record<string, {
         <p>საიტზე შეგიძლიათ დააყენოთ Google Analytics და Facebook Pixel. ეს გაძლევთ საშუალებას ზუსტად იცოდეთ, ვინ არიან თქვენი მომხმარებლები და რა აინტერესებთ მათ.</p>
 
         <p><strong>დასკვნა:</strong> საიტის დამზადება არის ინვესტიცია, რომელიც აუცილებლად ამოიღებს ხარჯებს.</p>
+        <p>თუ გსურთ კონკრეტული ფასის და ვადის გაგება, იხილეთ ჩვენი <a href="/saitis-damzadeba-fasi">საიტის დამზადების ფასები</a> ან მოგვწერეთ კონსულტაციისთვის.</p>
       `,
             en: `
         <p>In the digital age, a website is no longer a luxury - it's a necessity. In 2025, if you have a business without a website, you're missing out on huge opportunities. Here are 5 reasons why having a website is critically important:</p>
@@ -62,6 +63,7 @@ const posts: Record<string, {
         <p>You can install Google Analytics and Facebook Pixel on your site. This allows you to know exactly who your customers are and what interests them.</p>
 
         <p><strong>Conclusion:</strong> Building a website is an investment that will definitely pay off.</p>
+        <p>To estimate your budget and timeline, see our <a href="/saitis-damzadeba-fasi">website pricing page</a> or contact us for a consultation.</p>
       `
         },
         date: { ka: '3 ნოემბერი, 2025', en: 'November 3, 2025' },
@@ -79,7 +81,7 @@ const posts: Record<string, {
         <p>ერთ-ერთი ყველაზე ხშირი კითხვაა: "რა ღირს საიტი?". 2025 წელს პასუხი დამოკიდებულია იმაზე, თუ რა გჭირდებათ. მოდით განვიხილოთ დეტალურად.</p>
         
         <h3>1. Landing Page (ერთგვერდიანი საიტი)</h3>
-        <p><strong>ფასი:</strong> 400₾ - 800₾</p>
+        <p><strong>ფასი:</strong> 400₾ - 700₾</p>
         <p>ეს არის მარტივი საიტი, რომლის მიზანია ერთი კონკრეტული მოქმედების შესრულება (მაგ: პროდუქტის ყიდვა, რეგისტრაცია). იდეალურია სარეკლამო კამპანიებისთვის.</p>
 
         <h3>2. სავიზიტო / კორპორატიული საიტი</h3>
@@ -99,12 +101,13 @@ const posts: Record<string, {
         </ul>
 
         <p>PixelWeb-ში ჩვენ გთავაზობთ საუკეთესო ფასისა და ხარისხის შეფარდებას. ჩვენ ვწერთ სუფთა კოდს (Next.js), რაც უზრუნველყოფს საიტის სისწრაფეს და უსაფრთხოებას.</p>
+        <p>დეტალურად იხილეთ <a href="/saitis-damzadeba">საიტის დამზადების სერვისი</a>, <a href="/landing-page-damzadeba">Landing Page-ის დამზადება</a> ან <a href="/internet-magaziis-damzadeba">ინტერნეტ მაღაზიის დამზადება</a>.</p>
       `,
             en: `
         <p>One of the most common questions is: "How much does a website cost?". In 2025, the answer depends on what you need. Let's discuss in detail.</p>
         
         <h3>1. Landing Page (Single-page website)</h3>
-        <p><strong>Price:</strong> 400₾ - 800₾</p>
+        <p><strong>Price:</strong> 400₾ - 700₾</p>
         <p>This is a simple website aimed at completing one specific action (e.g., buying a product, registration). Ideal for advertising campaigns.</p>
 
         <h3>2. Business / Corporate Website</h3>
@@ -124,6 +127,7 @@ const posts: Record<string, {
         </ul>
 
         <p>At PixelWeb, we offer the best price-to-quality ratio. We write clean code (Next.js), which ensures site speed and security.</p>
+        <p>See more about <a href="/saitis-damzadeba">website creation</a>, <a href="/landing-page-damzadeba">Landing Page development</a>, or <a href="/internet-magaziis-damzadeba">online store development</a>.</p>
       `
         },
         date: { ka: '8 ნოემბერი, 2025', en: 'November 8, 2025' },

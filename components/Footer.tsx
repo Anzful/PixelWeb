@@ -117,15 +117,24 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer">
-                <Link href="/services">
+                <Link href="/saitis-damzadeba-fasi">
+                  {t.footer.serviceItems.price}
+                </Link>
+              </li>
+              <li className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer">
+                <Link href="/landing-page-damzadeba">
                   {t.footer.serviceItems.landing}
                 </Link>
               </li>
               <li className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer">
-                {t.footer.serviceItems.business}
+                <Link href="/biznes-saiti">
+                  {t.footer.serviceItems.business}
+                </Link>
               </li>
               <li className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer">
-                {t.footer.serviceItems.ecommerce}
+                <Link href="/internet-magaziis-damzadeba">
+                  {t.footer.serviceItems.ecommerce}
+                </Link>
               </li>
               <li className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer">
                 {t.footer.serviceItems.portfolio}
@@ -165,4 +174,3 @@ const Footer = () => {
 }
 
 export default Footer
-
