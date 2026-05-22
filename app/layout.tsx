@@ -45,6 +45,9 @@ export const metadata: Metadata = {
       'jkjsLT2q8ghWwf2_0CR7O4dOyVh8Bg2aDQZPJn1yLeE',
       's_hl5rj5jvAdLHAPKqB8dGy-Nb61eOn4YhpJRSWqf5U',
     ],
+    other: {
+      'msvalidate.01': 'AD4DC9949755033055B4AB67A4EC80D1',
+    },
   },
   icons: {
     icon: '/images/logo.png',
