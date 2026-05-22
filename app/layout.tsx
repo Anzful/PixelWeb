@@ -41,7 +41,10 @@ export const metadata: Metadata = {
     description: 'საიტის დამზადება, თანამედროვე დიზაინი და სწრაფი ვებსაიტები თქვენი ბიზნესისთვის.',
   },
   verification: {
-    google: 'jkjsLT2q8ghWwf2_0CR7O4dOyVh8Bg2aDQZPJn1yLeE',
+    google: [
+      'jkjsLT2q8ghWwf2_0CR7O4dOyVh8Bg2aDQZPJn1yLeE',
+      's_hl5rj5jvAdLHAPKqB8dGy-Nb61eOn4YhpJRSWqf5U',
+    ],
   },
   icons: {
     icon: '/images/logo.png',
