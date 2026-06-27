@@ -296,6 +296,8 @@ export const translations = {
                 ecommerce: 'E-Commerce',
                 restaurant: 'რესტორანი',
                 gaming: 'თამაშები',
+                business: 'ბიზნესი',
+                construction: 'მშენებლობა',
                 portfolio: 'პორტფოლიო'
             },
             stats: {
@@ -629,6 +631,8 @@ export const translations = {
                 ecommerce: 'E-Commerce',
                 restaurant: 'Restaurant',
                 gaming: 'Gaming',
+                business: 'Business',
+                construction: 'Construction',
                 portfolio: 'Portfolio'
             },
             stats: {

@@ -4,6 +4,8 @@ export type ProjectCategory =
   | 'ecommerce'
   | 'restaurant'
   | 'gaming'
+  | 'business'
+  | 'construction'
   | 'portfolio'
 
 export type Project = {
@@ -116,6 +118,210 @@ export const projects: Project[] = [
     },
     featured: true,
     accent: 'from-emerald-500 to-teal-600',
+  },
+  {
+    id: 12,
+    slug: 'sea-llc',
+    title: { ka: 'SEA LLC', en: 'SEA LLC' },
+    tagline: {
+      ka: 'წყლის დამუშავებისა და ინდუსტრიული აღჭურვილობის კატალოგი',
+      en: 'Water treatment and industrial equipment catalog',
+    },
+    description: {
+      ka: 'ბილინგვური მარკეტინგული და კატალოგის ვებსაიტი SEA LLC-სთვის.',
+      en: 'Bilingual marketing and catalog website for SEA LLC.',
+    },
+    longDescription: {
+      ka: 'SEA LLC-ის ვებსაიტი აერთიანებს კომპანიის მიმართულებებს, პროდუქციის კატალოგს, პროექტებსა და საკონტაქტო გზებს ერთ სწრაფ, ორენოვან Next.js გამოცდილებაში.',
+      en: 'The SEA LLC website brings company services, equipment categories, project work, and contact paths into one fast bilingual Next.js experience.',
+    },
+    category: 'business',
+    categoryLabel: { ka: 'ბიზნესი', en: 'Business' },
+    year: '2025',
+    client: 'SEA LLC',
+    role: { ka: 'დიზაინი + დეველოპმენტი', en: 'Design + Development' },
+    images: ['/images/portfolio-new/sea.png'],
+    cover: '/images/portfolio-new/sea.png',
+    technologies: ['Next.js', 'TypeScript', 'App Router', 'i18n'],
+    features: {
+      ka: ['ორენოვანი კონტენტი', 'პროდუქციის კატალოგი', 'პროექტების გალერეა', 'სწრაფი კონტაქტი'],
+      en: ['Bilingual content', 'Product catalog', 'Project gallery', 'Fast contact path'],
+    },
+    highlights: {
+      ka: ['ტექნიკური კატალოგი', 'ქართული და ინგლისური ენა', 'მკაფიო B2B სტრუქტურა'],
+      en: ['Technical catalog', 'Georgian and English UI', 'Clear B2B structure'],
+    },
+    accent: 'from-cyan-500 to-slate-700',
+  },
+  {
+    id: 13,
+    slug: 'nocturne',
+    title: { ka: 'Nocturne', en: 'Nocturne' },
+    tagline: {
+      ka: 'ატმოსფერული რესტორნის ლენდინგი დაჯავშნის ფოკუსით',
+      en: 'Atmospheric restaurant landing page focused on reservations',
+    },
+    description: {
+      ka: 'პრემიუმ რესტორნის ვებსაიტი, სადაც ვიზუალი, მენიუ და დაჯავშნის გზა ერთად მუშაობს.',
+      en: 'Premium restaurant website where visuals, menu storytelling, and reservations work together.',
+    },
+    longDescription: {
+      ka: 'Nocturne შექმნილია საღამოს რესტორნის/ლაუნჯის ბრენდისთვის: დიდი ვიზუალური ჰირო, მკაფიო CTA, ატმოსფერული სექციები და მობილურზე მორგებული ნავიგაცია.',
+      en: 'Nocturne is built for an evening restaurant or lounge brand: a strong visual hero, clear CTA, atmospheric sections, and mobile-friendly navigation.',
+    },
+    category: 'restaurant',
+    categoryLabel: { ka: 'რესტორანი', en: 'Restaurant' },
+    year: '2025',
+    role: { ka: 'დიზაინი + დეველოპმენტი', en: 'Design + Development' },
+    images: ['/images/portfolio-new/nocturne.png'],
+    cover: '/images/portfolio-new/nocturne.png',
+    technologies: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion'],
+    features: {
+      ka: ['დაჯავშნის CTA', 'ატმოსფერული ჰირო', 'მენიუს სექციები', 'მობილური UX'],
+      en: ['Reservation CTA', 'Atmospheric hero', 'Menu sections', 'Mobile UX'],
+    },
+    highlights: {
+      ka: ['ძლიერი პირველი შთაბეჭდილება', 'ლაუნჯის ვიზუალური ენა', 'სწრაფი კონვერსია'],
+      en: ['Strong first impression', 'Lounge visual language', 'Fast conversion path'],
+    },
+    accent: 'from-amber-500 to-stone-900',
+  },
+  {
+    id: 14,
+    slug: 'focus-cabin',
+    title: { ka: 'Focus Cabin', en: 'Focus Cabin' },
+    tagline: {
+      ka: 'მშვიდი ფოკუსის ვებსაიტი სამუშაო გარემოსთვის',
+      en: 'Quiet focus website for a calm work experience',
+    },
+    description: {
+      ka: 'პროდუქტიული სამუშაო სივრცის კონცეფცია მშვიდი ვიზუალითა და სუფთა ინტერფეისით.',
+      en: 'A focused workspace concept with calm visuals and a clean interface.',
+    },
+    longDescription: {
+      ka: 'Focus Cabin იყენებს ფართო ვიზუალს, მინიმალურ ნავიგაციას და მშვიდ CTA-ს, რათა მომხმარებელმა სწრაფად იგრძნოს პროდუქტის განწყობა და გამოიყენოს სივრცე ფოკუსისთვის.',
+      en: 'Focus Cabin uses immersive visuals, minimal navigation, and calm CTAs so visitors understand the mood quickly and enter a focused workspace.',
+    },
+    category: 'portfolio',
+    categoryLabel: { ka: 'პორტფოლიო', en: 'Portfolio' },
+    year: '2025',
+    role: { ka: 'დიზაინი + დეველოპმენტი', en: 'Design + Development' },
+    images: ['/images/portfolio-new/cabin.png'],
+    cover: '/images/portfolio-new/cabin.png',
+    technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS'],
+    features: {
+      ka: ['იმერსიული ჰირო', 'სუფთა ნავიგაცია', 'ფოკუსის CTA', 'რესპონსიული დიზაინი'],
+      en: ['Immersive hero', 'Clean navigation', 'Focus CTA', 'Responsive design'],
+    },
+    highlights: {
+      ka: ['მშვიდი ბრენდინგი', 'პროდუქტის განწყობა', 'სწრაფი შესვლა'],
+      en: ['Calm branding', 'Product mood', 'Fast entry point'],
+    },
+    accent: 'from-sky-500 to-blue-950',
+  },
+  {
+    id: 15,
+    slug: 'alasi',
+    title: { ka: 'Alasi', en: 'Alasi' },
+    tagline: {
+      ka: 'პრემიუმ ჩარდახების ვებსაიტი 3D ვიზუალიზატორით',
+      en: 'Premium awnings website with a 3D visualizer',
+    },
+    description: {
+      ka: 'Alasi.ge-სთვის შექმნილი სწრაფი პროდუქტის ვებსაიტი ინტერაქტიული ჩარდახის პრევიუთი.',
+      en: 'Fast product website for Alasi.ge with an interactive awning preview.',
+    },
+    longDescription: {
+      ka: 'Alasi აჩვენებს პროდუქტის ფერს, ფორმას და გამოყენებას ერთ ვიზუალურად ძლიერ გვერდზე. საიტში ჩაშენებულია 3D პრევიუ, კატეგორიები და სწრაფი საკონტაქტო გზა.',
+      en: 'Alasi presents product colors, form, and use cases on a strong visual page. The site includes a 3D preview, product sections, and a fast contact path.',
+    },
+    category: 'business',
+    categoryLabel: { ka: 'ბიზნესი', en: 'Business' },
+    year: '2025',
+    client: 'Alasi',
+    role: { ka: 'დიზაინი + დეველოპმენტი', en: 'Design + Development' },
+    images: ['/images/portfolio-new/alasi.png'],
+    cover: '/images/portfolio-new/alasi.png',
+    technologies: ['Next.js', 'TypeScript', 'Model Viewer', 'CSS'],
+    features: {
+      ka: ['3D ვიზუალიზატორი', 'პროდუქტის ფერები', 'ქართული კონტენტი', 'სწრაფი კონტაქტი'],
+      en: ['3D visualizer', 'Product colors', 'Georgian content', 'Fast contact'],
+    },
+    highlights: {
+      ka: ['ინტერაქტიული პროდუქტი', 'პრემიუმ ვიზუალი', 'alasi.ge დომენი'],
+      en: ['Interactive product', 'Premium visuals', 'alasi.ge domain'],
+    },
+    liveUrl: 'https://alasi.ge',
+    accent: 'from-orange-500 to-amber-900',
+  },
+  {
+    id: 16,
+    slug: 'comfort-building',
+    title: { ka: 'Comfort Building', en: 'Comfort Building' },
+    tagline: {
+      ka: 'არქიტექტურული დეველოპმენტის პრეზენტაციის ვებსაიტი',
+      en: 'Architecture development presentation website',
+    },
+    description: {
+      ka: 'ბუტიკური სამშენებლო კომპანიისთვის შექმნილი ვიზუალური ვებსაიტი.',
+      en: 'Visual website for a boutique building and development company.',
+    },
+    longDescription: {
+      ka: 'Comfort Building-ის ვებსაიტი ფოკუსირებულია ნდობაზე, პროექტის ვიზუალზე და სწრაფ კონტაქტზე. მოძრაობები და სქროლის გამოცდილება საიტს პრემიუმ სამშენებლო ბრენდის შეგრძნებას აძლევს.',
+      en: 'The Comfort Building website focuses on trust, project visuals, and fast contact. Motion and scrolling details give the site a premium construction brand feel.',
+    },
+    category: 'construction',
+    categoryLabel: { ka: 'მშენებლობა', en: 'Construction' },
+    year: '2025',
+    client: 'Comfort Building',
+    role: { ka: 'დიზაინი + დეველოპმენტი', en: 'Design + Development' },
+    images: ['/images/portfolio-new/building-company.png'],
+    cover: '/images/portfolio-new/building-company.png',
+    technologies: ['React', 'Vite', 'GSAP', 'Lenis'],
+    features: {
+      ka: ['პროექტის პრეზენტაცია', 'სქროლის ანიმაცია', 'კონტაქტის ფორმა', 'მობილური დიზაინი'],
+      en: ['Project presentation', 'Scroll animation', 'Contact form', 'Mobile design'],
+    },
+    highlights: {
+      ka: ['პრემიუმ არქიტექტურული სტილი', 'სუფთა CTA', 'ანიმირებული გამოცდილება'],
+      en: ['Premium architecture style', 'Clear CTA', 'Animated experience'],
+    },
+    accent: 'from-yellow-500 to-zinc-900',
+  },
+  {
+    id: 17,
+    slug: 'buildora-group',
+    title: { ka: 'Buildora Group', en: 'Buildora Group' },
+    tagline: {
+      ka: 'სამშენებლო კომპანიის ორენოვანი ვებსაიტი',
+      en: 'Bilingual website for a construction company',
+    },
+    description: {
+      ka: 'Buildora Group-ის ბიზნეს ვებსაიტი WhatsApp და Telegram კონტაქტით.',
+      en: 'Business website for Buildora Group with WhatsApp and Telegram contact paths.',
+    },
+    longDescription: {
+      ka: 'Buildora Group აერთიანებს კომპანიის პოზიციონირებას, მომსახურებებსა და სწრაფ საკონტაქტო ღილაკებს ერთ მკაფიო ლენდინგში, რომელიც ქართულ და რუსულ აუდიტორიას ემსახურება.',
+      en: 'Buildora Group combines company positioning, services, and quick contact buttons into a clear landing page for Georgian and Russian-speaking audiences.',
+    },
+    category: 'construction',
+    categoryLabel: { ka: 'მშენებლობა', en: 'Construction' },
+    year: '2025',
+    client: 'Buildora Group',
+    role: { ka: 'დიზაინი + დეველოპმენტი', en: 'Design + Development' },
+    images: ['/images/portfolio-new/buildora-group.png'],
+    cover: '/images/portfolio-new/buildora-group.png',
+    technologies: ['Vite', 'JavaScript', 'CSS', 'i18n'],
+    features: {
+      ka: ['ორენოვანი კონტენტი', 'WhatsApp CTA', 'Telegram CTA', 'სერვისების სექციები'],
+      en: ['Bilingual content', 'WhatsApp CTA', 'Telegram CTA', 'Service sections'],
+    },
+    highlights: {
+      ka: ['სწრაფი საკონტაქტო გზა', 'სამშენებლო ბრენდინგი', 'buildora-group.ge დომენი'],
+      en: ['Fast contact path', 'Construction branding', 'buildora-group.ge domain'],
+    },
+    liveUrl: 'https://buildora-group.ge',
+    accent: 'from-sky-500 to-slate-900',
   },
   {
     id: 1,

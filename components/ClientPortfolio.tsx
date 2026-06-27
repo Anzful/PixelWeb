@@ -30,6 +30,9 @@ const ClientPortfolio = () => {
     { id: 'ecommerce', label: t.portfolio.categories.ecommerce },
     { id: 'restaurant', label: t.portfolio.categories.restaurant },
     { id: 'gaming', label: t.portfolio.categories.gaming },
+    { id: 'business', label: t.portfolio.categories.business },
+    { id: 'construction', label: t.portfolio.categories.construction },
+    { id: 'portfolio', label: t.portfolio.categories.portfolio },
   ]
 
   const filteredProjects =
@@ -37,6 +40,7 @@ const ClientPortfolio = () => {
 
   const featured = filteredProjects.filter((p) => p.featured)
   const rest = filteredProjects.filter((p) => !p.featured)
+  const projectCount = projects.length
 
   return (
     <PageTransition>
@@ -97,7 +101,7 @@ const ClientPortfolio = () => {
               className="grid grid-cols-3 gap-4 lg:gap-6"
             >
               {[
-                { v: '11+', l: t.portfolio.stats.projects },
+                { v: `${projectCount}+`, l: t.portfolio.stats.projects },
                 { v: '100%', l: t.portfolio.stats.success },
                 { v: '24/7', l: t.portfolio.stats.support },
               ].map((s) => (
@@ -216,7 +220,7 @@ const ClientPortfolio = () => {
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-4 text-sm font-bold text-gray-950 transition hover:bg-gray-100"
+                className="inline-flex items-center gap-2 rounded-xl bg-primary-500 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-primary-500/25 transition hover:bg-primary-400"
               >
                 {t.portfolio.cta.button}
                 <FaArrowRight />
@@ -275,7 +279,8 @@ const FeatureRow = ({ project, reverse, onPreview, language }: RowProps) => {
               priority
             />
           </div>
-          <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-gray-900 backdrop-blur">
+          <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-gray-950/80 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-lg backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary-300" />
             {project.categoryLabel[language]}
           </div>
         </Link>
@@ -370,7 +375,8 @@ const ProjectCard = ({ project, index, onPreview, language }: CardProps) => {
               className="rounded-lg object-contain shadow-xl shadow-black/15 ring-1 ring-black/5 dark:ring-white/10"
             />
           </div>
-          <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-gray-900 backdrop-blur">
+          <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-gray-950/80 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white shadow-lg backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary-300" />
             {project.categoryLabel[language]}
           </div>
           {project.liveUrl && (
