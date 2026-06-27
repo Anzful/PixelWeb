@@ -45,7 +45,7 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 dark:bg-[#030712]/95 backdrop-blur-sm backdrop-saturate-150 shadow-lg py-3 sm:py-4' : 'bg-white/90 dark:bg-[#030712]/90 backdrop-blur-sm backdrop-saturate-150 py-4 sm:py-6'
+    <nav data-nosnippet="" className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 dark:bg-[#030712]/95 backdrop-blur-sm backdrop-saturate-150 shadow-lg py-3 sm:py-4' : 'bg-white/90 dark:bg-[#030712]/90 backdrop-blur-sm backdrop-saturate-150 py-4 sm:py-6'
       }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex justify-between items-center">
@@ -142,4 +142,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-

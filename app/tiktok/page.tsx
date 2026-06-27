@@ -121,7 +121,7 @@ function TikTokContent() {
                 მოთხოვნის გაგზავნა <FaArrowRight className="ml-2" />
               </Link>
             </div>
-            <div className="flex flex-wrap justify_center gap-3 mt-6">
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
               {benefits.map((b) => (
                 <span key={b} className="inline-flex items-center gap-2 text-sm sm:text-base text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-3 py-1.5">
                   <FaCheckCircle className="text-green-500" /> {b}
@@ -138,7 +138,7 @@ function TikTokContent() {
           <h2 className="text-center text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6">ბოლო ნამუშევრები</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
             {showcase.map((s, i) => (
-              <div key={i} className="rounded-xl overflow-hidden shadow-lg bg-gray-50 dark:bg_gray-800 border border-gray-100 dark:border-gray-700">
+              <div key={i} className="rounded-xl overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
                 <div className="relative pt-[60%] bg-gray-200 dark:bg-gray-700">
                   <img src={s.img} alt={s.title} className="absolute inset-0 w-full h-full object-cover" />
                 </div>
@@ -221,7 +221,7 @@ function TikTokContent() {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg_white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   placeholder="მოგვიყევით მოკლედ რას ეძებთ..."
                 />
               </div>
