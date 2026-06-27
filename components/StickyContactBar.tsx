@@ -3,13 +3,13 @@
 import { FaWhatsapp, FaPhone } from 'react-icons/fa'
 import { useLanguage } from '@/context/LanguageContext'
 
-const PHONE_E164 = '+995591410914'
-const WHATSAPP_INTL = '995591410914'
+const PHONE_NUMBER = '557100020'
+const WHATSAPP_INTL = '995557100020'
 
 const StickyContactBar = () => {
   const { t } = useLanguage()
   const waHref = `https://wa.me/${WHATSAPP_INTL}?text=${encodeURIComponent(t.footer.whatsappMessage)}`
-  const callHref = `tel:${PHONE_E164}`
+  const callHref = `tel:${PHONE_NUMBER}`
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden">

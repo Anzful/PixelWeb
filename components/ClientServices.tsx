@@ -426,7 +426,7 @@ const ClientServices = () => {
                   <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
-                  href="https://wa.me/995591410914"
+                  href="https://wa.me/995557100020"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-green-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-600 transition-all hover:shadow-xl hover:scale-105"

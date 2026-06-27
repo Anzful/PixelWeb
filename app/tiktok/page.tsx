@@ -7,8 +7,8 @@ import { motion } from 'framer-motion'
 import { FaWhatsapp, FaPhone, FaArrowRight, FaCheckCircle } from 'react-icons/fa'
 import PageTransition from '@/components/PageTransition'
 
-const PHONE_E164 = '+995591410914'
-const WHATSAPP_INTL = '995591410914'
+const PHONE_NUMBER = '557100020'
+const WHATSAPP_INTL = '995557100020'
 
 function buildWhatsAppHref(search: string) {
   const base = `https://wa.me/${WHATSAPP_INTL}`
@@ -21,7 +21,7 @@ function TikTokContent() {
   const searchParams = useSearchParams()
   const search = useMemo(() => searchParams?.toString() || '', [searchParams])
   const waHref = useMemo(() => buildWhatsAppHref(search), [search])
-  const callHref = `tel:${PHONE_E164}`
+  const callHref = `tel:${PHONE_NUMBER}`
 
   const [formData, setFormData] = useState({
     name: '',

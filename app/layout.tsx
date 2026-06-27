@@ -166,7 +166,7 @@ export default function RootLayout({
               url: 'https://pixelweb.ge',
               logo: 'https://pixelweb.ge/images/logo.png',
               image: 'https://pixelweb.ge/images/logo.png',
-              telephone: '+995591410914',
+              telephone: '557100020',
               email: 'pixelweb2026@gmail.com',
               address: {
                 '@type': 'PostalAddress',

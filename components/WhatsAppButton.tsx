@@ -2,7 +2,7 @@
 
 import { FaWhatsapp } from 'react-icons/fa'
 
-const WHATSAPP_INTL = '995591410914'
+const WHATSAPP_INTL = '995557100020'
 
 const WhatsAppButton = () => {
     const waHref = `https://wa.me/${WHATSAPP_INTL}?text=${encodeURIComponent('გამარჯობა, მაინტერესებს ვებსაიტი PixelWeb.ge-ზე')}`

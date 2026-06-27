@@ -14,7 +14,7 @@ type SeoStrengthBlock = {
 }
 
 const contactHref = '/contact'
-const whatsappHref = 'https://wa.me/995591410914?text=%E1%83%92%E1%83%90%E1%83%9B%E1%83%90%E1%83%A0%E1%83%AF%E1%83%9D%E1%83%91%E1%83%90%2C%20%E1%83%9B%E1%83%90%E1%83%98%E1%83%9C%E1%83%A2%E1%83%94%E1%83%A0%E1%83%94%E1%83%A1%E1%83%94%E1%83%91%E1%83%A1%20%E1%83%A1%E1%83%90%E1%83%98%E1%83%A2%E1%83%98%E1%83%A1%20%E1%83%93%E1%83%90%E1%83%9B%E1%83%96%E1%83%90%E1%83%93%E1%83%94%E1%83%91%E1%83%90'
+const whatsappHref = 'https://wa.me/995557100020?text=%E1%83%92%E1%83%90%E1%83%9B%E1%83%90%E1%83%A0%E1%83%AF%E1%83%9D%E1%83%91%E1%83%90%2C%20%E1%83%9B%E1%83%90%E1%83%98%E1%83%9C%E1%83%A2%E1%83%94%E1%83%A0%E1%83%94%E1%83%A1%E1%83%94%E1%83%91%E1%83%A1%20%E1%83%A1%E1%83%90%E1%83%98%E1%83%A2%E1%83%98%E1%83%A1%20%E1%83%93%E1%83%90%E1%83%9B%E1%83%96%E1%83%90%E1%83%93%E1%83%94%E1%83%91%E1%83%90'
 
 const seoStrengthBlocks: Record<SeoServiceKey, SeoStrengthBlock> = {
   'saitis-damzadeba': {
@@ -157,7 +157,7 @@ export default function SeoServiceLandingPage({ page }: SeoServiceLandingPagePro
       '@id': `${baseUrl}/#localbusiness`,
       name: 'PixelWeb.ge',
       url: baseUrl,
-      telephone: '+995591410914',
+      telephone: '557100020',
       email: 'pixelweb2026@gmail.com',
       address: {
         '@type': 'PostalAddress',
@@ -262,7 +262,7 @@ export default function SeoServiceLandingPage({ page }: SeoServiceLandingPagePro
                   WhatsApp
                 </a>
                 <a
-                  href="tel:+995591410914"
+                  href="tel:557100020"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-6 py-4 font-bold text-gray-900 transition hover:border-primary-300 hover:text-primary-700 dark:border-gray-700 dark:bg-gray-950 dark:text-white"
                 >
                   <FaPhone aria-hidden="true" />

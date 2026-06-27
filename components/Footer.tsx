@@ -45,7 +45,7 @@ const Footer = () => {
                 <FaInstagram size={24} />
               </a>
               <a
-                href="https://wa.me/995591410914"
+                href="https://wa.me/995557100020"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors"
@@ -61,7 +61,7 @@ const Footer = () => {
                 <FaEnvelope size={24} />
               </a>
               <a
-                href="tel:+995591410914"
+                href="tel:557100020"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 aria-label="Phone"
               >

@@ -711,7 +711,7 @@ const ClientHome = () => {
                   <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
-                  href="https://wa.me/995591410914"
+                  href="https://wa.me/995557100020"
                   onClick={() => {
                     if (typeof window !== 'undefined' && window.reportConversion) {
                       window.reportConversion();

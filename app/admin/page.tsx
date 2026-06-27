@@ -100,7 +100,7 @@ const AdminPage = () => {
       title: 'WhatsApp Business',
       description: 'მომხმარებლების მესიჯები',
       icon: <FaWhatsapp className="text-2xl" />,
-      href: 'https://wa.me/995591410914',
+      href: 'https://wa.me/995557100020',
       color: 'from-green-500 to-green-600',
       external: true
     },
@@ -292,4 +292,3 @@ const AdminPage = () => {
 }
 
 export default AdminPage
-

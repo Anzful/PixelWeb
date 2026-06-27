@@ -80,7 +80,7 @@ const ClientPortfolio = () => {
                   <FaArrowRight />
                 </Link>
                 <a
-                  href="https://wa.me/995591410914"
+                  href="https://wa.me/995557100020"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-6 py-3.5 text-sm font-bold text-gray-900 transition hover:border-primary-300 hover:text-primary-700 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-primary-500/40"
@@ -222,7 +222,7 @@ const ClientPortfolio = () => {
                 <FaArrowRight />
               </Link>
               <a
-                href="https://wa.me/995591410914"
+                href="https://wa.me/995557100020"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-7 py-4 text-sm font-bold text-white transition hover:bg-white/10"
